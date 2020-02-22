@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sushil Sharma</title>
+</head>
+<style>
+  .container {
+    width: 600px;
+    height: 600px;
+    background-color: lightgrey;
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  #user {
+    color: green;
+    font-size: 75px;
+  }
+
+  #score {
+    color: red;
+    font-size: 75px;
+  }
+
+  button {
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  button {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+  }
+
+  button:hover {
+    background-color: #555555;
+    color: white;
+  }
+</style>
+<script>
+  var myVar;
+  var score = 0;
+  
+  function myFunction() {
+    var userinput;
+    userinput = prompt("Please enter number between 0 to 9", "");
+    document.getElementById("user").innerHTML = userinput;
+    score = 0;
+    document.getElementById("score").innerHTML = "0";
+    start(userinput);
+    
+  }
+
+function start(userinput)
+
+{
+  myVar = setInterval(randomfunc, 1000);
+  function randomfunc() {
+    var userclick = "";
+    var left = Math.floor(Math.random() * 10);
+    var middle = Math.floor(Math.random() * 10);
+    var right = Math.floor(Math.random() * 10);
+
+    userclick = "<button type='button' onclick='checkAns(" +left+ "," +userinput+ ");' style='font-size:150px;color:#FF0000;' value='" +left+ "'>" +left+ "</button>" +
+      "<button type='button' onclick='checkAns(" +middle+ "," +userinput+ ");' style='font-size:150px;color:#FF9300' value='" +middle+ "'>" +middle+ "</button>" +
+      "<button type='button' onclick='checkAns(" +right+ "," +userinput+ ");'style='font-size:150px;color:#00FFE5;' value='" +right+ "'>" +right+ "</button>";
+    document.getElementById("numberbox").innerHTML = userclick;
+  }
+}  
+
+  function checkAns(random,userinput) {
+
+    if (random== userinput ) {
+      document.getElementById("score").innerHTML = ++score;
+    }
+    else 
+      document.getElementById("score").innerHTML = --score;
+    
+
+  }
+  function myStopFunction() {
+    clearInterval(myVar);
+  }
+</script>
+
+<body>
+
+  <center>
+
+    <div class="container">
+      <h1>Sushil Sharma: Number Game</h1>
+      <button onclick="myFunction()">START</button>
+      <button onclick="myStopFunction()">STOP</button><br>
+      <h1>User Selected : <span id="user"></span>
+      </h1>
+      <h1>Game Score : <span id="score"></span>
+      </h1>
+      <span id="numberbox" ></span>
+    </div>
+  </center>
+</body>
+
+</html>
