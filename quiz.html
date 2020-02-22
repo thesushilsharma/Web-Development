@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Quiz Questions And Answers</title>
+    <script>
+        
+        function getScore(form) {
+            var answers = ["ans3", "ans4", "ans8", "ans10", "ans13"];
+            var correct=["first","second","third","forth","fifth"];
+            var score = 0;
+           var i=0;
+           var Value;
+           for (i;i<answers.length;i++)
+           {
+               if(document.getElementById(answers[i]).checked)
+               {
+                   score++;
+               }
+               else{
+                   Value=document.getElementById(answers[i]).value;
+                   document.getElementById(correct[i]).innerHTML="Corect answer is "+ Value;
+               }
+               }
+           
+            document.getElementById("Total").innerHTML = "You got " + score + " correct out of 5";
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <h1>Quiz</h1>
+    </center>
+    <form id="quiz" name="quiz" method="post" onsubmit="" action="">
+        <b>Question 1.
+            <br>5+6<br></b>
+        <blockquote>
+            <input type="radio" name="question1" id="ans1" value="5">5<br>
+            <input type="radio" name="question1" id="ans2" value="56">56<br>
+            <input type="radio" name="question1" id="ans3" value="11">11<br>
+        </blockquote>
+        <span id="first" style="color:red;"></span><br>
+        <b>
+            <hr>
+            Question 2.
+            <br>10/2.<br></b>
+        <blockquote>
+            <input type="radio" name="question2" id="ans4" value="5">5<br>
+            <input type="radio" name="question2" id="ans5" value="20">20<br>
+            <input type="radio" name="question2" id="ans6" value="102">102<br>
+        </blockquote>
+        <span id="second" style="color:red;"></span><br>
+        <b>
+            <hr>
+            Question 3.
+            <br>The average of first 50 natural numbers is ………….<br></b>
+        <blockquote>
+            <input type="radio" name="question3" id="ans7" value="10">10<br>
+            <input type="radio" name="question3" id="ans8" value="25.5">25.5<br>
+            <input type="radio" name="question3" id="ans9" value="25.30">25.30<br>
+        </blockquote>
+        <span id="third" style="color:red;"></span><br>
+        <b>
+            <hr>
+            Question 4.
+            <br>106 × 106 – 94 × 94 = ?<br></b>
+        <blockquote>
+            <input type="radio" name="question4" id="ans10" value="2400">2400<br>
+            <input type="radio" name="question4" id="ans11" value="0">0<br>
+            <input type="radio" name="question4" id="ans12" value="106">106<br>
+        </blockquote>
+        <span id="forth" style="color:red;"></span><br>
+        <b>
+            <hr>
+            Question 5.
+            <br>The amount of water flowing into a tank doubles every minutes. The tank is full in an hour.<br></b>
+        <blockquote>
+            <input type="radio" name="question5" id="ans13" value="59">59<br>
+            <input type="radio" name="question5" id="ans14" value="30">30<br>
+            <input type="radio" name="question5" id="ans15" value="43">43<br>
+        </blockquote>
+        <span id="fifth" style="color:red;"></span><br>
+        <hr>
+        <input type="button" value="Submit" onclick="getScore(this.form)">
+        <input type="reset" value="Clear">
+        <span id="Total" style="color:red;"></span><br>
+    </form>
+</body>
+
+</html>

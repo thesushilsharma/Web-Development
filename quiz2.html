@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<div style="background: linear-gradient(to bottom,#ffafbd 10%,#2193b0 100%)">
+
+	<head>
+		<title> Fun Quiz </title>
+	</head>
+	<style>
+		h1 {
+			font-family: arial;
+			font-size: 48px;
+			font-weight: bold;
+			text-align: center;
+		}
+
+		questionnumber {
+			font-family: arial;
+			font-size: 24px;
+			font-weight: bold;
+		}
+
+		question {
+			font-family: arial;
+			font-size: 20px;
+		}
+
+		options {
+			font-family: arial;
+			font-size: 16px;
+			margin-left: 40px;
+			margin-bottom: 5px;
+			line-height: 10px;
+		}
+
+		button {
+			background-color: #a8e063;
+			color: #000000;
+			border-width: 3px;
+			border-color: #a8e063;
+			font-family: arial;
+			font-weight: bold;
+			border-radius: 10px;
+		}
+	</style>
+
+	<body>
+		<h1>Quiz Questions</h1>
+		<form name="quiz" id="quiz" onsubmit="return checkResults();">
+			<table width="100%" style="border:5px solid black">
+				<tr>
+					<td>
+						<p>
+							<questionnumber>Q1)</questionnumber>
+							<question>What is 5+5?</question><br>
+							<options>
+								<span id="51"><input type="radio" value="1" name="q1" id="01">55<br><br></span>
+							</options>
+							<options>
+								<span id="52"><input type="radio" value="2" name="q1" id="02">2.5<br><br></span>
+							</options>
+							<options>
+								<span id="53"><input type="radio" value="3" name="q1" id="03">5<br><br></span></options>
+							<options>
+								<span id="54"><input type="radio" value="4" name="q1" id="04">10<br><br></span>
+							</options>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>
+							<questionnumber>Q2)</questionnumber>
+							<question>What is 10-20</question><br>
+							<options>
+								<span id="61"><input type="radio" value="1" name="q2" id="11">1020<br><br></span>
+							</options>
+							<options>
+								<span id="62"><input type="radio" value="2" name="q2" id="12">5<br><br></span></options>
+							<options>
+								<span id="63"><input type="radio" value="3" name="q2" id="13">-10<br><br></span>
+							</options>
+							<options>
+								<span id="64"><input type="radio" value="4" name="q2" id="14">10<br><br></span>
+							</options>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>
+							<questionnumber>Q3)</questionnumber>
+							<question>The average of first 50 natural numbers is ………….</question><br>
+							<options>
+								<span id="71"><input type="radio" value="1" name="q3" id="21">10<br><br></span>
+							</options>
+
+							<options>
+								<span id="72"><input type="radio" value="2" name="q3" id="22">15<br><br></span>
+							</options>
+
+							<options>
+								<span id="73"><input type="radio" value="3" name="q3" id="23">25.5<br><br></span>
+							</options>
+							<options>
+								<span id="74"><input type="radio" value="4" name="q3" id="24">None<br><br></span>
+							</options>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>
+							<questionnumber>Q4)</questionnumber>
+							<question>106 × 106 – 94 × 94 = ?</question><br>
+							<options>
+								<span id="81"><input type="radio" value="1" name="q4" id="31">1598<br><br></span>
+							</options>
+							<options>
+								<span id="82"><input type="radio" value="2" name="q4" id="32">7894<br><br></span>
+							</options>
+							<options>
+								<span id="83"><input type="radio" value="3" name="q4" id="33">1024<br><br></span>
+							</options>
+							<options>
+								<span id="84"><input type="radio" value="4" name="q4" id="34">2400<br><br></span>
+							</options>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>
+							<questionnumber>Q5)</questionnumber>
+							<question>The amount of water flowing into a tank doubles every minutes. The tank is full in
+								an hour.</question><br>
+							<options>
+								<span id="91"><input type="radio" value="1" name="q5" id="41">None<br><br></span>
+							</options>
+							<options>
+								<span id="92"><input type="radio" value="2" name="q5" id="42">25<br><br></span>
+							</options>
+							<options>
+								<span id="93"><input type="radio" value="3" name="q5" id="43">78<br><br></span>
+							</options>
+							<options>
+								<span id="94"><input type="radio" value="4" name="q5" id="44">59<br><br></span>
+							</options>
+						</p>
+					</td>
+				</tr>
+				<tr style="text-align:right">
+					<td>
+						<button type="submit">Submit</button>
+						
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p id="results"> </p>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<script>
+			function checkResults() {
+
+
+				var score = 0;
+				var numOfQ = 5;
+				var ansArr = [4, 3, 3, 4, 4];
+				var ques1 = document.quiz.q1.value;
+				var ques2 = document.quiz.q2.value;
+				var ques3 = document.quiz.q3.value;
+				var ques4 = document.quiz.q4.value;
+				var ques5 = document.quiz.q5.value;
+				/*For reseting answers back to black if user resubmits in same session*/
+				for (var i = 0; i < numOfQ; i++) {
+					for (var x = 1; x <= 4; x++) {
+						document.getElementById(("" + (i + 5) + "" + x)).style.color = "#000000";
+						document.getElementById(("" + (i + 5) + "" + x)).style.color = "#000000";
+					}
+				}
+				/*For finding score*/
+				for (var i = 1; i <= numOfQ; i++) {
+					if (eval("ques" + i) == ansArr[i - 1]) {
+						score++;
+					}
+				}
+				/*For finding the checked checkboxes and making choice green if correct or red if incorrect*/
+				/*Also displays all correct answers green regardless*/
+				for (var i = 0; i < numOfQ; i++) {
+					var counter = i + 1;
+					for (var x = 1; x <= 4; x++) {
+						if (document.getElementById(("" + i + "" + x)).checked) {
+							if (document.getElementById(("" + i + "" + x)).value == ansArr[counter - 1]) {
+								document.getElementById(("" + (i + 5) + "" + x)).style.color = "green";
+							}
+							else {
+								document.getElementById(("" + (i + 5) + "" + x)).style.color = "red";
+							}
+						}
+						else {
+							if (document.getElementById(("" + i + "" + x)).value == ansArr[counter - 1]) {
+								document.getElementById(("" + (i + 5) + "" + x)).style.color = "green";
+
+							}
+						}
+					}
+				}
+
+				/*Displaying results*/
+				document.getElementById("results").innerHTML = "<h3>Result:</h3>" + score + " out of " + numOfQ;
+				return false;
+				/*The for loop goes through every single id I've dedicated to my input boxes, the parts where i have (i+5) is where it's modifying the span id's which I've dedicated a selection of integers to, the span id's share the same 2nd digit as their input boxes but their first digit is +5, for example input box 02 will have the span id 52, the loop goes through every input id, if the radio box is checked, it verifies the answer against the correct answer and changes its color accordingly, if the radio box is unticked and the answer is correct, it marks it green*/
+			}
+
+		</script>
+	</body>
+</div>
+
+</html>
