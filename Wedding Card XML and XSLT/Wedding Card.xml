@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="Wedding Card.xsl"?>
+<!DOCTYPE weddingcard [
+<!ELEMENT weddingcard (VIPguest*)>
+<!ELEMENT VIPguest (Name,Address,EmailID)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Address (#PCDATA)>
+<!ELEMENT EmailID (#PCDATA)>
+]>
+<weddingcard >
+    <VIPguest>
+        <Name>Shah Rukh Khan</Name>
+        <Address>Mannat</Address>
+        <EmailID></EmailID>
+    </VIPguest>
+    <VIPguest>
+        <Name>Sushil Sharma</Name>
+        <Address>Dubai</Address>
+        <EmailID>sushil@sharma.com</EmailID>
+    </VIPguest>
+    <VIPguest>
+        <Name>Shivay</Name>
+        <Address>Tibet</Address>
+        <EmailID></EmailID>
+    </VIPguest>
+    <VIPguest>
+        <Name>Karan</Name>
+        <Address>UAE</Address>
+        <EmailID>karan@google.com</EmailID>
+    </VIPguest>
+    <VIPguest>
+        <Name>Ayush</Name>
+        <Address>Abu Dhabi</Address>
+        <EmailID>ayush@ad.com</EmailID>
+    </VIPguest>
+</weddingcard>
