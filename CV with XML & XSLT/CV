@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="CV.xsl"?>
+<!DOCTYPE cv[
+<!ELEMENT cv (me*,education*,employment*,hobandint*)>
+<!ELEMENT me (name,address,telephone,email)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT telephone (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT education (qualification*)>
+<!ELEMENT qualification (organization,type,from,to)>
+<!ELEMENT organization (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT employment (experience*)>
+<!ELEMENT experience (organization,job_title,from,to)>
+<!ELEMENT job_title (#PCDATA)>
+<!ELEMENT hobandint (ul*)>
+<!ELEMENT ul (li+)>
+<!ELEMENT li (#PCDATA)>
+]>
+
+<cv>
+	<me >
+		<name>Sushil Sharma</name>
+		<address>Block 5, Knowledge Village, Dubai</address>
+		<telephone>100</telephone>
+		<email>info@sushilsharma.com</email>
+	</me>
+	<education>
+		<qualification >
+			<organization>UOWD</organization>
+			<type>UG</type>
+			<from>2018</from>
+			<to>2022*</to>
+		</qualification>
+		<qualification>
+			<organization>CBSE</organization>
+			<type>Higher Education</type>
+			<from>2005</from>
+			<to>2017</to>
+		</qualification>
+	</education>
+	<employment>
+		<experience>
+			<organization>UOWD SRC </organization>
+			<job_title>General Memeber</job_title>
+			<from >2019</from>
+			<to>2020*</to>
+		</experience>
+		<experience>
+			<organization>MAD</organization>
+			<job_title>Web Master</job_title>
+			<from>2019</from>
+			<to>2020*</to>			
+		</experience>
+	</employment>
+	<hobandint>
+		<ul>
+			<li>VideoGraphy</li>
+			<li>Programming</li>
+			<li>Hacker</li>
+			<li>Blog</li>
+		</ul>
+	</hobandint>
+</cv>
