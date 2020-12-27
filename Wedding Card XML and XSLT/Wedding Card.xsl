@@ -5,7 +5,7 @@
   <xsl:template match="/">
     <html>
       <head>
-        <title>Classwork 8</title>
+        <title>Wedding Invitation</title>
         <style type="text/css">
 body
 {
