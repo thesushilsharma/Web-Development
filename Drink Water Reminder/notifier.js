@@ -15,7 +15,7 @@
         };
 
         async function notify() {
-            await sleep(15000);
+            await sleep(3600000);
             showNotification();
         }
         notify();
