@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather Api</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="weather-card">
+            <div class="row">
+                <h2 class="weather-location"></h2>
+                <img src="https://cdn.glitch.com/6e8889e5-7a72-48f0-a061-863548450de5%2F04n.png?1499366020983" alt=""
+                    srcset="" class="weatherIcon">
+            </div>
+            <div class="row">
+                <div id="unitchange" class="col text-center">
+                    <h1 class="temp"></h1>
+                    <span class="temp-type">°C</span>
+                </div>
+                <div class="col text-center">
+                    <h1 class="weather-description"></h1>
+                </div>
+            </div>
+            <div class="row" id="Details">
+                <div class="col text-center">
+                    <i class="fas fa-tachometer-alt" style="font-size:48px;color:white"></i>
+                    <h4 class="pressure" style="font-size:48px;color:#3EB9E6"></h4>
+                </div>
+                <div class="col text-center">
+                    <i class="fas fa-tint" style="font-size:48px;color:white"></i>
+                    <h4 class="humidity" style="font-size:48px;color:#3EB9E6"></h4>
+                </div>
+                <div class="col text-center">
+                    <i class="fas fa-wind" style="font-size:48px;color:white"></i>
+                    <h4 class="windSpeed" style="font-size:48px;color:#3EB9E6"></h4>
+                </div>
+            </div>
+            <div class="row" id="otherDetails">
+                <div class="col text-center">
+                    <h3 id="dateTime"></h3> <br>
+                    <h3 id="timezone"></h3>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <a href="https://thesushilsharma.github.io/">Sushil Sharma</a>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <script src="./assets/main.js"></script>
+
+</body>
+
+</html>
