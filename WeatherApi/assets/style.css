@@ -1,0 +1,134 @@
+body {
+    background: #232840;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-card {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-family: 'Abel', sans-serif;
+    animation-name: introduction;
+    animation-duration: 2s;
+}
+
+.row {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid white;
+    padding-bottom: 30px;
+}
+
+.weather-location {
+    color: white;
+    font-size: 50px;
+}
+
+.weatherIcon {
+    width: 100px;
+}
+
+#unitchange {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#unitchange:hover .temp {
+    color: #41A5CF;
+}
+
+#unitchange:hover .temp-type {
+    color: white;
+}
+
+.temp {
+    color: white;
+    font-size: 80px;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: color 1s;
+}
+
+.temp-type {
+    color: #3EB9E6;
+    font-size: 80px;
+    cursor: pointer;
+    transition: color 1s;
+}
+
+.weather-description {
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 50px;
+    font-size: 40px;
+    width: 50%;
+}
+
+#Details {
+    margin-top: 20px;
+    color: white;
+}
+
+#otherDetails {
+    margin-top: 20px;
+    color: white;
+}
+
+footer {
+    color: #3EB9E6;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    padding: 10px;
+    font-size: 18px;
+}
+
+a:hover {
+    COLOR: white;
+    text-decoration: none;
+    font-weight: none
+}
+
+@keyframes introduction {
+    0% {
+        bottom: -320px;
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        bottom: 0px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .row {
+        flex-direction: column;
+    }
+
+    .weather-location {
+        font-size: 30px;
+    }
+
+    footer {
+        display: none;
+    }
+
+    .container-fluid {
+        height: 130vh;
+    }
+}
