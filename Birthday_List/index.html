@@ -2,659 +2,738 @@
 <html>
 
 <head>
+    <meta name="description"
+        content="This program will make the character photos visible when hovering over the date. It will also change the colors of the photos and highlight the birthday date.">
+    <meta name="author" content="Sushil Sharma">
+    <meta name="keywords"
+        content="HTML, CSS, Portfolio, Github, Github pages, Freelancer, Website Developement, JavaScript, PHP, Developer, Tailwind, Bootstrap, VSCode">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
     <link rel="stylesheet" href="style.css">
-    <title>Our Birthdays</title>
+    <title>Our Birthdays | Sushil Sharma</title>
 </head>
 
 <body>
     <div class="container-fuild">
-        <h1>Birthday List</h1>
+        <h1>Birthday Celebrations</h1>
         <div id="carousel-calendar" class="carousel slide carousel-fade" data-ride="carousel">
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item" id="jan">
                     <h2>January</h2>
-                    <ul class="list-unstyled calendar align-items-center">
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                        <li>6</li>
-                        <li>7</li>
-                        <li>8</li>
-                        <li>9</li>
-                        <li>10</li>
-                        <li>11</li>
-                        <li class="birthday" id="danish" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">12</li>
-                        <li>13</li>
-                        <li>14</li>
-                        <li>15</li>
-                        <li>16</li>
-                        <li>17</li>
-                        <li class="birthday" id="hamant" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">18</li>
-                        <li>19</li>
-                        <li>20</li>
-                        <li>21</li>
-                        <li>22</li>
-                        <li>23</li>
-                        <li>24</li>
-                        <li>25</li>
-                        <li>26</li>
-                        <li>27</li>
-                        <li>28</li>
-                        <li>29</li>
-                        <li>30</li>
-                        <li>31</li>
-                    </ul>
-                    <div class="birthday-icon" id="danish-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Male_Avatar.png">
-                        <p class="name">Danish</p>
+                    <div class="float-child">
+                        <ul class="list-unstyled calendar align-items-center">
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li>10</li>
+                            <li>11</li>
+                            <li class="birthday" id="danish" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">12</li>
+                            <li>13</li>
+                            <li>14</li>
+                            <li>15</li>
+                            <li>16</li>
+                            <li>17</li>
+                            <li class="birthday" id="hamant" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">18</li>
+                            <li>19</li>
+                            <li>20</li>
+                            <li>21</li>
+                            <li>22</li>
+                            <li>23</li>
+                            <li>24</li>
+                            <li>25</li>
+                            <li>26</li>
+                            <li>27</li>
+                            <li>28</li>
+                            <li>29</li>
+                            <li>30</li>
+                            <li>31</li>
+                        </ul>
                     </div>
-                    <div class="birthday-icon" id="hamant-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Male_Avatar.png">
-                        <p class="name">Hamant</p>
+                    <div class="float-child">
+                        <div class="birthday-icon" id="danish-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Male_Avatar.png">
+                            <p class="name">Danish</p>
+                        </div>
+                        <div class="birthday-icon" id="hamant-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Male_Avatar.png">
+                            <p class="name">Hamant</p>
+                        </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="feb">
                     <h2>February</h2>
-                    <ul class="list-unstyled calendar align-items-center">
-                        <li class="birthday" id="garima" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                        <li>6</li>
-                        <li>7</li>
-                        <li>8</li>
-                        <li>9</li>
-                        <li>10</li>
-                        <li class="birthday" id="ayush" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">11</li>
-                        <li>12</li>
-                        <li>13</li>
-                        <li>14</li>
-                        <li>15</li>
-                        <li>16</li>
-                        <li>17</li>
-                        <li>18</li>
-                        <li>19</li>
-                        <li>20</li>
-                        <li>21</li>
-                        <li>22</li>
-                        <li>23</li>
-                        <li>24</li>
-                        <li>25</li>
-                        <li>26</li>
-                        <li>27</li>
-                        <li>28</li>
-                        <li>29</li>
-                    </ul>
-                    <div class="birthday-icon" id="garima-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Female_Avatar.png">
-                        <p class="name">Garima</p>
+                    <div class="float-child">
+                        <ul class="list-unstyled calendar align-items-center">
+                            <li class="birthday" id="garima" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li>10</li>
+                            <li class="birthday" id="ayush" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">11</li>
+                            <li>12</li>
+                            <li>13</li>
+                            <li>14</li>
+                            <li>15</li>
+                            <li>16</li>
+                            <li>17</li>
+                            <li>18</li>
+                            <li>19</li>
+                            <li>20</li>
+                            <li>21</li>
+                            <li>22</li>
+                            <li>23</li>
+                            <li>24</li>
+                            <li>25</li>
+                            <li>26</li>
+                            <li>27</li>
+                            <li>28</li>
+                            <li>29</li>
+                        </ul>
                     </div>
-                    <div class="birthday-icon" id="ayush-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Male_Avatar.png">
-                        <p class="name">Ayush</p>
+                    <div>
+                        <div class="birthday-icon" id="garima-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Female_Avatar.png">
+                            <p class="name">Garima</p>
+                        </div>
+                        <div class="birthday-icon" id="ayush-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Male_Avatar.png">
+                            <p class="name">Ayush</p>
+                        </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="mar">
                     <h2>March</h2>
-                    <ul class="list-unstyled calendar align-items-center">
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                        <li>6</li>
-                        <li>7</li>
-                        <li>8</li>
-                        <li>9</li>
-                        <li>10</li>
-                        <li>11</li>
-                        <li>12</li>
-                        <li>13</li>
-                        <li>14</li>
-                        <li>15</li>
-                        <li>16</li>
-                        <li>17</li>
-                        <li>18</li>
-                        <li>19</li>
-                        <li>20</li>
-                        <li class="birthday" id="regina" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">21</li>
-                        <li>22</li>
-                        <li>23</li>
-                        <li class="birthday" id="mary_imad" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">24</li>
-                        <li>25</li>
-                        <li>26</li>
-                        <li>27</li>
-                        <li class="birthday" id="rikasu" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">28</li>
-                        <li>29</li>
-                        <li>30</li>
-                        <li>31</li>
-                    </ul>
-                    <div class="birthday-icon" id="regina-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Female_Avatar.png">
-                        <p class="name">Regina</p>
+                    <div class="float-child">
+                        <ul class="list-unstyled calendar align-items-center">
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li>10</li>
+                            <li>11</li>
+                            <li>12</li>
+                            <li>13</li>
+                            <li>14</li>
+                            <li>15</li>
+                            <li>16</li>
+                            <li>17</li>
+                            <li>18</li>
+                            <li>19</li>
+                            <li>20</li>
+                            <li class="birthday" id="regina" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">21</li>
+                            <li>22</li>
+                            <li>23</li>
+                            <li class="birthday" id="imad" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">24</li>
+                            <li>25</li>
+                            <li class="birthday" id="mary" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">26</li>
+                            <li>27</li>
+                            <li class="birthday" id="rikasu" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">28</li>
+                            <li>29</li>
+                            <li>30</li>
+                            <li>31</li>
+                        </ul>
                     </div>
-                    <div class="birthday-icon" id="mary_imad-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Female_Avatar.png">
-                        <p class="name">Mary</p>
-                        <img src="img/Male_Avatar.png">
-                        <p class="name">Imad</p>
-                    </div>
-                    <div class="birthday-icon" id="rikasu-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Male_Avatar.png">
-                        <p class="name">Rikasu</p>
+                    <div class="float-child">
+                        <div class="birthday-icon" id="regina-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Female_Avatar.png">
+                            <p class="name">Regina</p>
+                        </div>
+                        <div class="birthday-icon" id="imad-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Male_Avatar.png">
+                            <p class="name">Imad</p>
+                        </div>
+                        <div class="birthday-icon" id="mary-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Female_Avatar.png">
+                            <p class="name">Mary</p>
+                        </div>
+                        <div class="birthday-icon" id="rikasu-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Male_Avatar.png">
+                            <p class="name">Rikasu</p>
+                        </div>
                     </div>
                 </div>
                 <div class="carousel-item active" id="apr">
                     <h2>April</h2>
-                    <ul class="list-unstyled calendar align-items-center">
-                        <li>1</li>
-                        <li class="birthday" id="nipurn" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">2</li>
-                        <li>3</li>
-                        <li class="birthday" id="arwa" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">4</li>
-                        <li>5</li>
-                        <li>6</li>
-                        <li>7</li>
-                        <li>8</li>
-                        <li>9</li>
-                        <li class="birthday" id="sushil" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">10</li>
-                        <li class="birthday" id="kishna" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">11</li>
-                        <li>12</li>
-                        <li>13</li>
-                        <li>14</li>
-                        <li>15</li>
-                        <li class="birthday" id="rubina" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">16</li>
-                        <li class="birthday" id="jainney" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">17</li>
-                        <li>18</li>
-                        <li>19</li>
-                        <li>20</li>
-                        <li>21</li>
-                        <li>22</li>
-                        <li>23</li>
-                        <li>24</li>
-                        <li>25</li>
-                        <li class="birthday" id="mena" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">26</li>
-                        <li>27</li>
-                        <li>28</li>
-                        <li>29</li>
-                        <li>30</li>
-                    </ul>
-                    <div class="birthday-icon" id="nipurn-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Male_Avatar.png">
-                        <p class="name">Nipurn</p>
+                    <div class="float-child">
+                        <ul class="list-unstyled calendar align-items-center">
+                            <li>1</li>
+                            <li class="birthday" id="nipurn" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">2</li>
+                            <li>3</li>
+                            <li class="birthday" id="arwa" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li class="birthday" id="sushil" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">10</li>
+                            <li class="birthday" id="kishna" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">11</li>
+                            <li>12</li>
+                            <li>13</li>
+                            <li>14</li>
+                            <li>15</li>
+                            <li class="birthday" id="rubina" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">16</li>
+                            <li class="birthday" id="jainney" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">17</li>
+                            <li>18</li>
+                            <li>19</li>
+                            <li>20</li>
+                            <li>21</li>
+                            <li>22</li>
+                            <li>23</li>
+                            <li>24</li>
+                            <li>25</li>
+                            <li class="birthday" id="mena" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">26</li>
+                            <li>27</li>
+                            <li>28</li>
+                            <li>29</li>
+                            <li>30</li>
+                        </ul>
                     </div>
-                    <div class="birthday-icon" id="arwa-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Female_Avatar.png">
-                        <p class="name">Arwa</p>
-                    </div>
-                    <div class="birthday-icon" id="sushil-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Me.png">
-                        <p class="name">Sushil</p>
-                    </div>
-                    <div class="birthday-icon" id="kishna-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Female_Avatar.png">
-                        <p class="name">Kishna</p>
-                    </div>
-                    <div class="birthday-icon" id="rubina-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Female_Avatar.png">
-                        <p class="name">Rubina</p>
-                    </div>
-                    <div class="birthday-icon" id="jainney-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Female_Avatar.png">
-                        <p class="name">Jainney</p>
-                    </div>
-                    <div class="birthday-icon" id="mena-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Female_Avatar.png">
-                        <p class="name">Mena</p>
+                    <div class="float-child">
+                        <div class="birthday-icon" id="nipurn-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Male_Avatar.png">
+                            <p class="name">Nipurn</p>
+                        </div>
+                        <div class="birthday-icon" id="arwa-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Female_Avatar.png">
+                            <p class="name">Arwa</p>
+                        </div>
+                        <div class="birthday-icon" id="sushil-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Me.png">
+                            <p class="name">Sushil</p>
+                        </div>
+                        <div class="birthday-icon" id="kishna-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Female_Avatar.png">
+                            <p class="name">Kishna</p>
+                        </div>
+                        <div class="birthday-icon" id="rubina-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Female_Avatar.png">
+                            <p class="name">Rubina</p>
+                        </div>
+                        <div class="birthday-icon" id="jainney-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Female_Avatar.png">
+                            <p class="name">Jainney</p>
+                        </div>
+                        <div class="birthday-icon" id="mena-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Female_Avatar.png">
+                            <p class="name">Mena</p>
+                        </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="may">
                     <h2>May</h2>
-                    <ul class="list-unstyled calendar align-items-center">
-                        <li>1</li>
-                        <li class="birthday" id="sara" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">2</li>
-                        <li class="birthday" id="shuja" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">3</li>
-                        <li>4</li>
-                        <li>5</li>
-                        <li>6</li>
-                        <li>7</li>
-                        <li>8</li>
-                        <li>9</li>
-                        <li>10</li>
-                        <li>11</li>
-                        <li>12</li>
-                        <li>13</li>
-                        <li>14</li>
-                        <li>15</li>
-                        <li>16</li>
-                        <li>17</li>
-                        <li>18</li>
-                        <li>19</li>
-                        <li>20</li>
-                        <li>21</li>
-                        <li>22</li>
-                        <li>23</li>
-                        <li>24</li>
-                        <li>25</li>
-                        <li>26</li>
-                        <li>27</li>
-                        <li>28</li>
-                        <li class="birthday" id="eva" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">29</li>
-                        <li>30</li>
-                        <li>31</li>
-                    </ul>
-                    <div class="birthday-icon" id="sara-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Female_Avatar.png">
-                        <p class="name">Sara</p>
+                    <div class="float-child">
+                        <ul class="list-unstyled calendar align-items-center">
+                            <li>1</li>
+                            <li class="birthday" id="sara" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">2</li>
+                            <li class="birthday" id="shuja" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li>10</li>
+                            <li>11</li>
+                            <li>12</li>
+                            <li>13</li>
+                            <li>14</li>
+                            <li>15</li>
+                            <li>16</li>
+                            <li>17</li>
+                            <li>18</li>
+                            <li>19</li>
+                            <li>20</li>
+                            <li>21</li>
+                            <li>22</li>
+                            <li>23</li>
+                            <li>24</li>
+                            <li>25</li>
+                            <li>26</li>
+                            <li>27</li>
+                            <li class="birthday" id="sudip" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">28</li>
+                            <li class="birthday" id="eva" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">29</li>
+                            <li>30</li>
+                            <li>31</li>
+                        </ul>
                     </div>
-                    <div class="birthday-icon" id="shuja-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Male_Avatar.png">
-                        <p class="name">Shuja</p>
+                    <div class="float-child">
+                        <div class="birthday-icon" id="sara-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Female_Avatar.png">
+                            <p class="name">Sara</p>
+                        </div>
+                        <div class="birthday-icon" id="shuja-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Male_Avatar.png">
+                            <p class="name">Shuja</p>
+                        </div>
+                        <div class="birthday-icon" id="sudip-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/male_Avatar.png">
+                            <p class="name">Sudip</p>
+                        </div>
+                        <div class="birthday-icon" id="eva-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Female_Avatar.png">
+                            <p class="name">Eva</p>
+                        </div>
                     </div>
-                    <div class="birthday-icon" id="eva-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Female_Avatar.png">
-                        <p class="name">Eva</p>
-                    </div>
-
                 </div>
                 <div class="carousel-item" id="jun">
                     <h2>June</h2>
-                    <ul class="list-unstyled calendar align-items-center">
-                        <li class="birthday" id="abhay" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                        <li>6</li>
-                        <li>7</li>
-                        <li>8</li>
-                        <li>9</li>
-                        <li>10</li>
-                        <li>11</li>
-                        <li>12</li>
-                        <li>13</li>
-                        <li>14</li>
-                        <li>15</li>
-                        <li>16</li>
-                        <li>17</li>
-                        <li>18</li>
-                        <li class="birthday" id="rabina" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">19</li>
-                        <li>20</li>
-                        <li>21</li>
-                        <li>22</li>
-                        <li>23</li>
-                        <li>24</li>
-                        <li>25</li>
-                        <li>26</li>
-                        <li>27</li>
-                        <li>28</li>
-                        <li>29</li>
-                        <li>30</li>
-                    </ul>
-                    <div class="birthday-icon" id="abhay-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Male_Avatar.png">
-                        <p class="name">Abhay</p>
+                    <div class="float-child">
+                        <ul class="list-unstyled calendar align-items-center">
+                            <li class="birthday" id="abhay" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li class="birthday" id="Maa" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li class="birthday" id="sovita" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li>10</li>
+                            <li>11</li>
+                            <li>12</li>
+                            <li>13</li>
+                            <li>14</li>
+                            <li>15</li>
+                            <li>16</li>
+                            <li>17</li>
+                            <li>18</li>
+                            <li class="birthday" id="rabina" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">19</li>
+                            <li>20</li>
+                            <li>21</li>
+                            <li>22</li>
+                            <li>23</li>
+                            <li>24</li>
+                            <li>25</li>
+                            <li>26</li>
+                            <li>27</li>
+                            <li>28</li>
+                            <li>29</li>
+                            <li>30</li>
+                        </ul>
                     </div>
-                    <div class="birthday-icon" id="rabina-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Female_Avatar.png">
-                        <p class="name">Rabina</p>
+                    <div class="float-child">
+                        <div class="birthday-icon" id="abhay-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Male_Avatar.png">
+                            <p class="name">Abhay</p>
+                        </div>
+                        <div class="birthday-icon" id="Maa-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Maa.png">
+                            <p class="name">Maa</p>
+                        </div>
+                        <div class="birthday-icon" id="sovita-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Female_Avatar.png">
+                            <p class="name">Sovita</p>
+                        </div>
+                        <div class="birthday-icon" id="rabina-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Female_Avatar.png">
+                            <p class="name">Rabina</p>
+                        </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="jul">
                     <h2>July</h2>
-                    <ul class="list-unstyled calendar align-items-center">
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                        <li>6</li>
-                        <li>7</li>
-                        <li>8</li>
-                        <li>9</li>
-                        <li>10</li>
-                        <li>11</li>
-                        <li>12</li>
-                        <li>13</li>
-                        <li class="birthday" id="rakshya" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">14</li>
-                        <li>15</li>
-                        <li>16</li>
-                        <li class="birthday" id="p_k" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">17 </li>
-                        <li>18</li>
-                        <li>19</li>
-                        <li>20</li>
-                        <li>21</li>
-                        <li>22</li>
-                        <li>23</li>
-                        <li>24</li>
-                        <li>25</li>
-                        <li>26</li>
-                        <li>27</li>
-                        <li>28</li>
-                        <li>29</li>
-                        <li>30</li>
-                        <li>31</li>
-                    </ul>
-                    <div class="birthday-icon" id="rakshya-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Female_Avatar.png">
-                        <p class="name">Rakshya</p>
+                    <div class="float-child">
+                        <ul class="list-unstyled calendar align-items-center">
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li>10</li>
+                            <li>11</li>
+                            <li>12</li>
+                            <li>13</li>
+                            <li class="birthday" id="rakshya" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">14</li>
+                            <li>15</li>
+                            <li>16</li>
+                            <li class="birthday" id="p_k" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">17 </li>
+                            <li>18</li>
+                            <li>19</li>
+                            <li>20</li>
+                            <li>21</li>
+                            <li>22</li>
+                            <li>23</li>
+                            <li>24</li>
+                            <li>25</li>
+                            <li>26</li>
+                            <li>27</li>
+                            <li>28</li>
+                            <li>29</li>
+                            <li>30</li>
+                            <li>31</li>
+                        </ul>
                     </div>
-                    <div class="birthday-icon" id="p_k-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Female_Avatar.png">
-                        <p class="name">Priyansha</p>
-                        <img src="img/Male_Avatar.png">
-                        <p class="name">Karim</p>
+                    <div class="float-child">
+                        <div class="birthday-icon" id="rakshya-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Female_Avatar.png">
+                            <p class="name">Rakshya</p>
+                        </div>
+                        <div class="birthday-icon" id="p_k-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Female_Avatar.png">
+                            <p class="name">Priyansha</p>
+                            <img src="img/Male_Avatar.png">
+                            <p class="name">Karim</p>
+                        </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="aug">
                     <h2>August</h2>
-                    <ul class="list-unstyled calendar align-items-center">
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                        <li>6</li>
-                        <li>7</li>
-                        <li>8</li>
-                        <li>9</li>
-                        <li>10</li>
-                        <li>11</li>
-                        <li>12</li>
-                        <li>13</li>
-                        <li>14</li>
-                        <li>15</li>
-                        <li>16</li>
-                        <li>17</li>
-                        <li>18</li>
-                        <li>19</li>
-                        <li>20</li>
-                        <li class="birthday" id="krishna" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">21</li>
-                        <li>22</li>
-                        <li>23</li>
-                        <li>24</li>
-                        <li>25</li>
-                        <li>26</li>
-                        <li>27</li>
-                        <li>28</li>
-                        <li>29</li>
-                        <li>30</li>
-                        <li>31</li>
-                    </ul>
-                    <div class="birthday-icon" id="krishna-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Male_Avatar.png">
-                        <p class="name">Krishna</p>
+                    <div class="float-child">
+                        <ul class="list-unstyled calendar align-items-center">
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li>10</li>
+                            <li>11</li>
+                            <li>12</li>
+                            <li class="birthday" id="arsalan" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">13</li>
+                            <li>14</li>
+                            <li>15</li>
+                            <li>16</li>
+                            <li>17</li>
+                            <li>18</li>
+                            <li>19</li>
+                            <li>20</li>
+                            <li class="birthday" id="krishna" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">21</li>
+                            <li>22</li>
+                            <li>23</li>
+                            <li>24</li>
+                            <li>25</li>
+                            <li>26</li>
+                            <li>27</li>
+                            <li>28</li>
+                            <li>29</li>
+                            <li>30</li>
+                            <li>31</li>
+                        </ul>
+                    </div>
+                    <div class="float-child">
+                        <div class="birthday-icon" id="arsalan-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Male_Avatar.png">
+                            <p class="name">Arsalan</p>
+                        </div>
+                        <div class="birthday-icon" id="krishna-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Male_Avatar.png">
+                            <p class="name">Krishna</p>
+                        </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="sep">
                     <h2>September</h2>
-                    <ul class="list-unstyled calendar align-items-center">
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                        <li>6</li>
-                        <li>7</li>
-                        <li>8</li>
-                        <li>9</li>
-                        <li>10</li>
-                        <li>11</li>
-                        <li>12</li>
-                        <li>13</li>
-                        <li>14</li>
-                        <li>15</li>
-                        <li>16</li>
-                        <li>17</li>
-                        <li>18</li>
-                        <li class="birthday" id="himanshu" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">19</li>
-                        <li class="birthday" id="dipika" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">20</li>
-                        <li>21</li>
-                        <li>22</li>
-                        <li>23</li>
-                        <li>24</li>
-                        <li>25</li>
-                        <li>26</li>
-                        <li class="birthday" id="rama_prashish" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">27</li>
-                        <li>28</li>
-                        <li>29</li>
-                        <li>30</li>
-                    </ul>
-                    <div class="birthday-icon" id="himanshu-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Male_Avatar.png">
-                        <p class="name">Himanshu</p>
+                    <div class="float-child">
+                        <ul class="list-unstyled calendar align-items-center">
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li>10</li>
+                            <li>11</li>
+                            <li>12</li>
+                            <li>13</li>
+                            <li>14</li>
+                            <li>15</li>
+                            <li>16</li>
+                            <li>17</li>
+                            <li>18</li>
+                            <li class="birthday" id="himanshu" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">19</li>
+                            <li class="birthday" id="dipika" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">20</li>
+                            <li>21</li>
+                            <li>22</li>
+                            <li>23</li>
+                            <li>24</li>
+                            <li>25</li>
+                            <li>26</li>
+                            <li class="birthday" id="rama_prashish" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">27</li>
+                            <li>28</li>
+                            <li>29</li>
+                            <li>30</li>
+                        </ul>
                     </div>
-                    <div class="birthday-icon" id="dipika-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Female_Avatar.png">
-                        <p class="name">Dipika</p>
-                    </div>
-                    <div class="birthday-icon" id="rama_prashish-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Male_Avatar.png">
-                        <p class="name">Prashish</p>
-                        <img src="img/Female_Avatar.png">
-                        <p class="name">Rama</p>
+                    <div class="float-child">
+                        <div class="birthday-icon" id="himanshu-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Male_Avatar.png">
+                            <p class="name">Himanshu</p>
+                        </div>
+                        <div class="birthday-icon" id="dipika-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Female_Avatar.png">
+                            <p class="name">Dipika</p>
+                        </div>
+                        <div class="birthday-icon" id="rama_prashish-birthday"
+                            onmouseover="birthday_photo_active(this.id)" onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Male_Avatar.png">
+                            <p class="name">Prashish</p>
+                            <img src="img/Female_Avatar.png">
+                            <p class="name">Rama</p>
+                        </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="oct">
                     <h2>October</h2>
-                    <ul class="list-unstyled calendar align-items-center">
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                        <li class="birthday" id="hilal" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">6</li>
-                        <li class="birthday" id="fawaz" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">7</li>
-                        <li>8</li>
-                        <li>9</li>
-                        <li>10</li>
-                        <li>11</li>
-                        <li>12</li>
-                        <li>13</li>
-                        <li>14</li>
-                        <li>15</li>
-                        <li>16</li>
-                        <li class="birthday" id="swikrit" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">17</li>
-                        <li>18</li>
-                        <li>19</li>
-                        <li>20</li>
-                        <li>21</li>
-                        <li>22</li>
-                        <li class="birthday" id="simran" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">23</li>
-                        <li>24</li>
-                        <li>25</li>
-                        <li>26</li>
-                        <li>27</li>
-                        <li>28</li>
-                        <li>29</li>
-                        <li>30</li>
-                        <li>31</li>
-                    </ul>
-                    <div class="birthday-icon" id="hilal-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Male_Avatar.png">
-                        <p class="name">Hilal</p>
+                    <div class="float-child">
+                        <ul class="list-unstyled calendar align-items-center">
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li class="birthday" id="hilal" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">6</li>
+                            <li class="birthday" id="fawaz" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li>10</li>
+                            <li>11</li>
+                            <li>12</li>
+                            <li>13</li>
+                            <li>14</li>
+                            <li>15</li>
+                            <li>16</li>
+                            <li class="birthday" id="swikrit" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">17</li>
+                            <li>18</li>
+                            <li>19</li>
+                            <li>20</li>
+                            <li>21</li>
+                            <li>22</li>
+                            <li class="birthday" id="simran" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">23</li>
+                            <li>24</li>
+                            <li>25</li>
+                            <li>26</li>
+                            <li>27</li>
+                            <li>28</li>
+                            <li>29</li>
+                            <li>30</li>
+                            <li>31</li>
+                        </ul>
                     </div>
-                    <div class="birthday-icon" id="fawaz-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Male_Avatar.png">
-                        <p class="name">Fawaz</p>
-                    </div>
-                    <div class="birthday-icon" id="swikrit-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Male_Avatar.png">
-                        <p class="name">Swikrit</p>
-                    </div>
-                    <div class="birthday-icon" id="simran-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Female_Avatar.png">
-                        <p class="name">Simran</p>
+                    <div class="float-child">
+                        <div class="birthday-icon" id="hilal-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Male_Avatar.png">
+                            <p class="name">Hilal</p>
+                        </div>
+                        <div class="birthday-icon" id="fawaz-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Male_Avatar.png">
+                            <p class="name">Fawaz</p>
+                        </div>
+                        <div class="birthday-icon" id="swikrit-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Male_Avatar.png">
+                            <p class="name">Swikrit</p>
+                        </div>
+                        <div class="birthday-icon" id="simran-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Female_Avatar.png">
+                            <p class="name">Simran</p>
+                        </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="nov">
                     <h2>November</h2>
-                    <ul class="list-unstyled calendar align-items-center">
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                        <li>6</li>
-                        <li class="birthday" id="ann" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">7</li>
-                        <li>8</li>
-                        <li>9</li>
-                        <li>10</li>
-                        <li>11</li>
-                        <li>12</li>
-                        <li>13</li>
-                        <li>14</li>
-                        <li>15</li>
-                        <li>16</li>
-                        <li>17</li>
-                        <li class="birthday" id="geeta" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">18</li>
-                        <li class="birthday" id="muna" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">19</li>
-                        <li>20</li>
-                        <li>21</li>
-                        <li>22</li>
-                        <li>23</li>
-                        <li>24</li>
-                        <li>25</li>
-                        <li>26</li>
-                        <li>27</li>
-                        <li>28</li>
-                        <li>29</li>
-                        <li>30</li>
-                    </ul>
-                    <div class="birthday-icon" id="ann-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Female_Avatar.png">
-                        <p class="name">Ann</p>
+                    <div class="float-child">
+                        <ul class="list-unstyled calendar align-items-center">
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li class="birthday" id="ann" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li>10</li>
+                            <li>11</li>
+                            <li>12</li>
+                            <li>13</li>
+                            <li>14</li>
+                            <li>15</li>
+                            <li>16</li>
+                            <li>17</li>
+                            <li class="birthday" id="geeta" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">18</li>
+                            <li class="birthday" id="muna" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">19</li>
+                            <li>20</li>
+                            <li>21</li>
+                            <li>22</li>
+                            <li>23</li>
+                            <li>24</li>
+                            <li>25</li>
+                            <li>26</li>
+                            <li>27</li>
+                            <li>28</li>
+                            <li>29</li>
+                            <li>30</li>
+                        </ul>
                     </div>
-                    <div class="birthday-icon" id="geeta-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Female_Avatar.png">
-                        <p class="name">Geeta</p>
-                    </div>
-                    <div class="birthday-icon" id="muna-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Female_Avatar.png">
-                        <p class="name">Muna</p>
+                    <div class="float-child">
+                        <div class="birthday-icon" id="ann-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Female_Avatar.png">
+                            <p class="name">Ann</p>
+                        </div>
+                        <div class="birthday-icon" id="geeta-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Female_Avatar.png">
+                            <p class="name">Geeta</p>
+                        </div>
+                        <div class="birthday-icon" id="muna-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Female_Avatar.png">
+                            <p class="name">Muna</p>
+                        </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="dec">
                     <h2>December</h2>
-                    <ul class="list-unstyled calendar align-items-center">
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                        <li>6</li>
-                        <li>7</li>
-                        <li>8</li>
-                        <li>9</li>
-                        <li>10</li>
-                        <li>11</li>
-                        <li>12</li>
-                        <li class="birthday" id="safalta" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">13</li>
-                        <li class="birthday" id="radhika" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">14</li>
-                        <li>15</li>
-                        <li>16</li>
-                        <li>17</li>
-                        <li>18</li>
-                        <li>19</li>
-                        <li>20</li>
-                        <li>21</li>
-                        <li>22</li>
-                        <li>23</li>
-                        <li>24</li>
-                        <li>25</li>
-                        <li>26</li>
-                        <li>27</li>
-                        <li>28</li>
-                        <li class="birthday" id="keshav" onmouseover="birthday_active(this.id)"
-                            onmouseout="birthday_inactive(this.id)">29</li>
-                        <li>30</li>
-                        <li>31</li>
-                    </ul>
-                    <div class="birthday-icon" id="safalta-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Female_Avatar.png">
-                        <p class="name">Safalta</p>
+                    <div class="float-child">
+                        <ul class="list-unstyled calendar align-items-center">
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li>10</li>
+                            <li>11</li>
+                            <li>12</li>
+                            <li class="birthday" id="safalta" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">13</li>
+                            <li class="birthday" id="radhika" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">14</li>
+                            <li>15</li>
+                            <li>16</li>
+                            <li>17</li>
+                            <li>18</li>
+                            <li>19</li>
+                            <li>20</li>
+                            <li>21</li>
+                            <li>22</li>
+                            <li>23</li>
+                            <li>24</li>
+                            <li>25</li>
+                            <li>26</li>
+                            <li>27</li>
+                            <li>28</li>
+                            <li class="birthday" id="keshav" onmouseover="birthday_active(this.id)"
+                                onmouseout="birthday_inactive(this.id)">29</li>
+                            <li>30</li>
+                            <li>31</li>
+                        </ul>
                     </div>
-                    <div class="birthday-icon" id="radhika-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Female_Avatar.png">
-                        <p class="name">Radhika</p>
-                    </div>
-                    <div class="birthday-icon" id="keshav-birthday" onmouseover="birthday_photo_active(this.id)"
-                        onmouseout="birthday_photo_inactive(this.id)">
-                        <img src="img/Male_Avatar.png">
-                        <p class="name">Keshav</p>
+                    <div class="float-child">
+                        <div class="birthday-icon" id="safalta-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Female_Avatar.png">
+                            <p class="name">Safalta</p>
+                        </div>
+                        <div class="birthday-icon" id="radhika-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Female_Avatar.png">
+                            <p class="name">Radhika</p>
+                        </div>
+                        <div class="birthday-icon" id="keshav-birthday" onmouseover="birthday_photo_active(this.id)"
+                            onmouseout="birthday_photo_inactive(this.id)">
+                            <img src="img/Male_Avatar.png">
+                            <p class="name">Keshav</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -662,8 +741,8 @@
                 <li data-target="#carousel-calendar" data-slide-to="0"></li>
                 <li data-target="#carousel-calendar" data-slide-to="1"></li>
                 <li data-target="#carousel-calendar" data-slide-to="2"></li>
-                <li data-target="#carousel-calendar" data-slide-to="3"></li>
-                <li data-target="#carousel-calendar" data-slide-to="4" class="active"></li>
+                <li data-target="#carousel-calendar" data-slide-to="3" class="active"></li>
+                <li data-target="#carousel-calendar" data-slide-to="4"></li>
                 <li data-target="#carousel-calendar" data-slide-to="5"></li>
                 <li data-target="#carousel-calendar" data-slide-to="6"></li>
                 <li data-target="#carousel-calendar" data-slide-to="7"></li>
