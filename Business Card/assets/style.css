@@ -1,0 +1,104 @@
+body {
+    background: #dedfe1;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card {
+    box-shadow: 0 0 10px rgba(22, 15, 15, 0.5);
+    height: 459px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    width: 805px;
+    perspective: 1000px;
+    border-radius: 50px;
+    filter: drop-shadow(0px 34px 64px black);
+    background-color: #D9AFD9;
+    background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+}
+
+.name {
+    color: #444444;
+    font-weight: 600;
+}
+
+.title {
+    color: grey;
+    font-size: 18px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.profile {
+    width: 10em;
+}
+
+.banner {
+    width: 20em;
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    color: black;
+
+}
+
+.flip-card-back {
+    color: white;
+    /* border: 5px inset black;
+    border-radius: 10px; */
+    padding: 3px;
+    transform: rotateY(180deg);
+}
+
+
+.social i {
+    text-decoration: none;
+    font-size: 45px;
+    color: black;
+}
+
+address {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    text-align: center;
+    cursor: pointer;
+    width: auto;
+    font-size: 25px;
+}
+
+.portfolio address a {
+    color: black;
+}
+
+.portfolio:hover {
+    opacity: 0.7;
+}

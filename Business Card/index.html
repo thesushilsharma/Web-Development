@@ -1,101 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title>Class Work</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background: #dedfe1;
-      font-family: 'Open Sans', sans-serif;
-    }
-
-    .wrapper {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .container {
-      width: 480px;
-      height: 245px;
-      background: #fff;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(22, 15, 15, 0.5);
-    }
-
-    .img-container {
-      width: 40%;
-      height: 100%;
-      float: left;
-      position: relative;
-    }
-
-    .img-container img {
-      width: 100%;
-      height: 100%;
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px;
-    }
-
-    .content {
-      width: 60%;
-      height: 100%;
-      float: left;
-      padding: 15px 15px;
-      box-sizing: border-box;
-    }
-
-    .head {
-      padding-bottom: 30px;
-    }
-
-    .head p {
-      font-size: 28px;
-      color: #444444;
-      font-weight: 600;
-    }
-
-    .head span {
-      color: #aaabaf;
-      font-size: 14px;
-    }
-    
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="An interactive business card. ">
+    <meta name="author" content="Sushil Sharma">
+    <meta name="keywords"
+        content="HTML, CSS, Portfolio, Github, Github pages, Freelancer, Website Developement, JavaScript, PHP, Developer, Tailwind, Bootstrap, VSCode">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Document</title>
 </head>
 
 <body>
-  <div class="wrapper">
-    <div class="container">
-      <div class="img-container">
-        <img src="https://avatars3.githubusercontent.com/u/58214222?s=460&v=4">
-      </div>
-      <div class="img-container:after"> </div>
-      <div class="content">
-        <div class="head">
-          <a href="https://www.linkedin.com/in/thesushilsharma/">
-            <p>Sushil Sharma</p>
-          </a>
-          <span>King Maker</span><br>
-          <span>SRC</span><br>
-          <span>University Of Wollongong </span><br>
-          <span>Eath 52</span><br>
-          <span><a href="mailto:sushil@sharma.com">Email</a></span><br>
-          <span><a href="skype:sushilsharma?call">Skype</a></span><br>
-          <span><a href="tel:123-456-7890">Call</a></span><br>
-          <span><a href="https://wa.me/1234567890">WhatsApp</a></span>
+    <div class="wrapper">
+        <div class="card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img class="profile" src="https://github.com/thesushilsharma.png" alt="Sushil Sharma">
+                    <h1 class="name">Sushil Sharma</h1>
+                    <h3 class="title">Web Developer and Designer</h3>
+                    <h2>University Of Wollongong </h2>
 
-          
+                </div>
+                <div class="flip-card-back">
+                    <div>
+                        <img class="banner" src="assets/Banner_Sushil_Sharma.png" alt="Sushil Sharma Banner">
+                    </div>
+                    <div class="social" style="margin: 24px 0;">
+                        <a href="#"><i class="fa fa-medium"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-github"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                    </div>
+                    <div class="portfolio">
+                        <address>
+                            <a href="mailto:thesushilsharma@duck.com">thesushilsharma@duck.com</a><br>
+                            <a href="tel:+13115552368">(311) 555-2368</a><br>
+                            <a href="thesushilsharma.github.io">Portfolio</a><br>
+                            <a href="#">Earth 52</a>
+                        </address>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-
     </div>
-  </div>
+
+
 </body>
 
 </html>
