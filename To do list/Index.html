@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,54 +8,51 @@
     <meta name="author" content="Sushil Sharma">
     <meta name="keywords" content="WebSQL, localdatabase, sql, Database, browser database, Notes keeper">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Assets/style.css">
     <title>Notes Keeper | Sushil Sharma</title>
 </head>
 
 <body>
-    <center>
-        <table class="infoBack" style="padding: 15px 15px 15px 15px;">
-            <tr>
-                <ul id="comments"></ul>
-            </tr>
-            <tr>
-                <td>
-                    <input type="text" id="topic" name="topic" placeholder="E-Mail" style="padding: 12px 50px;
-                margin: 8px 0;width: 20%;
-                border: 3px solid lightgrey;
-                outline: none;">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <textarea rows="5" cols="50" name="note" id="note" placeholder="Comments" style=" width: 100%;
-                    height: 150px;
-                    padding: 12px 20px;
-                    box-sizing: border-box;
-                    border: 2px solid #ccc;
-                    border-radius: 4px;
-                    background-color: #f8f8f8;
-                    resize: none;"></textarea>
-                </td>
-            </tr>
-            <tr>
-                <td><button type="button" onclick="createTicket()" style=" padding: 12px 20px;
-                margin: 8px 0;background-color: black;border: none;color: white;cursor: pointer;">Add a note</button>
-                    <button type="button" onclick="clearDatabase()" style=" padding: 12px 20px;
-                margin: 8px 0;background-color: black;border: none;color: white;cursor: pointer;">Clear
-                        all</button>
-                </td>
-            </tr>
+    <div class="container">
+        <center>
+            <div>
+                <h1>Death Note</h1>
+                <span>Message To Yourself!</span>
+            </div>
+            <table class="info" style="padding: 15px 15px 15px 15px;">
+                <tr>
+                    <ul id="comments"></ul>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" id="topic" name="topic" placeholder="E-Mail">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea rows="5" cols="50" name="note" id="note" placeholder="Comments"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td><button type="button" id="addDraft" onclick="createTicket();">Add a note</button>
+                        <button type="button" id="clearDatabase" onclick="clearDatabase();">Clear
+                            all</button>
+                    </td>
+                </tr>
 
-        </table>
-    </center>
-    <p class="infoBack" style="padding-left:15px;margin-right:86%;line-height:45px;"> Your Notes:</p>
-    <div id="OutputSection" class="infoBack" style="font-size:12px;margin-right:80%;padding:15px 15px 15px 15px;">
-        <p></p>
+            </table>
+        </center>
     </div>
+    <div id="listholder">
+        <h3 class="info" style="padding-left:15px;margin-right:86%;line-height:45px;">Your saved notes</h3>
+        <ol id="savednotes">
+        </ol>
+    </div>
+    <p><strong>Note: </strong>You can leave this page and come back, your notes are going nowhere!</p>
+
+
+
 </body>
 <script src="Assets/main.js"></script>
-<script>
-
-</script>
 
 </html>
