@@ -2,7 +2,13 @@
 <html>
 
 <head>
-  <title>Sushil Sharma</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Sushil Sharma | Number Game</title>
+  <meta name="description" content="Number game using JavaScript">
+  <meta name="keywords" content="Html, CCS, JavaScript, Github">
+  <meta name="author" content="Sushil Sharma">
 </head>
 <style>
   .container {
@@ -49,7 +55,7 @@
 <script>
   var myVar;
   var score = 0;
-  
+
   function myFunction() {
     var userinput;
     userinput = prompt("Please enter number between 0 to 9", "");
@@ -57,34 +63,32 @@
     score = 0;
     document.getElementById("score").innerHTML = "0";
     start(userinput);
-    
+
   }
 
-function start(userinput)
+  function start(userinput) {
+    myVar = setInterval(randomfunc, 1000);
+    function randomfunc() {
+      var userclick = "";
+      var left = Math.floor(Math.random() * 10);
+      var middle = Math.floor(Math.random() * 10);
+      var right = Math.floor(Math.random() * 10);
 
-{
-  myVar = setInterval(randomfunc, 1000);
-  function randomfunc() {
-    var userclick = "";
-    var left = Math.floor(Math.random() * 10);
-    var middle = Math.floor(Math.random() * 10);
-    var right = Math.floor(Math.random() * 10);
-
-    userclick = "<button type='button' onclick='checkAns(" +left+ "," +userinput+ ");' style='font-size:150px;color:#FF0000;' value='" +left+ "'>" +left+ "</button>" +
-      "<button type='button' onclick='checkAns(" +middle+ "," +userinput+ ");' style='font-size:150px;color:#FF9300' value='" +middle+ "'>" +middle+ "</button>" +
-      "<button type='button' onclick='checkAns(" +right+ "," +userinput+ ");'style='font-size:150px;color:#00FFE5;' value='" +right+ "'>" +right+ "</button>";
-    document.getElementById("numberbox").innerHTML = userclick;
+      userclick = "<button type='button' onclick='checkAns(" + left + "," + userinput + ");' style='font-size:150px;color:#FF0000;' value='" + left + "'>" + left + "</button>" +
+        "<button type='button' onclick='checkAns(" + middle + "," + userinput + ");' style='font-size:150px;color:#FF9300' value='" + middle + "'>" + middle + "</button>" +
+        "<button type='button' onclick='checkAns(" + right + "," + userinput + ");'style='font-size:150px;color:#00FFE5;' value='" + right + "'>" + right + "</button>";
+      document.getElementById("numberbox").innerHTML = userclick;
+    }
   }
-}  
 
-  function checkAns(random,userinput) {
+  function checkAns(random, userinput) {
 
-    if (random== userinput ) {
+    if (random == userinput) {
       document.getElementById("score").innerHTML = ++score;
     }
-    else 
+    else
       document.getElementById("score").innerHTML = --score;
-    
+
 
   }
   function myStopFunction() {
@@ -104,7 +108,7 @@ function start(userinput)
       </h1>
       <h1>Game Score : <span id="score"></span>
       </h1>
-      <span id="numberbox" ></span>
+      <span id="numberbox"></span>
     </div>
   </center>
 </body>
