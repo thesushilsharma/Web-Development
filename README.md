@@ -7,7 +7,7 @@ By making use of YouTube and Google learning materials, I began my journey into 
 ## Projects
 
 - Birthday List
-- To Do List
+- Notes Keeper
 - Business Card
 - CV with XML and XSLT
 - Drink Water Reminder
@@ -22,7 +22,7 @@ By making use of YouTube and Google learning materials, I began my journey into 
 |  #  |            Project             |   Website |
 | :-: | :----------------------------: | :---------: |
 | 01  |       [Birthday List](https://github.com/thesushilsharma/Web-Development/tree/master/Birthday_List)       | [Click Here](https://thesushilsharma.github.io/Web-Development/Birthday_List/index.html)  |
-| 02  |      [To Do List](https://github.com/thesushilsharma/Web-Development/tree/master/To%20do%20list)       | [Click Here](https://thesushilsharma.github.io/Web-Development/To%20do%20list/Index.html)  |
+| 02  |      [Notes Keeper](https://github.com/thesushilsharma/Web-Development/tree/master/Notes-Keeper)       | [Click Here](https://sushilsharma.info.np/Web-Development/Notes-Keeper/index.html)  |
 | 03  |     [Business Card](https://github.com/thesushilsharma/Web-Development/tree/master/Business%20Card)    | [Click Here](https://thesushilsharma.github.io/Web-Development/Business%20Card/index.html)  |
 | 04  |    [CV with XML and XSLT](https://github.com/thesushilsharma/Web-Development/tree/master/CV%20with%20XML%20%26%20XSLT)     | [Click Here](https://thesushilsharma.github.io/Web-Development/CV%20with%20XML%20&%20XSLT/CV.xml)  |
 | 05  |  [Drink Water Reminder](https://github.com/thesushilsharma/Web-Development/tree/master/Drink%20Water%20Reminder)  | [Click Here](https://thesushilsharma.github.io/Web-Development/Drink%20Water%20Reminder/Drink_Water_Reminder.html)  |
