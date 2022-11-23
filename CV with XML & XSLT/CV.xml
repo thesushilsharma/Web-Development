@@ -24,16 +24,16 @@
 <cv>
 	<me >
 		<name>Sushil Sharma</name>
-		<address>Block 5, Knowledge Village, Dubai</address>
+		<address>Lost in Himalayas</address>
 		<telephone>100</telephone>
-		<email>info@sushilsharma.com</email>
+		<email>sushilsharma@duck.com</email>
 	</me>
 	<education>
 		<qualification >
 			<organization>UOWD</organization>
 			<type>UG</type>
 			<from>2018</from>
-			<to>2022*</to>
+			<to>2023*</to>
 		</qualification>
 		<qualification>
 			<organization>CBSE</organization>
@@ -47,13 +47,13 @@
 			<organization>UOWD SRC </organization>
 			<job_title>General Memeber</job_title>
 			<from >2019</from>
-			<to>2020*</to>
+			<to>2021</to>
 		</experience>
 		<experience>
-			<organization>MAD</organization>
+			<organization>Freelancer</organization>
 			<job_title>Web Master</job_title>
 			<from>2019</from>
-			<to>2020*</to>			
+			<to>2022*</to>			
 		</experience>
 	</employment>
 	<hobandint>
