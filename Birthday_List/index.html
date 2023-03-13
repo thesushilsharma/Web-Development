@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="This program will make the character photos visible when hovering over the date. It will also change the colors of the photos and highlight the birthday date.">
     <meta name="author" content="Sushil Sharma">
@@ -13,21 +16,48 @@
 
 <body>
     <header class="text-center">
-        <h1 class="text-3xl font-bold mb-4">Birthday Calender</h1>
-        <q class="text-lg italic">Not friends, not enemies, just strangers with memories.</q>
+        <h1 class="text-3xl font-medium title-font text-black mb-12 text-center">Birthday Calendar 📅</h1>
+        <q class="text-lg italic leading-relaxed mb-6">Not friends, not enemies, just strangers with memories.</q>
     </header>
-    <main class="container mx-auto px-4 py-6 bg-blue-500">
-        <section class="bg-gray-900 body-font">
-            <div class="container flex flex-wrap px-5 py-24 mx-auto items-center">
-                <div
-                    class="md:w-1/2 md:pr-12 md:py-8 md:border-r md:border-b-0 md:mb-0 mb-10 pb-10 border-b border-gray-800">
-                    <div id="wishes-container" class="bg-white p-4 rounded-lg shadow-md">
-                        <h2 class="text-lg font-bold mb-4">Birthday Wishes</h2>
+    <main>
+        <section class="text-gray-900 bg-gray-900 body-font">
+            <div class="container px-5 py-24 mx-auto">
+                <div class="flex flex-wrap -m-4">
+                    <div class="p-4 md:w-1/2 w-full">
+                        <div class="h-full bg-gray-800 bg-opacity-40 p-8 rounded">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="block w-5 h-5 text-gray-100 mb-4"
+                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M4 5h2"></path>
+                                <path d="M5 4v2"></path>
+                                <path d="M11.5 4l-.5 2"></path>
+                                <path d="M18 5h2"></path>
+                                <path d="M19 4v2"></path>
+                                <path d="M15 9l-1 1"></path>
+                                <path d="M18 13l2 -.5"></path>
+                                <path d="M18 19h2"></path>
+                                <path d="M19 18v2"></path>
+                                <path d="M14 16.518l-6.518 -6.518l-4.39 9.58a1 1 0 0 0 1.329 1.329l9.579 -4.39z"></path>
+                            </svg>
+                            <div id="wishes-container" class="bg-white p-4 rounded-lg shadow-md">
+                                <h2 class="text-lg font-bold mb-4 title-font">Birthday Wishes 🎁</h2>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="flex flex-col md:w-1/2 md:pl-12">
-                    <div id="upcoming-container" class="bg-white p-4 rounded-lg shadow-md">
-                        <h2 class="text-lg font-bold mb-4">Upcoming Birthdays</h2>
+                    <div class="p-4 md:w-1/2 w-full">
+                        <div class="h-full bg-gray-800 bg-opacity-40 p-8 rounded">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="block w-5 h-5 text-gray-100 mb-4"
+                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M9 21h6v-9a1 1 0 0 0 -1 -1h-4a1 1 0 0 0 -1 1v9z"></path>
+                                <path d="M12 3l1.465 1.638a2 2 0 1 1 -3.015 .099l1.55 -1.737z"></path>
+                            </svg>
+                            <div id="upcoming-container" class="bg-white p-4 rounded-lg shadow-md">
+                                <h2 class="text-lg font-bold mb-4 title-font">Upcoming Birthdays 🎂</h2>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
