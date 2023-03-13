@@ -1,5 +1,5 @@
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'Assets/DOBjson.json');
+xhr.open('GET', 'assets/DOBjson.json');
 xhr.onload = function () {
     if (xhr.status === 200) {
         var persons = JSON.parse(xhr.responseText);
