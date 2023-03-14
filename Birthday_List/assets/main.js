@@ -22,12 +22,14 @@ xhr.onload = function () {
             }
 
             var wishesHtml = '';
+            var congratsLink = '';
             if (today.getMonth() == birthDate.getMonth() && today.getDate() == birthDate.getDate()) {
                 // Generate HTML code for each wish and append to wishesHtml
                 wishesHtml = '<span class="text-red-500 font-bold">Today is your birthday. May your birthday be filled with happiness!. Now, You are ' + age + ' years old.</span>';
-                
+                congratsLink = '<a href="https://thesushilsharma.github.io/congrats" class="sm:text-2xl text-xl font-medium text-blue-500 hover:text-blue-900 underline">Congratulations 🎊</a>';
+
                 // Generate HTML code for person's name and wishes
-                var personHtml = '<h1 class="text-2xl">' + person.Name + ' (' + birthDateWithoutYear + ')</h1>' + wishesHtml;
+                var personHtml = '<h1 class="text-2xl">' + person.Name + ' (' + birthDateWithoutYear + ')</h1>' + wishesHtml + '<br>' + congratsLink;
 
                 // Append person's HTML code to wishes container
                 var wishesContainer = document.getElementById('wishes-container');
