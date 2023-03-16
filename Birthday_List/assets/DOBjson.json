@@ -20,10 +20,6 @@
     "DOB": "August 13, 1999"
   },
   {
-    "Name": "Sagar",
-    "DOB": "March 15, 2000"
-  },
-  {
     "Name": "Ayush",
     "DOB": "February 11, 1996"
   },
@@ -33,7 +29,7 @@
   },
   {
     "Name": "Bunny",
-    "DOB": "December 24, 2000"
+    "DOB": "December 25, 1999"
   },
   {
     "Name": "Ranjita",
@@ -92,6 +88,10 @@
     "DOB": "June 19, 2000"
   },
   {
+    "Name": "Rubina",
+    "DOB": "Aprii 16, 1998"
+  },
+  {
     "Name": "Radhika",
     "DOB": "December 14, 1998"
   },
@@ -110,6 +110,10 @@
   {
     "Name": "Safalta",
     "DOB": "December 13, 1999"
+  },
+  {
+    "Name": "Sagar",
+    "DOB": "March 15, 2000"
   },
   {
     "Name": "Santosh Sharma",
