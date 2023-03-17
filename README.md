@@ -4,6 +4,10 @@ By making use of YouTube and Google learning materials, I began my journey into 
 
 - [Developer Portfolio](https://thesushilsharma.github.io)
 - [Web Projects](https://thesushilsharma.github.io/Web-Development/)
+
+## Installation 
+To install this project, clone the repository to your local machine and open the index.html file in your web browser or Launch a local development server (Live Server - VS Code Extension).
+
 ## Projects
 
 - Birthday List
@@ -35,3 +39,11 @@ By making use of YouTube and Google learning materials, I began my journey into 
 | 11  |     [Expense Tracker](https://github.com/thesushilsharma/Web-Development/tree/master/Expense-Tracker)     | [Click Here](https://thesushilsharma.github.io/Web-Development/Expense-Tracker)  |
 | 12  |     [Wedding Card XML and XSLT](https://github.com/thesushilsharma/Web-Development/tree/master/Wedding%20Card%20XML%20and%20XSLT)     | [Click Here](https://thesushilsharma.github.io/Web-Development/Wedding%20Card%20XML%20and%20XSLT/Wedding%20Card.xml)  |
 
+## Known Issues
+- None
+
+## Contributing
+To contribute to this project, please submit any issues or pull requests on the GitHub repository.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
