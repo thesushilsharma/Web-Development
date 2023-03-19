@@ -2,26 +2,66 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Sushil Sharma | Expense Tracker</title>
-    <!-- <link rel="stylesheet" href="assets/style.css"> -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="description"
+    content="Sushil Sharma has vast experience in website designing, development, and optimization, and is also proficient in WordPress. I am in charge of testing and maintaining the applications and websites I develop, as well as the documentation that goes with them." />
+  <meta name="author" content="Sushil Sharma" />
+  <meta name="keywords"
+    content="HTML, CSS, Portfolio, Github, Github pages, Expense Tracker, Website Developement, JavaScript, PHP, Developer, Tailwind, Bootstrap, VSCode" />
+  <title>Expense Tracker | Sushil Sharma</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
+  <header class="bg-gray-800 py-4">
+    <h2 class="text-3xl text-center text-white font-bold">Expense Tracker</h2>
+    <p class="text-lg text-center text-gray-400">Budget and Track Expenses</p>
+  </header>
+  <main>
+    <section class="py-10">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 bg-gray-100 rounded-lg shadow-lg">
+        <h4 class="text-lg font-bold mb-4">Your Balance</h4>
+        <h1 id="balance" class="text-4xl font-bold text-gray-800 mb-8">$0.00</h1>
 
-    <main>
-        <h2>Expense Tracker</h2>
-        <section>
-            <article>
+        <div class="flex justify-between mb-8">
+          <div class="text-gray-800">
+            <h4 class="text-base font-medium mb-2">Income</h4>
+            <p id="credit" class="text-2xl font-bold text-green-500">+$0.00</p>
+          </div>
+          <div class="text-gray-800">
+            <h4 class="text-base font-medium mb-2">Expense</h4>
+            <p id="debit" class="text-2xl font-bold text-red-500">-$0.00</p>
+          </div>
+        </div>
 
-            </article>
-        </section>
-    </main>
+        <h3 class="text-lg font-bold mb-4">Financial Summary</h3>
+        <ul id="list" class="list">
+          <!-- <li class="minus">
+              Cash <span>-$400</span><button class="delete-btn">x</button>
+            </li> -->
+        </ul>
 
-    <script src="assets/main.js"></script>
+        <h3 class="text-lg font-bold mb-4">Add new transaction</h3>
+        <form id="form">
+          <div class="mb-4">
+            <label for="text" class="text-gray-800">Text</label>
+            <input type="text" id="text" placeholder="Enter text..."
+              class="block w-full h-10 border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+          </div>
+          <div class="mb-4">
+            <label for="amount" class="text-gray-800">Amount (negative - expense, positive - income)</label>
+            <input type="number" id="amount" placeholder="Enter amount..."
+              class="block w-full h-10 border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+          </div>
+          <button class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">Add transaction</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/script.js"></script>
 </body>
 
 </html>
