@@ -23,7 +23,7 @@ function updateNotes(tx, results) {
         //Get the current row from database
         var row = results.rows.item(i);
 
-        node.innerHTML += "<li><p><b>" + row.topic + "</b><br><q>" + row.note + "</q></p><br><button onclick='deleteNote(" + row.id + ");'>Delete Draft</button></li>";
+        node.innerHTML += "<li><p><b>" + row.topic + "</b><br><q>" + row.note + "</q></p><br><button class='bg-black text-white px-4 py-2 rounded' onclick='deleteNote(" + row.id + ");'>Delete Draft</button></li>";
     }
 }
 

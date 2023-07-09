@@ -8,53 +8,51 @@
     <meta name="author" content="Sushil Sharma">
     <meta name="keywords" content="WebSQL, localdatabase, sql, Database, browser database, Notes keeper">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Assets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>The Sushil Sharma | Notes Keeper</title>
 </head>
 
 <body>
-    <div class="container">
-        <center>
-            <div>
-                <h1>Death Note</h1>
-                <span>Message To Yourself! My classified archive</span>
-            </div>
-            <table class="info" style="padding: 15px 15px 15px 15px;">
-                <tr>
-                    <ul id="comments"></ul>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" id="topic" name="topic" placeholder="E-Mail">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <textarea rows="5" cols="50" name="note" id="note" placeholder="Comments"></textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td><button type="button" id="addDraft" onclick="createTicket();">Add a note</button>
-                        <button type="button" id="clearDatabase" onclick="clearDatabase();">Clear
-                            all</button>
-                    </td>
-                </tr>
+    <div class="container mx-auto p-4">
+        <div class="text-center">
+            <h1 class="text-4xl font-bold">Death Note</h1>
+            <span>Message To Yourself! My classified archive</span>
+        </div>
+        <table class="mt-4 w-full">
+            <tr>
+                <ul id="comments"></ul>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="topic" name="topic" placeholder="E-Mail"
+                        class="w-full px-2 py-1 border border-gray-300 rounded">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <textarea rows="5" cols="50" name="note" id="note" placeholder="Comments"
+                        class="w-full px-2 py-1 border border-gray-300 rounded"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" id="addDraft" onclick="createTicket();"
+                        class="bg-blue-500 text-white px-4 py-2 rounded">Add a note</button>
+                    <button type="button" id="clearDatabase" onclick="clearDatabase();"
+                        class="bg-red-500 text-white px-4 py-2 rounded">Clear all</button>
+                </td>
+            </tr>
 
-            </table>
-        </center>
+        </table>
     </div>
-    <div id="listholder">
-        <h3 class="info" style="padding-left:15px;margin-right:86%;line-height:45px;">
-            Thoughts, feelings and plans as time goes
-        </h3>
+    <div id="listholder" class="mx-auto p-4">
+        <h3 class="text-lg font-bold mb-2">Thoughts, feelings and plans as time goes</h3>
         <ol id="savednotes">
         </ol>
     </div>
-    <p><strong>Note: </strong>You can leave this page and come back, your notes are going nowhere!</p>
+    <p><strong>Note:</strong> You can leave this page and come back; your notes are going nowhere!</p>
 
-
-
+    <script src="Assets/main.js"></script>
 </body>
-<script src="Assets/main.js"></script>
 
 </html>
