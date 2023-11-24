@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact form in HTML and CSS">
+    <meta name="author" content="Sushil Sharma">
+    <meta name="keywords" content="HTML, CSS, Contact Form, Github, Get in touch">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>The Sushil Sharma | Contact Form</title>
+</head>
+
+<body class="body">
+    <div class="wrapper">
+        <div class="title">
+            <h5>Get In Touch</h5>
+        </div>
+        <form class="form">
+            <fieldset>
+                <legend>Required fields are followed by <abbr title="required">*</abbr>.</legend>
+                <div>
+                    <input type="text" class="name entry " placeholder="Your Name*">
+                </div>
+                <div>
+                    <select class="entry" required>
+                        <option value="select" disabled selected hidden>Select a Gender*</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="others">Prefer not to say</option>
+                        <option value="others">Not sure</option>
+                    </select>
+                </div>
+                <div>
+                    <input type="text" class="email entry" placeholder="Email*" required>
+                </div>
+                <div>
+                    <input type="text" class="phone entry" placeholder="Contact No.*" required>
+                </div>
+                <div>
+                    <input type="text" class="subject entry" placeholder="Subject*" required>
+                </div>
+                <div>
+                    <textarea class="message entry" name="textarea" rows="5" placeholder="Message*" required></textarea>
+                </div>
+                <div>
+                    <input type="checkbox" id="scales" name="scales" checked required>
+                    <label for="scales">Agreed to terms and conditions</label>
+                </div>
+                <div>
+                    <input type="submit" class="submit entry" value="Submit">
+                </div>
+            </fieldset>
+        </form>
+        <div class="shadow"></div>
+    </div>
+
+
+</body>
+
+</html>

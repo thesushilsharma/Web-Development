@@ -4,59 +4,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact form in HTML and CSS">
+    <meta name="description" content="Form using JavaScript, HTML, CSS">
     <meta name="author" content="Sushil Sharma">
     <meta name="keywords" content="HTML, CSS, Contact Form, Github, Get in touch">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
-    <link rel="stylesheet" href="assets/style.css">
-    <title>The Sushil Sharma | Contact Form</title>
+    <title>Sushil Sharma | Work with us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="body">
-    <div class="wrapper">
-        <div class="title">
-            <h5>Get In Touch</h5>
-        </div>
-        <form class="form">
-            <fieldset>
-                <legend>Required fields are followed by <abbr title="required">*</abbr>.</legend>
-                <div>
-                    <input type="text" class="name entry " placeholder="Your Name*">
+<body class="bg-gray-100 p-8">
+    <main class="flex max-w-full flex-auto flex-col">
+        <div class="max-w-md mx-auto bg-white p-8 rounded shadow-md">
+
+            <h2 class="text-2xl font-semibold mb-4">Submit your candidacy</h2>
+            <h3 class="text-sm font-medium text-gray-500">
+                We do not seem to know about you. <br>
+                If you wish to join us, please tell us know about you:
+            </h3>
+
+            <form action="#" method="post" enctype="multipart/form-data">
+
+                <!-- Title -->
+                <div class="mb-4">
+                    <label for="title" class="block text-gray-700 font-semibold mb-2">Title</label>
+                    <div class="flex">
+                        <input type="radio" id="title_mr" name="title" value="Mr" class="mr-2" required>
+                        <label for="title_mr" class="mr-4">Mr</label>
+
+                        <input type="radio" id="title_miss" name="title" value="Miss" class="mr-2" required>
+                        <label for="title_miss" class="mr-4">Miss</label>
+
+                        <input type="radio" id="title_mrs" name="title" value="Mrs" class="mr-2" required>
+                        <label for="title_mrs">Mrs</label>
+                    </div>
                 </div>
-                <div>
-                    <select class="entry" required>
-                        <option value="select" disabled selected hidden>Select a Gender*</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                        <option value="others">Prefer not to say</option>
-                        <option value="others">Not sure</option>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- First Name -->
+                    <div class="mb-4">
+                        <label for="first_name" class="block text-gray-700 font-semibold mb-2">First Name</label>
+                        <input type="text" id="first_name" name="first_name"
+                            class="w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500" required>
+                    </div>
+
+                    <!-- Last Name -->
+                    <div class="mb-4">
+                        <label for="last_name" class="block text-gray-700 font-semibold mb-2">Last Name</label>
+                        <input type="text" id="last_name" name="last_name"
+                            class="w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500" required>
+                    </div>
+                </div>
+
+
+                <!-- Email -->
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                    <input type="email" id="email" name="email"
+                        class="w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500" required>
+                </div>
+
+                <!-- Mobile Phone -->
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="relative">
+                        <span id="flagIcon" class="mb-5 inline-block p-2 shadow-lg"></span>
+                    </div>
+
+                    <div class="relative">
+                        <label for="countryDropdown" class="text-sm text-gray-600">Select a country:</label>
+                        <select id="countryDropdown"
+                            class="w-full px-4 py-2 rounded focus:outline-none focus:border-blue-500">
+                            <option value="">Choose a country...</option>
+                        </select>
+                    </div>
+
+                    <div class="relative">
+                        <label for="phoneNumber" class="text-sm text-gray-600">Mobile Phone</label>
+                        <input type="tel" id="phoneNumber" placeholder="Enter phone number"
+                            class="w-full p-2 rounded outline-none border focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base text-gray-700"
+                            required>
+                    </div>
+                </div>
+
+
+                <!-- Nationality -->
+                <div class="mb-4">
+                    <label for="nationality" class="block text-gray-700 font-semibold mb-2">Nationality</label>
+                    <select id="nationality" name="nationality"
+                        class="w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500" required>
+                        <option value="">Select Nationality</option>
+                        <option value="US">United States</option>
+                        <option value="GB">United Kingdom</option>
+                        <option value="AU">Australia</option>
+                        <option value="DE">Germany</option>
+                        <option value="FR">France</option>
+                        <option value="JP">Japan</option>
+                        <option value="CN">China</option>
                     </select>
                 </div>
-                <div>
-                    <input type="text" class="email entry" placeholder="Email*" required>
-                </div>
-                <div>
-                    <input type="text" class="phone entry" placeholder="Contact No.*" required>
-                </div>
-                <div>
-                    <input type="text" class="subject entry" placeholder="Subject*" required>
-                </div>
-                <div>
-                    <textarea class="message entry" name="textarea" rows="5" placeholder="Message*" required></textarea>
-                </div>
-                <div>
-                    <input type="checkbox" id="scales" name="scales" checked required>
-                    <label for="scales">Agreed to terms and conditions</label>
-                </div>
-                <div>
-                    <input type="submit" class="submit entry" value="Submit">
-                </div>
-            </fieldset>
-        </form>
-        <div class="shadow"></div>
-    </div>
 
+                <!-- Expected Monthly Salary -->
+                <div class="space-y-6 sm:flex sm:space-x-3 sm:space-y-0">
+                    <div class="grow space-y-1">
+                        <label for="monthly_salary" class="font-medium">Expected Monthly
+                            Salary</label>
+                        <input type="text" id="monthly_salary" name="monthly_salary"
+                            class="block w-full rounded-lg border border-gray-200 px-5 py-3 leading-6 placeholder-gray-500 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+                            required>
+                    </div>
+                    <div class="space-y-1 sm:w-40">
+                        <label for="currency_select" class="font-medium">Select Currency</label>
+                        <select id="currency_select" name="monthly_salary"
+                            class="block w-full rounded-lg border border-gray-200 px-5 py-3 leading-6 placeholder-gray-500 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+                            required>
+                            <option value="">Choose one</option>
+                        </select>
+                    </div>
+                </div>
 
+                <!-- Upload Picture -->
+                <div class="flex flex-col mb-4">
+                    <label for="picture" class="block text-gray-700 font-semibold mb-2">Upload Your Picture
+                        (Optional)</label>
+                    <div class="relative border border-gray-300 rounded h-32">
+                        <input type="file" id="picture" name="picture" accept="image/*"
+                            class="absolute w-full h-full opacity-0 cursor-pointer" multiple>
+                        <div class="flex items-center justify-center h-full">
+                            <p class="text-gray-400 text-sm">Drop, select, or paste an image here</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upload Resume -->
+                <div class="flex flex-col mb-4">
+                    <label for="resume" class="block text-gray-700 font-semibold mb-2">Upload Your Resume</label>
+                    <div class="relative border border-gray-300 rounded h-32">
+                        <input type="file" id="resume" name="resume" accept=".pdf, .doc, .docx"
+                            class="absolute w-full h-full opacity-0 cursor-pointer" multiple>
+                        <div class="flex items-center justify-center h-full">
+                            <p class="text-gray-400 text-sm">Drop, select, or paste a file here</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tell Us More -->
+                <div class="mb-4">
+                    <label for="about_yourself" class="block text-gray-700 font-semibold mb-2">Tell Us More About
+                        Yourself</label>
+                    <textarea id="about_yourself" name="about_yourself" rows="4"
+                        class="w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500"
+                        required></textarea>
+                </div>
+
+                <!-- Terms and Conditions -->
+                <div class="mb-4">
+                    <div class="relative inline-block w-10 mr-2 align-middle select-none">
+                        <input type="checkbox" id="terms" name="terms"
+                            class="form-checkbox checked:bg-blue-500 outline-none focus:outline-none right-4 checked:right-0 duration-200 ease-in absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
+                            required />
+                        <label for="terms" class="block h-6 overflow-hidden bg-gray-300 rounded-full cursor-pointer">
+                        </label>
+                    </div>
+                    <span class="font-medium text-gray-400 ml-2 text-sm">
+                        I acknowledge and agree to the terms and conditions
+                    </span>
+                </div>
+                <!-- Submit Button -->
+                <div class="mt-8">
+                    <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-700"> 👍 Submit my candidacy
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </main>
+    <script src="assets/script.js"> </script>
 </body>
 
 </html>
