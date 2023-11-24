@@ -13,7 +13,7 @@
 
 <body class="bg-gray-100 p-8">
     <main class="flex max-w-full flex-auto flex-col">
-        <div class="max-w-md mx-auto bg-white p-8 rounded shadow-md">
+        <div class="max-w-xl mx-auto bg-white p-8 rounded shadow-md">
 
             <h2 class="text-2xl font-semibold mb-4">Submit your candidacy</h2>
             <h3 class="text-sm font-medium text-gray-500">
@@ -25,7 +25,7 @@
 
                 <!-- Title -->
                 <div class="mb-4">
-                    <label for="title" class="block text-gray-700 font-semibold mb-2">Title</label>
+                    <label for="title" class="block text-gray-700 font-semibold mb-2">Title*</label>
                     <div class="flex">
                         <input type="radio" id="title_mr" name="title" value="Mr" class="mr-2" required>
                         <label for="title_mr" class="mr-4">Mr</label>
@@ -41,64 +41,57 @@
                 <div class="grid grid-cols-2 gap-4">
                     <!-- First Name -->
                     <div class="mb-4">
-                        <label for="first_name" class="block text-gray-700 font-semibold mb-2">First Name</label>
+                        <label for="first_name" class="block text-gray-700 font-semibold mb-2">First Name*</label>
                         <input type="text" id="first_name" name="first_name"
                             class="w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500" required>
                     </div>
 
                     <!-- Last Name -->
                     <div class="mb-4">
-                        <label for="last_name" class="block text-gray-700 font-semibold mb-2">Last Name</label>
+                        <label for="last_name" class="block text-gray-700 font-semibold mb-2">Last Name*</label>
                         <input type="text" id="last_name" name="last_name"
                             class="w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500" required>
                     </div>
                 </div>
 
-
-                <!-- Email -->
-                <div class="mb-4">
-                    <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
-                    <input type="email" id="email" name="email"
-                        class="w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500" required>
-                </div>
-
                 <!-- Mobile Phone -->
-                <div class="grid grid-cols-3 gap-4">
-                    <div class="relative">
-                        <span id="flagIcon" class="mb-5 inline-block p-2 shadow-lg"></span>
+                <div class="flex items-center justify-between space-x-4">
+                    <div class="w-1/6">
+                        <span id="flagIcon" class="inline-block h-6 w-6"></span>
                     </div>
 
-                    <div class="relative">
-                        <label for="countryDropdown" class="text-sm text-gray-600">Select a country:</label>
+                    <div class="w-2/6">
+                        <label for="countryDropdown" class="block text-sm text-gray-600 mb-2">Select a country:</label>
                         <select id="countryDropdown"
-                            class="w-full px-4 py-2 rounded focus:outline-none focus:border-blue-500">
-                            <option value="">Choose a country...</option>
+                            class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500">
+                            <option value="">Country Code</option>
                         </select>
                     </div>
 
-                    <div class="relative">
-                        <label for="phoneNumber" class="text-sm text-gray-600">Mobile Phone</label>
+                    <div class="w-3/6">
+                        <label for="phoneNumber" class="block text-sm text-gray-600 mb-2">Mobile Phone*</label>
                         <input type="tel" id="phoneNumber" placeholder="Enter phone number"
-                            class="w-full p-2 rounded outline-none border focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base text-gray-700"
+                            class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-sm text-gray-700"
                             required>
                     </div>
                 </div>
 
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Email -->
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 font-semibold mb-2">Email*</label>
+                        <input type="email" id="email" name="email"
+                            class="w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500" required>
+                    </div>
 
-                <!-- Nationality -->
-                <div class="mb-4">
-                    <label for="nationality" class="block text-gray-700 font-semibold mb-2">Nationality</label>
-                    <select id="nationality" name="nationality"
-                        class="w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500" required>
-                        <option value="">Select Nationality</option>
-                        <option value="US">United States</option>
-                        <option value="GB">United Kingdom</option>
-                        <option value="AU">Australia</option>
-                        <option value="DE">Germany</option>
-                        <option value="FR">France</option>
-                        <option value="JP">Japan</option>
-                        <option value="CN">China</option>
-                    </select>
+                    <!-- Nationality -->
+                    <div class="mb-4">
+                        <label for="nation_select" class="block text-gray-700 font-semibold mb-2">Nationality*</label>
+                        <select id="nation_select" name="nationality"
+                            class="w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500" required>
+                            <option value="">Select Nationality</option>
+                        </select>
+                    </div>
                 </div>
 
                 <!-- Expected Monthly Salary -->
@@ -106,7 +99,7 @@
                     <div class="grow space-y-1">
                         <label for="monthly_salary" class="font-medium">Expected Monthly
                             Salary</label>
-                        <input type="text" id="monthly_salary" name="monthly_salary"
+                        <input type="number" id="monthly_salary" name="monthly_salary" min="1" step="any"
                             class="block w-full rounded-lg border border-gray-200 px-5 py-3 leading-6 placeholder-gray-500 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
                             required>
                     </div>
@@ -135,7 +128,7 @@
 
                 <!-- Upload Resume -->
                 <div class="flex flex-col mb-4">
-                    <label for="resume" class="block text-gray-700 font-semibold mb-2">Upload Your Resume</label>
+                    <label for="resume" class="block text-gray-700 font-semibold mb-2">Upload Your Resume*</label>
                     <div class="relative border border-gray-300 rounded h-32">
                         <input type="file" id="resume" name="resume" accept=".pdf, .doc, .docx"
                             class="absolute w-full h-full opacity-0 cursor-pointer" multiple>
@@ -169,10 +162,11 @@
                 </div>
                 <!-- Submit Button -->
                 <div class="mt-8">
-                    <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-700"> 👍 Submit my candidacy
+                    <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-700"> 👍
+                        Submit
+                        my candidacy
                     </button>
                 </div>
-
             </form>
         </div>
     </main>
