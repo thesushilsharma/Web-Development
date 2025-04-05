@@ -1,12 +1,12 @@
 # Web Development
 
-By making use of YouTube and Google learning materials, I began my journey into web creation. The videos are well made, they approach the content well, and they bring a fun twist to web development learning that really helps create a learning experience that is more enjoyable and engaging. They do, however, lack the most critical part of learning how to create the web, actually constructing things. I urge those around me to start learning about web design. In doing so, I have created a few go-to projects that I send to individuals to really help them begin to develop their abilities when beginning their journey. My hope is that this project guide helps new developers search for their learning framework, or existing developers reach out to a friend with a loose curriculum.
+By making use of YouTube and Google learning materials, I began my journey into web creation. The videos are well made, they approach the content well, and they bring a fun twist to web development learning that helps create a learning experience that is more enjoyable and engaging. However, they lack the most critical part of learning how to create the web, actually constructing things. I urge those around me to start learning about web design. In doing so, I have created a few go-to projects that I send to individuals to help them begin to develop their abilities when beginning their journey. I hope that this project guide helps new developers search for their learning framework or existing developers reach out to a friend with a loose curriculum.
 
 - [Developer Portfolio](https://thesushilsharma.github.io)
 - [Web Projects](https://thesushilsharma.github.io/Web-Development/)
 
 ## Installation 
-To install this project, clone the repository to your local machine and open the index.html file in your web browser or Launch a local development server (Live Server - VS Code Extension).
+To install this project, clone the repository to your local machine and open the index.html file in your web browser or launch a local development server (Live Server - VS Code Extension).
 
 ## Projects
 
@@ -38,6 +38,7 @@ To install this project, clone the repository to your local machine and open the
 | 10  |        [Weather API](https://github.com/thesushilsharma/Web-Development/tree/master/WeatherApi)       | [Click Here](https://thesushilsharma.github.io/Web-Development/WeatherApi/index.html)  |
 | 11  |     [Expense Tracker](https://github.com/thesushilsharma/Web-Development/tree/master/Expense-Tracker)     | [Click Here](https://thesushilsharma.github.io/Web-Development/Expense-Tracker)  |
 | 12  |     [Wedding Card XML and XSLT](https://github.com/thesushilsharma/Web-Development/tree/master/Wedding%20Card%20XML%20and%20XSLT)     | [Click Here](https://thesushilsharma.github.io/Web-Development/Wedding%20Card%20XML%20and%20XSLT/Wedding%20Card.xml)  |
+| 13  |     [Terminal Folio](https://github.com/thesushilsharma/Web-Development/tree/master/Shellscape)     | [Click Here](https://thesushilsharma.github.io/Web-Development/Shellscape)  |
 
 ## Known Issues
 - None
