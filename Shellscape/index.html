@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="theme-color" content="#319197" media="(prefers-color-scheme: dark)">
+    <meta name="description"
+        content="I am a Student and Web developer. Visit my personal portfolio, which is built on the command-line interface (CLI)" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>The Sushil Sharma | Terminal - command-line interface </title>
+</head>
+
+<body class="font-mono">
+    <main class="flex items-center justify-center h-screen antialiased text-slate-500 bg-slate-300">
+        <section class="w-full">
+            <article class="bg-gray-900 shadow-xl rounded-lg p-6 sm:w-full">
+                <div class="container mx-auto px-4 pb-8">
+                    <samp id="terminal-output" class="rounded-lg overflow-auto bg-gray-700 text-gray-100 p-4">
+                    </samp>
+                </div>
+                <div id="command" class="left-0 w-full bg-gray-700 z-10">
+                    <input type="text" id="terminal-input" autofocus placeholder="Try typing ? or help..."
+                        class=" bg-gray-700 text-gray-100 border-none outline-none py-2 px-4 w-full bg-transparent border-b-2 border-white focus:outline-none focus:border-blue-500 pb-10">
+                </div>
+            </article>
+        </section>
+    </main>
+    <script src="Assets/JS/command.js"></script>
+    <script src="Assets/JS/main.js"></script>
+</body>
+
+</html>

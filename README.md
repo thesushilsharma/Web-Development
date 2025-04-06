@@ -22,6 +22,7 @@ To install this project, clone the repository to your local machine and open the
 - Weather API
 - Wedding Card XML and XSLT
 - Expense Tracker
+- Shellscape
 
 
 |  #  |            Project             |   Website |
