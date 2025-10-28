@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>BMI Calculator</title>
+</head>
+
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen py-8">
+    <div class="container mx-auto px-4 max-w-2xl">
+        <div class="bg-white rounded-lg shadow-xl p-8">
+            <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">BMI Calculator</h1>
+
+            <form id="bmiForm" class="space-y-6">
+                <!-- Age Verification -->
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        Are you aged 18 or over?
+                    </label>
+                    <div class="flex space-x-4">
+                        <label class="flex items-center">
+                            <input type="radio" name="ageVerification" value="yes" class="mr-2" required>
+                            <span>Yes</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="ageVerification" value="no" class="mr-2" required>
+                            <span>No</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Personal Information -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            Date of Birth
+                        </label>
+                        <input type="date" id="dob"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            Gender
+                        </label>
+                        <select id="gender"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required>
+                            <option value="">Select gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="prefer-not-to-say">Prefer not to say</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            Ethnic Background
+                        </label>
+                        <select id="ethnicity"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required>
+                            <option value="">Select ethnicity</option>
+                            <option value="asian">Asian or Asian British</option>
+                            <option value="black">Black, African, Caribbean or Black British</option>
+                            <option value="white">White</option>
+                            <option value="hispanic">Hispanic/Latino</option>
+                            <option value="mixed">Mixed or Multiple ethnic groups</option>
+                            <option value="other">Other ethnic group</option>
+                            <option value="prefer-not-to-say">Prefer not to say</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Physical Measurements -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            Height
+                        </label>
+                        <div class="flex space-x-2">
+                            <input type="number" id="height" placeholder="170"
+                                class="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                            <select id="heightUnit"
+                                class="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="cm">cm</option>
+                                <option value="ft">ft/in</option>
+                            </select>
+                        </div>
+                        <div id="heightFeet" class="hidden mt-2 flex space-x-2">
+                            <input type="number" id="feet" placeholder="5"
+                                class="flex-1 px-3 py-2 border border-gray-300 rounded-md" min="0" max="8">
+                            <span class="self-center">ft</span>
+                            <input type="number" id="inches" placeholder="7"
+                                class="flex-1 px-3 py-2 border border-gray-300 rounded-md" min="0" max="11">
+                            <span class="self-center">in</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            Weight
+                        </label>
+                        <div class="flex space-x-2">
+                            <input type="number" id="weight" placeholder="70"
+                                class="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                            <select id="weightUnit"
+                                class="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="kg">kg</option>
+                                <option value="lbs">lbs</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium">
+                    Calculate BMI
+                </button>
+            </form>
+
+            <!-- Results Section -->
+            <div id="results" class="hidden mt-8 space-y-6">
+                <!-- BMI Result -->
+                <div class="p-6 bg-gray-50 rounded-lg">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Your Results</h2>
+                    <div id="bmiResult" class="text-center mb-4">
+                        <div class="text-4xl font-bold text-blue-600" id="bmiValue"></div>
+                        <div class="text-lg text-gray-600" id="bmiCategory"></div>
+                    </div>
+                    <div id="healthInfo" class="text-sm text-gray-700"></div>
+                </div>
+
+                <!-- BMI Chart -->
+                <div class="p-6 bg-white rounded-lg border">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-6">BMI Chart</h3>
+                    
+                    <!-- Horizontal BMI Bar Chart -->
+                    <div class="mb-6">
+                        <!-- BMI Scale Bar -->
+                        <div class="relative h-12 rounded-lg overflow-hidden border-2 border-gray-300 mb-4">
+                            <div class="flex h-full">
+                                <!-- Underweight Section -->
+                                <div class="bg-purple-500 flex-none" style="width: 18.5%;" id="underweight-section"></div>
+                                <!-- Healthy Section -->
+                                <div class="bg-teal-500 flex-none" style="width: 23.5%;" id="healthy-section"></div>
+                                <!-- Overweight Section -->
+                                <div class="bg-yellow-500 flex-none" style="width: 16.5%;" id="overweight-section"></div>
+                                <!-- Obese Section -->
+                                <div class="bg-red-500 flex-1" id="obese-section"></div>
+                            </div>
+                            
+                            <!-- BMI Marker -->
+                            <div id="bmiMarker" class="absolute top-0 h-full w-1 bg-black transform -translate-x-1/2 hidden">
+                                <div class="absolute -top-8 left-1/2 transform -translate-x-1/2">
+                                    <div class="bg-black text-white px-2 py-1 rounded text-xs font-bold" id="bmiMarkerValue"></div>
+                                    <div class="w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-black mx-auto"></div>
+                                </div>
+                                <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2">
+                                    <div class="text-xs font-bold text-black">✕</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Scale Numbers -->
+                        <div class="relative flex justify-between text-sm text-gray-600 mb-4">
+                            <span class="absolute" style="left: 0%;">0</span>
+                            <span class="absolute" style="left: 18.5%;" id="threshold1">18.5</span>
+                            <span class="absolute" style="left: 42%;" id="threshold2">25</span>
+                            <span class="absolute" style="left: 58.5%;" id="threshold3">30</span>
+                            <span class="absolute" style="left: 90%;">40</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Legend -->
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-4 h-4 bg-purple-500 rounded"></div>
+                            <span class="font-medium">Underweight</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-4 h-4 bg-teal-500 rounded"></div>
+                            <span class="font-medium">Healthy</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-4 h-4 bg-yellow-500 rounded"></div>
+                            <span class="font-medium">Overweight</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-4 h-4 bg-red-500 rounded"></div>
+                            <span class="font-medium">Obese</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Your BMI Indicator -->
+                    <div class="mt-4 flex items-center justify-center">
+                        <div class="flex items-center space-x-2">
+                            <div class="text-lg font-bold">✕</div>
+                            <span class="text-sm text-gray-600 font-medium">Your BMI</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Expandable Chart Description -->
+                    <div class="mt-4 border-t pt-4">
+                        <button id="chartDescriptionToggle" 
+                                class="w-full flex items-center justify-between text-left text-sm font-medium text-gray-700 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded p-2">
+                            <span>Understanding BMI Categories</span>
+                            <svg id="chevronIcon" class="w-4 h-4 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        
+                        <div id="chartDescription" class="hidden mt-3 text-sm text-gray-600 space-y-3">
+                            <div class="bg-blue-50 p-3 rounded border-l-4 border-blue-400">
+                                <h4 class="font-semibold text-blue-800 mb-1">Underweight (BMI below 18.5)</h4>
+                                <p>May indicate malnutrition, eating disorders, or other health issues. Consider consulting a healthcare provider to discuss healthy weight gain strategies.</p>
+                            </div>
+                            
+                            <div class="bg-green-50 p-3 rounded border-l-4 border-green-400">
+                                <h4 class="font-semibold text-green-800 mb-1">Healthy Weight (BMI 18.5-24.9)</h4>
+                                <p>Associated with the lowest risk of weight-related health problems. Maintain this range through balanced nutrition and regular physical activity.</p>
+                                <p class="text-xs mt-1 text-green-700"><strong>Note:</strong> For Asian populations, the healthy range is 18.5-22.9 due to different body composition and health risk profiles.</p>
+                            </div>
+                            
+                            <div class="bg-yellow-50 p-3 rounded border-l-4 border-yellow-400">
+                                <h4 class="font-semibold text-yellow-800 mb-1">Overweight (BMI 25.0-29.9)</h4>
+                                <p>May increase risk of cardiovascular disease, type 2 diabetes, and other health conditions. Consider lifestyle changes including diet and exercise.</p>
+                                <p class="text-xs mt-1 text-yellow-700"><strong>Note:</strong> For Asian populations, overweight is classified as BMI 23.0-27.4.</p>
+                            </div>
+                            
+                            <div class="bg-red-50 p-3 rounded border-l-4 border-red-400">
+                                <h4 class="font-semibold text-red-800 mb-1">Obese (BMI 30.0 and above)</h4>
+                                <p>Significantly increases risk of serious health conditions including heart disease, stroke, type 2 diabetes, and certain cancers. Medical consultation is strongly recommended.</p>
+                                <p class="text-xs mt-1 text-red-700"><strong>Note:</strong> For Asian populations, obesity is classified as BMI 27.5 and above.</p>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-3 rounded border border-gray-200 mt-4">
+                                <h4 class="font-semibold text-gray-800 mb-2">Important Limitations of BMI</h4>
+                                <ul class="text-xs space-y-1 text-gray-600">
+                                    <li>• BMI doesn't distinguish between muscle and fat mass</li>
+                                    <li>• May not be accurate for athletes with high muscle mass</li>
+                                    <li>• Different ethnic groups may have different health risks at the same BMI</li>
+                                    <li>• Age, gender, and body composition are not considered</li>
+                                    <li>• Should be used alongside other health assessments</li>
+                                </ul>
+                                <p class="text-xs mt-2 font-medium text-gray-700">Always consult with a healthcare professional for personalized health advice.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weight Recommendations -->
+                <div id="weightRecommendations" class="hidden p-6 bg-orange-50 border border-orange-200 rounded-lg">
+                    <h3 class="text-lg font-semibold text-orange-800 mb-3">Weight Management Recommendation</h3>
+                    <div id="weightLossInfo" class="text-sm text-orange-700"></div>
+                </div>
+
+                <!-- Age Warning -->
+                <div id="ageWarning" class="hidden p-3 bg-red-100 border border-red-300 rounded text-red-700">
+                    <strong>Note:</strong> This BMI calculator is designed for adults (18+). For children and teenagers,
+                    please consult a healthcare professional for appropriate growth charts and assessments.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/main.js"></script>
+</body>
+
+</html>
