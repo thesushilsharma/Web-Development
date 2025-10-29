@@ -3,51 +3,248 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="An interactive business card. ">
+    <meta name="description" content="Interactive business card for Sushil Sharma - Full Stack Developer">
     <meta name="author" content="Sushil Sharma">
     <meta name="keywords"
-        content="HTML, CSS, Portfolio, Github, Github pages, Freelancer, Website Developement, JavaScript, PHP, Developer, Tailwind, Bootstrap, VSCode">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/style.css">
-    <title>The Sushil Sharma | Interactive business card</title>
+        content="Full Stack Developer, Web Developer, JavaScript, React, Node.js, Portfolio, Freelancer">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>Sushil Sharma | Interactive Business Card</title>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace'],
+                        'playfair': ['Playfair Display', 'serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 20px #3b82f6;
+            }
+
+            to {
+                box-shadow: 0 0 30px #8b5cf6, 0 0 40px #ec4899;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .flip-card {
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            backface-visibility: hidden;
+        }
+
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
 </head>
 
-<body>
-  <main>
-    <section>
-        <article>
-            <div class="wrapper">
-                <div class="card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img class="profile" src="https://github.com/thesushilsharma.png" alt="Sushil Sharma">
-                            <h1 class="name">Sushil Sharma</h1>
-                            <h3 class="title">Web Developer and Designer</h3>
-                            <h2>University Of Wollongong </h2>
+<body
+    class="font-inter bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen flex items-center justify-center p-4">
+    <main class="w-full max-w-md">
+        <div class="flip-card w-full h-96 animate-float">
+            <div class="flip-card-inner relative w-full h-full">
+
+                <!-- Front Side -->
+                <div
+                    class="flip-card-front absolute inset-0 bg-gradient-to-br from-gray-900 to-black rounded-3xl shadow-2xl border border-gray-700 animate-glow">
+                    <div class="h-full flex flex-col items-center justify-center p-8 text-center">
+                        <!-- Profile Image -->
+                        <div class="relative mb-6">
+                            <img src="https://github.com/thesushilsharma.png" alt="Sushil Sharma"
+                                class="w-24 h-24 rounded-full border-4 border-gradient-to-r from-blue-500 to-purple-500 shadow-lg hover:scale-110 transition-transform duration-300">
+                            <div
+                                class="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full border-2 border-gray-900 animate-pulse">
+                            </div>
                         </div>
-                        <div class="flip-card-back">
-                            <div class="social" style="margin: 24px 0;">
-                                <a class="icon-box" href="#"><i class="fa fa-medium"></i></a>
-                                <a class="icon-box" href="#"><i class="fa fa-linkedin"></i></a>
-                                <a class="icon-box" href="#"><i class="fa fa-github"></i></a>
+
+                        <!-- Name -->
+                        <h1 class="font-playfair text-3xl font-bold gradient-text mb-2">
+                            Sushil Sharma
+                        </h1>
+
+                        <!-- Title -->
+                        <h2 class="text-gray-300 text-lg font-medium mb-2">
+                            Full Stack Developer
+                        </h2>
+
+                        <!-- Subtitle -->
+                        <p class="text-gray-400 text-sm font-mono mb-4">
+                            &lt;/&gt; Code • Create • Innovate
+                        </p>
+
+                        <!-- University -->
+                        <div class="bg-gray-800/50 rounded-full px-4 py-2 border border-gray-600">
+                            <p class="text-gray-300 text-xs font-medium">
+                                🎓 University of Wollongong
+                            </p>
+                        </div>
+
+                        <!-- Hover Indicator -->
+                        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                            <p class="text-gray-500 text-xs animate-bounce">
+                                Hover to flip →
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Back Side -->
+                <div
+                    class="flip-card-back absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900 rounded-3xl shadow-2xl border border-gray-700">
+                    <div class="h-full flex flex-col items-center justify-center p-8">
+
+                        <!-- Social Links -->
+                        <div class="mb-8">
+                            <h3 class="text-white text-lg font-semibold mb-4 text-center">Connect With Me</h3>
+                            <div class="flex space-x-4">
+                                <a href="https://github.com/thesushilsharma"
+                                    class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-gray-700 hover:scale-110 transition-all duration-300 group">
+                                    <span class="material-icons text-xl group-hover:text-blue-400">code</span>
+                                </a>
+                                <a href="https://linkedin.com/in/thesushilsharma"
+                                    class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-500 hover:scale-110 transition-all duration-300">
+                                    <span class="material-icons text-xl">business</span>
+                                </a>
+                                <a href="https://medium.com/@thesushilsharma"
+                                    class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white hover:bg-green-500 hover:scale-110 transition-all duration-300">
+                                    <span class="material-icons text-xl">article</span>
+                                </a>
                             </div>
-                            <div class="portfolio">
-                                <address>
-                                    <a href="mailto:thesushilsharma@duck.com">thesushilsharma@duck.com</a><br>
-                                    <a href="tel:+13115552368">(311) 555-2368</a><br>
-                                    <a href="thesushilsharma.github.io">Portfolio</a><br>
-                                    <a href="#">Earth 52</a>
-                                </address>
+                        </div>
+
+                        <!-- Contact Information -->
+                        <div class="space-y-3 w-full">
+                            <a href="mailto:thesushilsharma@duck.com"
+                                class="flex items-center space-x-3 text-gray-200 hover:text-white transition-colors duration-300 group">
+                                <div
+                                    class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <span class="material-icons text-sm">email</span>
+                                </div>
+                                <span class="text-sm font-mono">thesushilsharma@duck.com</span>
+                            </a>
+
+                            <a href="tel:+13115552368"
+                                class="flex items-center space-x-3 text-gray-200 hover:text-white transition-colors duration-300 group">
+                                <div
+                                    class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <span class="material-icons text-sm">phone</span>
+                                </div>
+                                <span class="text-sm font-mono">+1 (311) 555-2368</span>
+                            </a>
+
+                            <a href="https://thesushilsharma.github.io"
+                                class="flex items-center space-x-3 text-gray-200 hover:text-white transition-colors duration-300 group">
+                                <div
+                                    class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <span class="material-icons text-sm">language</span>
+                                </div>
+                                <span class="text-sm font-mono">Portfolio</span>
+                            </a>
+
+                            <div class="flex items-center space-x-3 text-gray-200">
+                                <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                                    <span class="material-icons text-sm">location_on</span>
+                                </div>
+                                <span class="text-sm font-mono">Dubai, UAE</span>
                             </div>
+                        </div>
+
+                        <!-- Skills Tags -->
+                        <div class="mt-6 flex flex-wrap gap-2 justify-center">
+                            <span
+                                class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-medium border border-blue-500/30">
+                                React
+                            </span>
+                            <span
+                                class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-xs font-medium border border-green-500/30">
+                                Node.js
+                            </span>
+                            <span
+                                class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-medium border border-purple-500/30">
+                                TypeScript
+                            </span>
                         </div>
                     </div>
                 </div>
             </div>
-        </article>
-    </section>
-  </main>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="mt-6 text-center animate-slide-up">
+            <p class="text-gray-400 text-sm">
+                💡 Available for freelance projects
+            </p>
+        </div>
+    </main>
 </body>
+
 </html>
