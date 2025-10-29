@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="Wedding Card.xsl"?>
+<!DOCTYPE weddingcard [
+<!ELEMENT weddingcard (wedding-info, VIPguest*)>
+<!ELEMENT wedding-info (bride-name, groom-name, wedding-date, venue)>
+<!ELEMENT bride-name (#PCDATA)>
+<!ELEMENT groom-name (#PCDATA)>
+<!ELEMENT wedding-date (#PCDATA)>
+<!ELEMENT venue (#PCDATA)>
+<!ELEMENT VIPguest (Name, Address, EmailID, relationship?)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Address (#PCDATA)>
+<!ELEMENT EmailID (#PCDATA)>
+<!ELEMENT relationship (#PCDATA)>
+]>
+<weddingcard>
+    <wedding-info>
+        <bride-name>Priya Sharma</bride-name>
+        <groom-name>Rahul Gupta</groom-name>
+        <wedding-date>December 15, 2024</wedding-date>
+        <venue>Grand Palace Hotel, Mumbai</venue>
+    </wedding-info>
+    
+    <VIPguest>
+        <Name>Shah Rukh Khan</Name>
+        <Address>Mannat, Bandra West, Mumbai</Address>
+        <EmailID></EmailID>
+        <relationship>Family Friend</relationship>
+    </VIPguest>
+    <VIPguest>
+        <Name>Sushil Sharma</Name>
+        <Address>Dubai, UAE</Address>
+        <EmailID>sushil@sharma.com</EmailID>
+        <relationship>Uncle</relationship>
+    </VIPguest>
+    <VIPguest>
+        <Name>Shivay Oberoi</Name>
+        <Address>Tibet, China</Address>
+        <EmailID></EmailID>
+        <relationship>College Friend</relationship>
+    </VIPguest>
+    <VIPguest>
+        <Name>Karan Johar</Name>
+        <Address>UAE</Address>
+        <EmailID>karan@google.com</EmailID>
+        <relationship>Business Partner</relationship>
+    </VIPguest>
+    <VIPguest>
+        <Name>Ayush Khanna</Name>
+        <Address>Abu Dhabi, UAE</Address>
+        <EmailID>ayush@ad.com</EmailID>
+        <relationship>Cousin</relationship>
+    </VIPguest>
+    <VIPguest>
+        <Name>Deepika Padukone</Name>
+        <Address>Bangalore, Karnataka</Address>
+        <EmailID>deepika@bollywood.com</EmailID>
+        <relationship>Close Friend</relationship>
+    </VIPguest>
+</weddingcard>
