@@ -1,116 +1,391 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Sushil Sharma | Number Game</title>
-  <meta name="description" content="Number game using JavaScript">
-  <meta name="keywords" content="Html, CCS, JavaScript, Github">
+  <title>Number Rush | Interactive Number Game</title>
+  <meta name="description" content="Fast-paced number matching game with modern design and enhanced gameplay">
+  <meta name="keywords" content="Number Game, JavaScript, Interactive Game, Web Game, Tailwind CSS">
   <meta name="author" content="Sushil Sharma">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'inter': ['Inter', 'sans-serif'],
+            'mono': ['JetBrains Mono', 'monospace'],
+          },
+          animation: {
+            'bounce-in': 'bounceIn 0.5s ease-out',
+            'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'shake': 'shake 0.5s ease-in-out',
+            'success': 'success 0.6s ease-out',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @keyframes bounceIn {
+      0% {
+        transform: scale(0.3);
+        opacity: 0;
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+
+      70% {
+        transform: scale(0.9);
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes shake {
+
+      0%,
+      100% {
+        transform: translateX(0);
+      }
+
+      10%,
+      30%,
+      50%,
+      70%,
+      90% {
+        transform: translateX(-10px);
+      }
+
+      20%,
+      40%,
+      60%,
+      80% {
+        transform: translateX(10px);
+      }
+    }
+
+    @keyframes success {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .gradient-text {
+      background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  </style>
 </head>
-<style>
-  .container {
-    width: 600px;
-    height: 600px;
-    background-color: lightgrey;
-    padding-top: 20px;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
 
-  #user {
-    color: green;
-    font-size: 75px;
-  }
+<body
+  class="font-inter bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 min-h-screen flex items-center justify-center p-4">
 
-  #score {
-    color: red;
-    font-size: 75px;
-  }
-
-  button {
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
-
-  button {
-    background-color: white;
-    color: black;
-    border: 2px solid #555555;
-  }
-
-  button:hover {
-    background-color: #555555;
-    color: white;
-  }
-</style>
-<script>
-  var myVar;
-  var score = 0;
-
-  function myFunction() {
-    var userinput;
-    userinput = prompt("Please enter number between 0 to 9", "");
-    document.getElementById("user").innerHTML = userinput;
-    score = 0;
-    document.getElementById("score").innerHTML = "0";
-    start(userinput);
-
-  }
-
-  function start(userinput) {
-    myVar = setInterval(randomfunc, 1000);
-    function randomfunc() {
-      var userclick = "";
-      var left = Math.floor(Math.random() * 10);
-      var middle = Math.floor(Math.random() * 10);
-      var right = Math.floor(Math.random() * 10);
-
-      userclick = "<button type='button' onclick='checkAns(" + left + "," + userinput + ");' style='font-size:150px;color:#FF0000;' value='" + left + "'>" + left + "</button>" +
-        "<button type='button' onclick='checkAns(" + middle + "," + userinput + ");' style='font-size:150px;color:#FF9300' value='" + middle + "'>" + middle + "</button>" +
-        "<button type='button' onclick='checkAns(" + right + "," + userinput + ");'style='font-size:150px;color:#00FFE5;' value='" + right + "'>" + right + "</button>";
-      document.getElementById("numberbox").innerHTML = userclick;
-    }
-  }
-
-  function checkAns(random, userinput) {
-
-    if (random == userinput) {
-      document.getElementById("score").innerHTML = ++score;
-    }
-    else
-      document.getElementById("score").innerHTML = --score;
-
-
-  }
-  function myStopFunction() {
-    clearInterval(myVar);
-  }
-</script>
-
-<body>
-
-  <center>
-
-    <div class="container">
-      <h1>Sushil Sharma: Number Game</h1>
-      <button onclick="myFunction()">START</button>
-      <button onclick="myStopFunction()">STOP</button><br>
-      <h1>User Selected : <span id="user"></span>
+  <div class="w-full max-w-4xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <h1 class="font-mono text-4xl md:text-6xl font-bold gradient-text mb-4">
+        NUMBER RUSH
       </h1>
-      <h1>Game Score : <span id="score"></span>
-      </h1>
-      <span id="numberbox"></span>
+      <p class="text-gray-300 text-lg">
+        Match your number as fast as you can! 🎯
+      </p>
     </div>
-  </center>
+
+    <!-- Game Container -->
+    <div class="bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl border border-white/20 p-8 md:p-12">
+
+      <!-- Game Setup Section -->
+      <div class="text-center mb-8" id="setupSection">
+        <div class="mb-6">
+          <label class="block text-white text-xl font-semibold mb-4">
+            Choose Your Lucky Number (0-9)
+          </label>
+          <div class="flex justify-center space-x-2 flex-wrap">
+            <div class="grid grid-cols-5 gap-2 md:gap-3">
+              <button onclick="selectNumber(0)"
+                class="number-select w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold text-xl rounded-xl hover:scale-110 transition-all duration-300 shadow-lg">0</button>
+              <button onclick="selectNumber(1)"
+                class="number-select w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold text-xl rounded-xl hover:scale-110 transition-all duration-300 shadow-lg">1</button>
+              <button onclick="selectNumber(2)"
+                class="number-select w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold text-xl rounded-xl hover:scale-110 transition-all duration-300 shadow-lg">2</button>
+              <button onclick="selectNumber(3)"
+                class="number-select w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold text-xl rounded-xl hover:scale-110 transition-all duration-300 shadow-lg">3</button>
+              <button onclick="selectNumber(4)"
+                class="number-select w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold text-xl rounded-xl hover:scale-110 transition-all duration-300 shadow-lg">4</button>
+              <button onclick="selectNumber(5)"
+                class="number-select w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold text-xl rounded-xl hover:scale-110 transition-all duration-300 shadow-lg">5</button>
+              <button onclick="selectNumber(6)"
+                class="number-select w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold text-xl rounded-xl hover:scale-110 transition-all duration-300 shadow-lg">6</button>
+              <button onclick="selectNumber(7)"
+                class="number-select w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold text-xl rounded-xl hover:scale-110 transition-all duration-300 shadow-lg">7</button>
+              <button onclick="selectNumber(8)"
+                class="number-select w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold text-xl rounded-xl hover:scale-110 transition-all duration-300 shadow-lg">8</button>
+              <button onclick="selectNumber(9)"
+                class="number-select w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold text-xl rounded-xl hover:scale-110 transition-all duration-300 shadow-lg">9</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-x-4">
+          <button onclick="startGame()" id="startBtn"
+            class="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2 mx-auto">
+            <span class="material-icons">play_arrow</span>
+            <span>START GAME</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Game Stats -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div
+          class="bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl p-6 text-center border border-blue-500/30">
+          <div class="text-blue-300 text-sm font-medium mb-2">YOUR NUMBER</div>
+          <div id="userNumber" class="text-4xl font-bold text-white font-mono">-</div>
+        </div>
+
+        <div
+          class="bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-2xl p-6 text-center border border-green-500/30">
+          <div class="text-green-300 text-sm font-medium mb-2">SCORE</div>
+          <div id="score" class="text-4xl font-bold text-white font-mono">0</div>
+        </div>
+
+        <div
+          class="bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl p-6 text-center border border-purple-500/30">
+          <div class="text-purple-300 text-sm font-medium mb-2">TIME</div>
+          <div id="timer" class="text-4xl font-bold text-white font-mono">0s</div>
+        </div>
+      </div>
+
+      <!-- Game Area -->
+      <div class="text-center mb-8">
+        <div id="gameStatus" class="text-gray-400 text-lg mb-4">
+          Select your number and click START to begin!
+        </div>
+
+        <div id="numberButtons" class="flex justify-center space-x-4 mb-6">
+          <!-- Number buttons will be generated here -->
+        </div>
+
+        <button onclick="stopGame()" id="stopBtn"
+          class="bg-gradient-to-r from-red-500 to-pink-500 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-lg hidden flex items-center space-x-2 mx-auto">
+          <span class="material-icons">stop</span>
+          <span>STOP GAME</span>
+        </button>
+      </div>
+
+      <!-- High Score -->
+      <div class="text-center">
+        <div
+          class="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-2xl p-4 border border-yellow-500/30 inline-block">
+          <div class="text-yellow-300 text-sm font-medium">HIGH SCORE</div>
+          <div id="highScore" class="text-2xl font-bold text-white font-mono">0</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="text-center mt-8">
+      <p class="text-gray-400 text-sm">
+        Created by <span class="text-white font-semibold">Sushil Sharma</span> •
+        <span class="text-purple-400">Enhanced with Modern Design</span>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Game variables
+    let gameInterval;
+    let timerInterval;
+    let score = 0;
+    let selectedNumber = null;
+    let gameTime = 0;
+    let isGameRunning = false;
+    let highScore = localStorage.getItem('numberGameHighScore') || 0;
+
+    // Initialize high score display
+    document.getElementById('highScore').textContent = highScore;
+
+    // Select number function
+    function selectNumber(num) {
+      if (isGameRunning) return;
+
+      selectedNumber = num;
+      document.getElementById('userNumber').textContent = num;
+      document.getElementById('startBtn').disabled = false;
+
+      // Update button styles
+      document.querySelectorAll('.number-select').forEach(btn => {
+        btn.classList.remove('ring-4', 'ring-yellow-400');
+      });
+      event.target.classList.add('ring-4', 'ring-yellow-400');
+
+      // Update status
+      document.getElementById('gameStatus').textContent = `Great! You selected ${num}. Ready to start?`;
+    }
+
+    // Start game function
+    function startGame() {
+      if (selectedNumber === null) {
+        alert('Please select a number first!');
+        return;
+      }
+
+      isGameRunning = true;
+      score = 0;
+      gameTime = 0;
+
+      document.getElementById('score').textContent = '0';
+      document.getElementById('timer').textContent = '0s';
+      document.getElementById('startBtn').classList.add('hidden');
+      document.getElementById('stopBtn').classList.remove('hidden');
+      document.getElementById('gameStatus').textContent = 'Game started! Click your number when you see it!';
+
+      // Start timer
+      timerInterval = setInterval(() => {
+        gameTime++;
+        document.getElementById('timer').textContent = gameTime + 's';
+      }, 1000);
+
+      // Start number generation
+      generateNumbers();
+      gameInterval = setInterval(generateNumbers, 1200);
+    }
+
+    // Generate random numbers
+    function generateNumbers() {
+      const colors = [
+        'from-red-500 to-pink-500',
+        'from-blue-500 to-indigo-500',
+        'from-green-500 to-emerald-500',
+        'from-purple-500 to-violet-500',
+        'from-yellow-500 to-orange-500'
+      ];
+
+      const numbers = [];
+      for (let i = 0; i < 3; i++) {
+        numbers.push(Math.floor(Math.random() * 10));
+      }
+
+      let buttonsHTML = '';
+      numbers.forEach((num, index) => {
+        const colorClass = colors[index % colors.length];
+        buttonsHTML += `
+                    <button onclick="checkAnswer(${num})" 
+                            class="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-r ${colorClass} text-white font-bold text-3xl rounded-2xl hover:scale-110 transition-all duration-300 shadow-lg animate-bounce-in">
+                        ${num}
+                    </button>
+                `;
+      });
+
+      document.getElementById('numberButtons').innerHTML = buttonsHTML;
+    }
+
+    // Check answer function
+    function checkAnswer(clickedNumber) {
+      if (!isGameRunning) return;
+
+      const scoreElement = document.getElementById('score');
+      const gameStatusElement = document.getElementById('gameStatus');
+
+      if (clickedNumber === selectedNumber) {
+        score++;
+        scoreElement.textContent = score;
+        scoreElement.classList.add('animate-success');
+        gameStatusElement.textContent = '🎉 Correct! Keep going!';
+        gameStatusElement.className = 'text-green-400 text-lg mb-4 font-semibold';
+
+        // Play success animation
+        setTimeout(() => {
+          scoreElement.classList.remove('animate-success');
+        }, 600);
+      } else {
+        if (score > 0) score--;
+        scoreElement.textContent = score;
+        scoreElement.classList.add('animate-shake');
+        gameStatusElement.textContent = '❌ Wrong number! Try again!';
+        gameStatusElement.className = 'text-red-400 text-lg mb-4 font-semibold';
+
+        // Play error animation
+        setTimeout(() => {
+          scoreElement.classList.remove('animate-shake');
+        }, 500);
+      }
+
+      // Reset status message after 2 seconds
+      setTimeout(() => {
+        if (isGameRunning) {
+          gameStatusElement.textContent = 'Keep clicking your number!';
+          gameStatusElement.className = 'text-gray-400 text-lg mb-4';
+        }
+      }, 2000);
+    }
+
+    // Stop game function
+    function stopGame() {
+      isGameRunning = false;
+      clearInterval(gameInterval);
+      clearInterval(timerInterval);
+
+      document.getElementById('startBtn').classList.remove('hidden');
+      document.getElementById('stopBtn').classList.add('hidden');
+      document.getElementById('numberButtons').innerHTML = '';
+
+      // Update high score
+      if (score > highScore) {
+        highScore = score;
+        localStorage.setItem('numberGameHighScore', highScore);
+        document.getElementById('highScore').textContent = highScore;
+        document.getElementById('gameStatus').textContent = `🏆 NEW HIGH SCORE! You scored ${score} points in ${gameTime} seconds!`;
+        document.getElementById('gameStatus').className = 'text-yellow-400 text-lg mb-4 font-bold';
+      } else {
+        document.getElementById('gameStatus').textContent = `Game Over! Final Score: ${score} points in ${gameTime} seconds`;
+        document.getElementById('gameStatus').className = 'text-blue-400 text-lg mb-4';
+      }
+    }
+
+    // Keyboard support
+    document.addEventListener('keydown', (e) => {
+      if (e.key >= '0' && e.key <= '9' && !isGameRunning) {
+        selectNumber(parseInt(e.key));
+      } else if (e.key === ' ' || e.key === 'Enter') {
+        e.preventDefault();
+        if (!isGameRunning && selectedNumber !== null) {
+          startGame();
+        } else if (isGameRunning) {
+          stopGame();
+        }
+      }
+    });
+  </script>
 </body>
 
 </html>
