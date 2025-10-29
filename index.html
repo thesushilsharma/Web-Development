@@ -2,439 +2,432 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="The projects portfolio of Sushil Sharma who has vast experience in web site design, development and optimization, and I am also proficient in WordPress.">
-    <meta name="author" content="Sushil Sharma">
-    <meta name="keywords"
-        content="HTML, CSS, Portfolio, Github, Github pages, Freelancer, Website Developement, JavaScript, PHP, Developer, Tailwind, Bootstrap, VSCode">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="icon" href="Favicon/undraw_personalization_triu.svg" type="image/svg+xml" sizes="any">
-    <title>The Sushil Sharma | Projects</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Portfolio of Sushil Sharma - Full-stack web developer with expertise in HTML, CSS, JavaScript, PHP, and WordPress." />
+  <meta name="author" content="Sushil Sharma" />
+  <meta property="og:title" content="Sushil Sharma - Web Developer Portfolio" />
+  <meta property="og:description" content="Explore innovative web development projects by Sushil Sharma" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thesushilsharma.github.io" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'sans': ['Inter', 'system-ui', 'sans-serif'],
+            'mono': ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="styles.css" rel="stylesheet" />
+  <link rel="icon" href="Favicon/undraw_personalization_triu.svg" type="image/svg+xml" />
+  <title>Sushil Sharma | Web Developer Portfolio</title>
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sushil Sharma",
+        "jobTitle": "Web Developer",
+        "description": "Full-stack web developer with expertise in HTML, CSS, JavaScript, PHP, and WordPress",
+        "url": "https://thesushilsharma.github.io",
+        "sameAs": ["https://github.com/thesushilsharma"],
+        "knowsAbout": [
+          "Web Development",
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "PHP",
+          "WordPress"
+        ]
+      }
+    </script>
 </head>
 
 <body>
-    <header class="text-gray-400 bg-gray-900 body-font">
-        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-            <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
-                <a class="mr-5 hover:text-white" href="https://thesushilsharma.github.io">Portfolio</a>
-                <a class="mr-5 hover:text-white" href="#">Clients</a>
-                <a class="mr-5 hover:text-white" href="#">Resume</a>
-                <a class="hover:text-white" href="#">Contact</a>
-            </nav>
-            <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-white lg:items-center lg:justify-center mb-4 md:mb-0"
-                href="https://thesushilsharma.github.io">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white p-2 bg-blue-500 rounded-full"
-                    width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M9.183 6.117a6 6 0 1 0 4.511 3.986"></path>
-                    <path d="M14.813 17.883a6 6 0 1 0 -4.496 -3.954"></path>
-                </svg>
-                <span class="ml-3 text-xl xl:block lg:hidden">The Sushil Sharma</span>
-            </a>
-            <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-                <button
-                    class="inline-flex items-center bg-blue-700 border-0 focus:outline-none hover:bg-blue-900 rounded-full text-white font-bold py-2 px-4 mt-4 md:mt-0">Get
-                    In Touch
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                        stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                </button>
-            </div>
+  <header class="text-gray-400 bg-gray-900 body-font sticky top-0 z-50 backdrop-blur-sm bg-opacity-95">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto space-x-5">
+        <a href="https://thesushilsharma.github.io"
+          class="hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded">Portfolio</a>
+        <a href="#projects"
+          class="hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded">Projects</a>
+        <a href="#contact"
+          class="hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded">Resume</a>
+        <a href="#contact"
+          class="hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded">Contact</a>
+      </nav>
+      <a href="https://thesushilsharma.github.io"
+        class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-white lg:items-center lg:justify-center mb-4 md:mb-0 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded transition-all duration-200">
+        <div class="w-10 h-10 text-white bg-blue-500 rounded-full flex items-center justify-center shadow-lg">
+          <span class="material-icons text-xl">code</span>
         </div>
-    </header>
-    <section class="text-gray-500 bg-gray-900 body-font">
-        <div class="container px-5 py-24 mx-auto">
-            <div class="text-center mb-20">
-                <h1 class="sm:text-3xl text-2xl font-medium title-font text-white mb-4">Web Developemnt
-                    <br class="hidden sm:block">Fun Projects
-                </h1>
-                <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-400 text-opacity-80">
-                    On what website to make, there are literally a zillion thoughts. Even the silliest ones may have a
-                    brilliant idea, theoretically..
-                </p>
-                <div class="flex mt-6 justify-center">
-                    <div class="w-16 h-1 rounded-full bg-blue-500 inline-flex"></div>
-                </div>
-            </div>
-            <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-                <div class="p-4 md:w-1/3 md:mb-0 mb-6 flex">
-                    <div
-                        class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-800 text-blue-400 mb-4 flex-shrink-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="w-6 h-6">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M8 9l3 3l-3 3" />
-                            <path d="M13 15l3 0" />
-                            <path d="M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
-                        </svg>
-                    </div>
-                    <div class="flex-grow pl-6">
-                        <h2 class="text-white text-lg title-font font-medium mb-2">Terminal Folio</h2>
-                        <p class="leading-relaxed text-base">A retro hacker-themed personal portfolio built to look and
-                            feel like a terminal. This is a minimalist, keyboard-navigable personal site built with ⚡
-                            speed and style.</p>
-                        <a href="Shellscape/" class="mt-3 text-blue-500 inline-flex items-center">Learn More
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="p-4 md:w-1/3 md:mb-0 mb-6 flex">
-                    <div
-                        class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-800 text-blue-400 mb-4 flex-shrink-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6">
-                            <path fill-rule="evenodd"
-                                d="M4.5 2A1.5 1.5 0 003 3.5v13A1.5 1.5 0 004.5 18h11a1.5 1.5 0 001.5-1.5V7.621a1.5 1.5 0 00-.44-1.06l-4.12-4.122A1.5 1.5 0 0011.378 2H4.5zm2.25 8.5a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-6.5zm0 3a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-6.5z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </div>
-                    <div class="flex-grow pl-6">
-                        <h2 class="text-white text-lg title-font font-medium mb-2">Contact Form</h2>
-                        <p class="leading-relaxed text-base">A webpage on a website that allows visitors to contact the
-                            website's owner. Name, address, and kind of remark forms are available on the page. Most
-                            corporate websites also provide email and mailing addresses; nevertheless, the contact form
-                            provides a quick and easy option for consumers to ask the firm inquiries.</p>
-                        <a href="Forms/" class="mt-3 text-blue-500 inline-flex items-center">Learn More
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="p-4 md:w-1/3 md:mb-0 mb-6 flex">
-                    <div
-                        class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-800 text-blue-400 mb-4 flex-shrink-0">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M4.649 3.084A1 1 0 015.163 4.4 13.95 13.95 0 004 10c0 1.993.416 3.886 1.164 5.6a1 1 0 01-1.832.8A15.95 15.95 0 012 10c0-2.274.475-4.44 1.332-6.4a1 1 0 011.317-.516zM12.96 7a3 3 0 00-2.342 1.126l-.328.41-.111-.279A2 2 0 008.323 7H8a1 1 0 000 2h.323l.532 1.33-1.035 1.295a1 1 0 01-.781.375H7a1 1 0 100 2h.039a3 3 0 002.342-1.126l.328-.41.111.279A2 2 0 0011.677 14H12a1 1 0 100-2h-.323l-.532-1.33 1.035-1.295A1 1 0 0112.961 9H13a1 1 0 100-2h-.039zm1.874-2.6a1 1 0 011.833-.8A15.95 15.95 0 0118 10c0 2.274-.475 4.44-1.332 6.4a1 1 0 11-1.832-.8A13.949 13.949 0 0016 10c0-1.993-.416-3.886-1.165-5.6z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                    <div class="flex-grow pl-6">
-                        <h2 class="text-white text-lg title-font font-medium mb-2">Number Game</h2>
-                        <p class="leading-relaxed text-base">We will be developing a Dice Game Project using HTML, CSS
-                            and JavaScript. The Dice Game is a game that is two-player based. Both players roll the dice
-                            and the player who earns the highest stage score will win the game.</p>
-                        <a href="Number-Game/" class="mt-3 text-blue-500 inline-flex items-center">Learn More
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <span class="ml-3 text-xl xl:block lg:hidden font-semibold">Sushil Sharma</span>
+      </a>
+      <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
+        <button onclick="scrollToContact()"
+          class="inline-flex items-center bg-blue-700 border-0 focus:outline-none hover:bg-blue-900 focus:ring-2 focus:ring-blue-300 rounded-full text-white font-semibold py-2 px-4 transition-all duration-200 transform hover:scale-105 shadow-lg">
+          Get In Touch
+          <span class="material-icons text-sm ml-1">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="projects" class="text-gray-500 bg-gray-900 body-font">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="text-center mb-20">
+          <h1 class="sm:text-5xl text-4xl font-bold font-sans text-white mb-4 tracking-tight">
+            Web Development
+            <span class="block text-blue-400 font-light">Creative Projects</span>
+          </h1>
+          <p class="text-lg leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-300 font-light">
+            Explore my collection of innovative web applications and creative
+            solutions built with modern technologies.
+          </p>
+          <div class="flex mt-6 justify-center">
+            <div class="w-16 h-1 rounded-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
+          </div>
         </div>
 
-        <div class="container px-5 py-24 mx-auto">
-
-            <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-
-                <div class="p-4 md:w-1/3 md:mb-0 mb-6 flex">
-                    <div
-                        class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-800 text-blue-400 mb-4 flex-shrink-0">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z">
-                            </path>
-                        </svg>
-                    </div>
-                    <div class="flex-grow pl-6">
-                        <h2 class="text-white text-lg title-font font-medium mb-2">Notes keeper</h2>
-                        <p class="leading-relaxed text-base">For future usage, to save notes and recover them..</p>
-                        <a href="Notes-Keeper/" class="mt-3 text-blue-500 inline-flex items-center">Learn More
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="p-4 md:w-1/3 md:mb-0 mb-6 flex">
-                    <div
-                        class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-800 text-blue-400 mb-4 flex-shrink-0">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.817 14.769 2.156 18 4.828 18h10.343c2.673 0 4.012-3.231 2.122-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.027 1.028a4 4 0 00-2.171.102l-.47.156a4 4 0 01-2.53 0l-.563-.187a1.993 1.993 0 00-.114-.035l1.063-1.063A3 3 0 009 8.172z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                    <div class="flex-grow pl-6">
-                        <h2 class="text-white text-lg title-font font-medium mb-2">Drink Water Reminder and Calculator
-                        </h2>
-                        <p class="leading-relaxed text-base">An Application that will remind us to periodically drink
-                            water and Depending on your weight, measure how much water you need.</p>
-                        <a href="Drink-Water-Reminder/" class="mt-3 text-blue-500 inline-flex items-center">Learn More
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="p-4 md:w-1/3 md:mb-0 mb-6 flex">
-                    <div
-                        class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-800 text-blue-400 mb-4 flex-shrink-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6">
-                            <path fill-rule="evenodd"
-                                d="M19 10.5a8.5 8.5 0 11-17 0 8.5 8.5 0 0117 0zM8.25 9.75A.75.75 0 019 9h.253a1.75 1.75 0 011.709 2.13l-.46 2.066a.25.25 0 00.245.304H11a.75.75 0 010 1.5h-.253a1.75 1.75 0 01-1.709-2.13l.46-2.066a.25.25 0 00-.245-.304H9a.75.75 0 01-.75-.75zM10 7a1 1 0 100-2 1 1 0 000 2z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </div>
-                    <div class="flex-grow pl-6">
-                        <h2 class="text-white text-lg title-font font-medium mb-2">CV using XML and XSLT</h2>
-                        <p class="leading-relaxed text-base">A personal resume website puts your name and your personal
-                            brand in full charge of you. It also improves your exposure and makes it easier for you to
-                            be identified online by clients, or even consumers.</p>
-                        <a href="CV with XML & XSLT/CV.xml" class="mt-3 text-blue-500 inline-flex items-center">Learn
-                            More
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container px-5 py-24 mx-auto">
-
-            <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-
-                <div class="p-4 md:w-1/3 md:mb-0 mb-6 flex">
-                    <div
-                        class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-800 text-blue-400 mb-4 flex-shrink-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6">
-                            <path
-                                d="M12 4.467c0-.405.262-.75.559-1.027.276-.257.441-.584.441-.94 0-.828-.895-1.5-2-1.5s-2 .672-2 1.5c0 .362.171.694.456.953.29.265.544.6.544.994a.968.968 0 01-1.024.974 39.655 39.655 0 01-3.014-.306.75.75 0 00-.847.847c.14.993.242 1.999.306 3.014A.968.968 0 014.447 10c-.393 0-.729-.253-.994-.544C3.194 9.17 2.862 9 2.5 9 1.672 9 1 9.895 1 11s.672 2 1.5 2c.356 0 .683-.165.94-.441.276-.297.622-.559 1.027-.559a.997.997 0 011.004 1.03 39.747 39.747 0 01-.319 3.734.75.75 0 00.64.842c1.05.146 2.111.252 3.184.318A.97.97 0 0010 16.948c0-.394-.254-.73-.545-.995C9.171 15.693 9 15.362 9 15c0-.828.895-1.5 2-1.5s2 .672 2 1.5c0 .356-.165.683-.441.94-.297.276-.559.622-.559 1.027a.998.998 0 001.03 1.005c1.337-.05 2.659-.162 3.961-.337a.75.75 0 00.644-.644c.175-1.302.288-2.624.337-3.961A.998.998 0 0016.967 12c-.405 0-.75.262-1.027.559-.257.276-.584.441-.94.441-.828 0-1.5-.895-1.5-2s.672-2 1.5-2c.362 0 .694.17.953.455.265.291.601.545.995.545a.97.97 0 00.976-1.024 41.159 41.159 0 00-.318-3.184.75.75 0 00-.842-.64c-1.228.164-2.473.271-3.734.319A.997.997 0 0112 4.467z" />
-                        </svg>
-                    </div>
-                    <div class="flex-grow pl-6">
-                        <h2 class="text-white text-lg title-font font-medium mb-2">Quiz game</h2>
-                        <p class="leading-relaxed text-base">How do I create a quiz with JavaScript? is, and with good
-                            purpose, one of the most popular questions asked by individuals studying web creation.
-                            Quizzes are enjoyable! They're a great way to learn about new topics, and they encourage you
-                            to interact with something fun and playful for your audience.</p>
-                        <a href="Quiz/Quiz2.html" class="mt-3 text-blue-500 inline-flex items-center">Learn More
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="p-4 md:w-1/3 md:mb-0 mb-6 flex">
-                    <div
-                        class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-800 text-blue-400 mb-4 flex-shrink-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6">
-                            <path fill-rule="evenodd"
-                                d="M2.5 4A1.5 1.5 0 001 5.5V6h18v-.5A1.5 1.5 0 0017.5 4h-15zM19 8.5H1v6A1.5 1.5 0 002.5 16h15a1.5 1.5 0 001.5-1.5v-6zM3 13.25a.75.75 0 01.75-.75h1.5a.75.75 0 010 1.5h-1.5a.75.75 0 01-.75-.75zm4.75-.75a.75.75 0 000 1.5h3.5a.75.75 0 000-1.5h-3.5z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </div>
-                    <div class="flex-grow pl-6">
-                        <h2 class="text-white text-lg title-font font-medium mb-2">Expense Tracker</h2>
-                        <p class="leading-relaxed text-base">Keeping track of expenses. Budget It</p>
-                        <a href="Expense-Tracker/" class="mt-3 text-blue-500 inline-flex items-center">Learn More
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="p-4 md:w-1/3 md:mb-0 mb-6 flex">
-                    <div
-                        class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-800 text-blue-400 mb-4 flex-shrink-0">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5.5 16a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 16h-8z"></path>
-                        </svg>
-                    </div>
-                    <div class="flex-grow pl-6">
-                        <h2 class="text-white text-lg title-font font-medium mb-2">Weather</h2>
-                        <p class="leading-relaxed text-base">A Basic Weather App</p>
-                        <a href="WeatherApi/" class="mt-3 text-blue-500 inline-flex items-center">Learn More
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container px-5 py-24 mx-auto">
-            <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-                <div class="p-4 md:w-1/3 md:mb-0 mb-6 flex">
-                    <div
-                        class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-800 text-blue-400 mb-4 flex-shrink-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6">
-                            <path
-                                d="M6.75.98l-.884.883a1.25 1.25 0 101.768 0L6.75.98zM13.25.98l-.884.883a1.25 1.25 0 101.768 0L13.25.98zM10 .98l.884.883a1.25 1.25 0 11-1.768 0L10 .98zM7.5 5.75a.75.75 0 00-1.5 0v.464c-1.179.305-2 1.39-2 2.622v.094c.1-.02.202-.038.306-.051A42.869 42.869 0 0110 8.5c1.93 0 3.83.129 5.694.379.104.013.206.03.306.051v-.094c0-1.232-.821-2.317-2-2.622V5.75a.75.75 0 00-1.5 0v.318a45.645 45.645 0 00-1.75-.062V5.75a.75.75 0 00-1.5 0v.256c-.586.01-1.17.03-1.75.062V5.75zM4.505 10.365A41.377 41.377 0 0110 10c1.863 0 3.697.124 5.495.365C16.967 10.562 18 11.838 18 13.28v.693a3.72 3.72 0 01-1.665-.393 5.222 5.222 0 00-4.67 0 3.722 3.722 0 01-3.33 0 5.222 5.222 0 00-4.67 0A3.72 3.72 0 012 13.972v-.693c0-1.441 1.033-2.716 2.505-2.914zM15.665 14.921a5.22 5.22 0 002.335.551V16.5a1.5 1.5 0 01-1.5 1.5h-13A1.5 1.5 0 012 16.5v-1.028c.8 0 1.6-.183 2.335-.551a3.722 3.722 0 013.33 0c1.47.735 3.2.735 4.67 0a3.722 3.722 0 013.33 0z" />
-                        </svg>
-                    </div>
-                    <div class="flex-grow pl-6">
-                        <h2 class="text-white text-lg title-font font-medium mb-2">Birthday Calender</h2>
-                        <p class="leading-relaxed text-base">This program will make the character photos visible when
-                            hovering over the date. It will also change the colors of the photos and highlight the
-                            birthday date.</p>
-                        <a href="Birthday_List/" class="mt-3 text-blue-500 inline-flex items-center">Learn
-                            More
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="p-4 md:w-1/3 md:mb-0 mb-6 flex">
-                    <div
-                        class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-800 text-blue-400 mb-4 flex-shrink-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6">
-                            <path fill-rule="evenodd"
-                                d="M9.25 3H3.5A1.5 1.5 0 002 4.5v4.75h3.365A2.75 2.75 0 019.25 5.362V3zM2 10.75v4.75A1.5 1.5 0 003.5 17h5.75v-4.876A4.75 4.75 0 015 14.75a.75.75 0 010-1.5 3.251 3.251 0 003.163-2.5H2zM10.75 17h5.75a1.5 1.5 0 001.5-1.5v-4.75h-6.163A3.251 3.251 0 0015 13.25a.75.75 0 010 1.5 4.75 4.75 0 01-4.25-2.626V17zM18 9.25V4.5A1.5 1.5 0 0016.5 3h-5.75v2.362a2.75 2.75 0 013.885 3.888H18zm-4.496-2.755a1.25 1.25 0 00-1.768 0c-.36.359-.526.999-.559 1.697-.01.228-.006.443.004.626.183.01.398.014.626.003.698-.033 1.338-.2 1.697-.559a1.25 1.25 0 000-1.767zm-5.24 0a1.25 1.25 0 00-1.768 1.767c.36.36 1 .526 1.697.56.228.01.443.006.626-.004.01-.183.015-.398.004-.626-.033-.698-.2-1.338-.56-1.697z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </div>
-                    <div class="flex-grow pl-6">
-                        <h2 class="text-white text-lg title-font font-medium mb-2">Wedding Invitation using XML and XSLT
-                        </h2>
-                        <p class="leading-relaxed text-base">A template for a wedding guest list will help you keep
-                            track of everybody you plan to invite to your wedding. It will not only help keep you
-                            organized, it is also a place where you can make sure that no invitation or note of thanks
-                            is missed.
-                            Such models can be as basic or as thorough as you want. You would need to enter simple data
-                            such as names and addresses, and anything from how many children are in the group to dietary
-                            requirements and more can be entered from there.</p>
-                        <a href="Wedding Card XML and XSLT/Wedding Card.xml"
-                            class="mt-3 text-blue-500 inline-flex items-center">Learn More
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="p-4 md:w-1/3 md:mb-0 mb-6 flex">
-                    <div
-                        class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-800 text-blue-400 mb-4 flex-shrink-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6">
-                            <path fill-rule="evenodd"
-                                d="M1 6a3 3 0 013-3h12a3 3 0 013 3v8a3 3 0 01-3 3H4a3 3 0 01-3-3V6zm4 1.5a2 2 0 114 0 2 2 0 01-4 0zm2 3a4 4 0 00-3.665 2.395.75.75 0 00.416 1A8.98 8.98 0 007 14.5a8.98 8.98 0 003.249-.604.75.75 0 00.416-1.001A4.001 4.001 0 007 10.5zm5-3.75a.75.75 0 01.75-.75h2.5a.75.75 0 010 1.5h-2.5a.75.75 0 01-.75-.75zm0 6.5a.75.75 0 01.75-.75h2.5a.75.75 0 010 1.5h-2.5a.75.75 0 01-.75-.75zm.75-4a.75.75 0 000 1.5h2.5a.75.75 0 000-1.5h-2.5z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </div>
-                    <div class="flex-grow pl-6">
-                        <h2 class="text-white text-lg title-font font-medium mb-2">Business Card</h2>
-                        <p class="leading-relaxed text-base">Business card in HTML and CSS.</p>
-                        <a href="Business-Card/" class="mt-3 text-blue-500 inline-flex items-center">Learn
-                            More
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container px-5 py-24 mx-auto">
-            <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-                <div class="p-4 md:w-1/3 md:mb-0 mb-6 flex">
-                    <div
-                        class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-800 text-blue-400 mb-4 flex-shrink-0">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                    <div class="flex-grow pl-6">
-                        <h2 class="text-white text-lg title-font font-medium mb-2">GitHub Search box</h2>
-                        <p class="leading-relaxed text-base">The Simple Search Form Tag makes it simple to search a
-                            GitHub repository.</p>
-                        <a href="Search-Form/" class="mt-3 text-blue-500 inline-flex items-center">Learn More
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid"></div>
+      </div>
     </section>
-    <footer class="text-gray-500 bg-gray-900 body-font">
-        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-            <a class="flex title-font font-medium items-center md:justify-start justify-center text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white p-2 bg-blue-500 rounded-full"
-                    width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M9.183 6.117a6 6 0 1 0 4.511 3.986"></path>
-                    <path d="M14.813 17.883a6 6 0 1 0 -4.496 -3.954"></path>
-                </svg>
-                <span class="ml-3 text-xl">The Sushil Sharma</span>
-            </a>
-            <p class="text-sm text-gray-600 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">
-            <p> Copyright &copy; 2019-
-                <script>document.write(new Date().getFullYear())</script>
-            </p>
-            <a href="" class="text-gray-500 ml-1" target="_blank" rel="noopener noreferrer">The Sushil Sharma All Rights
-                Reserved</a>
-            </p>
-            <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-                <a class="text-gray-600">
-                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        class="w-5 h-5" viewBox="0 0 24 24">
-                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-                    </svg>
-                </a>
-                <a class="ml-3 text-gray-600">
-                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        class="w-5 h-5" viewBox="0 0 24 24">
-                        <path
-                            d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
-                        </path>
-                    </svg>
-                </a>
-                <a class="ml-3 text-gray-600">
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                        stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-                    </svg>
-                </a>
-                <a class="ml-3 text-gray-600">
-                    <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                        stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
-                        <path stroke="none"
-                            d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
-                        </path>
-                        <circle cx="4" cy="4" r="2" stroke="none"></circle>
-                    </svg>
-                </a>
-            </span>
+
+    <!-- Contact Section -->
+    <section id="contact" class="text-gray-400 bg-gray-800 body-font">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="sm:text-4xl text-3xl font-bold font-sans text-white mb-4 tracking-tight"></h2>
+          Let's Work Together
+          </h2>
+          <p class="text-lg leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-300">
+            Ready to bring your ideas to life? I'm always excited to work on
+            new projects and collaborate with amazing people.
+          </p>
         </div>
-    </footer>
+        <div class="flex justify-center">
+          <div class="bg-gray-900 rounded-lg p-8 max-w-md w-full">
+            <div class="text-center">
+              <h3 class="text-white text-xl font-semibold mb-4">
+                Get In Touch
+              </h3>
+              <p class="text-gray-300 mb-6">
+                Feel free to reach out for collaborations, questions, or just
+                to say hello!
+              </p>
+              <div class="space-y-4">
+                <a href="mailto:contact@sushilsharma.dev"
+                  class="block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  Send Email
+                </a>
+                <a href="https://github.com/thesushilsharma"
+                  class="block w-full bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                  target="_blank" rel="noopener noreferrer">
+                  View GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-gray-500 bg-gray-900 body-font">
+    <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+      <a href="https://thesushilsharma.github.io" class="flex title-font font-medium items-center text-white">
+        <div class="w-10 h-10 text-white bg-blue-500 rounded-full flex items-center justify-center shadow-lg">
+          <span class="material-icons text-xl">code</span>
+        </div>
+        <span class="ml-3 text-xl font-semibold">Sushil Sharma</span>
+      </a>
+      <p class="text-sm text-gray-600 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">
+        Copyright &copy; 2019-<span id="currentYear"></span>
+        <a href="https://thesushilsharma.github.io"
+          class="text-gray-500 ml-1 hover:text-gray-300 transition-colors duration-200" target="_blank"
+          rel="noopener">Sushil Sharma. All Rights Reserved</a>
+      </p>
+      <div class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start space-x-3" id="social-links">
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Project data with Google Material Icons
+    const projects = [
+      {
+        title: "Terminal Portfolio",
+        desc: "A retro hacker-themed personal portfolio with keyboard navigation and command-line interface.",
+        link: "Shellscape/",
+        tags: ["HTML", "CSS", "JavaScript"],
+        gradient: "from-blue-500 to-purple-500",
+        icon: "terminal",
+        iconType: "material"
+      },
+      {
+        title: "Contact Form System",
+        desc: "A comprehensive contact form solution with validation and responsive design.",
+        link: "Forms/",
+        tags: ["HTML5", "CSS3", "Forms"],
+        gradient: "from-green-500 to-blue-500",
+        icon: "contact_mail",
+        iconType: "material"
+      },
+      {
+        title: "Interactive Number Game",
+        desc: "A two-player Number game with dynamic scoring and engaging gameplay mechanics.",
+        link: "Number-Game/",
+        tags: ["JavaScript", "Game Logic", "Interactive"],
+        gradient: "from-red-500 to-pink-500",
+        icon: "casino",
+        iconType: "material"
+      },
+      {
+        title: "Notes Keeper",
+        desc: "Save and recover notes for future usage with local storage.",
+        link: "Notes-Keeper/",
+        tags: ["JavaScript", "Storage", "Utility"],
+        gradient: "from-yellow-500 to-orange-500",
+        icon: "note_add",
+        iconType: "material"
+      },
+      {
+        title: "Water Reminder",
+        desc: "Application to remind periodic water intake with weight-based calculations.",
+        link: "Drink-Water-Reminder/",
+        tags: ["JavaScript", "Health", "Calculator"],
+        gradient: "from-cyan-500 to-blue-500",
+        icon: "water_drop",
+        iconType: "material"
+      },
+      {
+        title: "BMI Calculator",
+        desc: "Application to calculate body mass index based on height, weight etc",
+        link: "BMI/",
+        tags: ["JavaScript", "Health", "Calculator"],
+        gradient: "from-cyan-500 to-lime-500",
+        icon: "monitor_weight",
+        iconType: "material"
+      },
+      {
+        title: "CV with XML & XSLT",
+        desc: "Personal resume website using XML and XSLT transformation.",
+        link: "CV/index.xml",
+        tags: ["XML", "XSLT", "Resume"],
+        gradient: "from-purple-500 to-indigo-500",
+        icon: "description",
+        iconType: "material"
+      },
+      {
+        title: "Quiz Game",
+        desc: "Interactive quiz application with JavaScript for learning and entertainment.",
+        link: "Quiz/Quiz2.html",
+        tags: ["JavaScript", "Quiz", "Interactive"],
+        gradient: "from-pink-500 to-rose-500",
+        icon: "quiz",
+        iconType: "material"
+      },
+      {
+        title: "Expense Tracker",
+        desc: "Keep track of expenses and budget management tool.",
+        link: "Expense-Tracker/",
+        tags: ["JavaScript", "Finance", "Tracker"],
+        gradient: "from-emerald-500 to-teal-500",
+        icon: "account_balance_wallet",
+        iconType: "material"
+      },
+      {
+        title: "Weather App",
+        desc: "Basic weather application with API integration.",
+        link: "WeatherApi/",
+        tags: ["JavaScript", "API", "Weather"],
+        gradient: "from-sky-500 to-blue-500",
+        icon: "wb_sunny",
+        iconType: "material"
+      },
+      {
+        title: "Birthday Calendar",
+        desc: "Interactive calendar with birthday reminders and photo display.",
+        link: "Birthday_List/",
+        tags: ["JavaScript", "Calendar", "Interactive"],
+        gradient: "from-rose-500 to-pink-500",
+        icon: "cake",
+        iconType: "material"
+      },
+      {
+        title: "Wedding Invitation",
+        desc: "Wedding guest list template using XML and XSLT.",
+        link: "Save-The-Date/index.xml",
+        tags: ["XML", "XSLT", "Template"],
+        gradient: "from-violet-500 to-purple-500",
+        icon: "favorite",
+        iconType: "material"
+      },
+      {
+        title: "Business Card",
+        desc: "Professional business card design in HTML and CSS.",
+        link: "Business-Card/",
+        tags: ["HTML", "CSS", "Design"],
+        gradient: "from-gray-500 to-slate-500",
+        icon: "badge",
+        iconType: "material"
+      },
+      {
+        title: "GitHub Search",
+        desc: "Simple search form for GitHub repositories.",
+        link: "Search-Form/",
+        tags: ["JavaScript", "Search", "GitHub"],
+        gradient: "from-indigo-500 to-blue-500",
+        icon: "search",
+        iconType: "material"
+      },
+    ];
+
+    // Social links data with brand icons (keeping SVG for brand consistency)
+    const socialLinks = [
+      {
+        name: "Facebook",
+        url: "#",
+        icon: "facebook",
+        iconType: "brand"
+      },
+      {
+        name: "Twitter",
+        url: "#",
+        icon: "𝕏",
+        iconType: "text"
+      },
+      {
+        name: "Instagram",
+        url: "#",
+        icon: "photo_camera",
+        iconType: "material"
+      },
+      {
+        name: "GitHub",
+        url: "https://github.com/thesushilsharma",
+        icon: "code",
+        iconType: "material"
+      },
+      {
+        name: "LinkedIn",
+        url: "#",
+        icon: "work",
+        iconType: "material"
+      },
+    ];
+
+    // Generate project cards
+    function generateProjects() {
+      const grid = document.getElementById("projects-grid");
+      grid.innerHTML = projects
+        .map(
+          (project) => `
+                <article class="project-card bg-gray-800 rounded-lg p-6 hover:bg-gray-750 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl font-sans">
+                    <div class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gradient-to-r ${project.gradient} text-white mb-4 shadow-lg">
+                        <span class="material-icons text-2xl">${project.icon}</span>
+                    </div>
+                    <h2 class="text-white text-xl font-semibold mb-3 font-sans">${project.title}</h2>
+                    <p class="text-gray-300 mb-4 leading-relaxed">${project.desc}</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        ${project.tags
+              .map(
+                (tag) =>
+                  `<span class="px-3 py-1 bg-blue-600/80 hover:bg-blue-600 text-white text-xs rounded-full font-medium transition-colors duration-200">${tag}</span>`
+              )
+              .join("")}
+                    </div>
+                    <a href="${project.link}" class="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded font-medium">
+                        Explore Project
+                        <span class="material-icons text-sm ml-1">arrow_forward</span>
+                    </a>
+                </article>
+            `
+        )
+        .join("");
+    }
+
+    // Generate social links
+    function generateSocialLinks() {
+      const container = document.getElementById("social-links");
+      container.innerHTML = socialLinks
+        .map(
+          (social) => `
+                <a href="${social.url}" class="text-gray-600 hover:text-blue-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded p-2 hover:bg-gray-800/50" aria-label="${social.name}" ${social.url.startsWith("http") ? 'target="_blank" rel="noopener"' : ""}>
+                    ${social.iconType === 'material'
+              ? `<span class="material-icons text-xl">${social.icon}</span>`
+              : social.iconType === 'text'
+                ? `<span class="text-lg font-bold">${social.icon}</span>`
+                : `<span class="text-lg">📘</span>`
+            }
+                </a>
+            `
+        )
+        .join("");
+    }
+
+    // Initialize
+    document.addEventListener("DOMContentLoaded", function () {
+      generateProjects();
+      generateSocialLinks();
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) target.scrollIntoView({ behavior: "smooth" });
+        });
+      });
+
+      // Intersection observer for animations
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = "1";
+              entry.target.style.transform = "translateY(0)";
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      document.querySelectorAll(".project-card").forEach((card) => {
+        card.style.opacity = "0";
+        card.style.transform = "translateY(20px)";
+        card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+        observer.observe(card);
+      });
+    });
+
+    function scrollToContact() {
+      document
+        .getElementById("contact")
+        .scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
 </body>
 
 </html>
