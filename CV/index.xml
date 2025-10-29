@@ -24,44 +24,52 @@
 <cv>
 	<me >
 		<name>Sushil Sharma</name>
-		<address>Lost in Himalayas</address>
-		<telephone>100</telephone>
+		<address>Himalayan Valley, Nepal</address>
+		<telephone>+977-9841-234567</telephone>
 		<email>sushilsharma@duck.com</email>
 	</me>
 	<education>
 		<qualification >
-			<organization>UOWD</organization>
-			<type>UG</type>
+			<organization>University of Wollongong Dubai</organization>
+			<type>Bachelor of Computer Science</type>
 			<from>2018</from>
-			<to>2023*</to>
+			<to>2023</to>
 		</qualification>
 		<qualification>
-			<organization>CBSE</organization>
-			<type>Higher Education</type>
+			<organization>CBSE Board</organization>
+			<type>Higher Secondary Education</type>
 			<from>2005</from>
 			<to>2017</to>
 		</qualification>
 	</education>
 	<employment>
 		<experience>
-			<organization>UOWD SRC </organization>
-			<job_title>General Memeber</job_title>
+			<organization>UOWD Student Representative Council</organization>
+			<job_title>General Member</job_title>
 			<from >2019</from>
 			<to>2021</to>
 		</experience>
 		<experience>
-			<organization>Freelancer</organization>
-			<job_title>Web Master</job_title>
+			<organization>Freelance Web Development</organization>
+			<job_title>Full Stack Developer</job_title>
 			<from>2019</from>
-			<to>2022*</to>			
+			<to>Present</to>			
+		</experience>
+		<experience>
+			<organization>Tech Startup Inc.</organization>
+			<job_title>Junior Software Engineer</job_title>
+			<from>2022</from>
+			<to>Present</to>			
 		</experience>
 	</employment>
 	<hobandint>
 		<ul>
 			<li>VideoGraphy</li>
 			<li>Programming</li>
-			<li>Hacker</li>
-			<li>Blog</li>
+			<li>Cybersecurity</li>
+			<li>Technical Writing</li>
+			<li>Photography</li>
+			<li>Mountain Trekking</li>
 		</ul>
 	</hobandint>
 </cv>
