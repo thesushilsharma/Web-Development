@@ -1,47 +1,194 @@
-// Storage Configuration using localStorage
-const STORAGE_KEY = 'noteskeeper_data';
-const COUNTER_KEY = 'noteskeeper_counter';
+// IndexedDB Configuration
+const DB_NAME = 'NotesKeeperDB';
+const DB_VERSION = 1;
+const STORE_NAME = 'notes';
 
-// Initialize Storage
-function initializeStorage() {
-    if (!localStorage.getItem(STORAGE_KEY)) {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify([]));
-    }
-    if (!localStorage.getItem(COUNTER_KEY)) {
-        localStorage.setItem(COUNTER_KEY, '0');
-    }
+let db = null;
+
+// IndexedDB Helper Functions
+function initializeDB() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open(DB_NAME, DB_VERSION);
+
+        request.onerror = () => {
+            console.error('Database failed to open');
+            reject(request.error);
+        };
+
+        request.onsuccess = () => {
+            db = request.result;
+            console.log('Database opened successfully');
+            resolve(db);
+        };
+
+        request.onupgradeneeded = (e) => {
+            db = e.target.result;
+
+            // Create object store if it doesn't exist
+            if (!db.objectStoreNames.contains(STORE_NAME)) {
+                const objectStore = db.createObjectStore(STORE_NAME, {
+                    keyPath: 'id',
+                    autoIncrement: true
+                });
+
+                // Create indexes for better querying
+                objectStore.createIndex('category', 'category', { unique: false });
+                objectStore.createIndex('created_at', 'created_at', { unique: false });
+                objectStore.createIndex('is_important', 'is_important', { unique: false });
+
+                console.log('Database setup complete');
+            }
+        };
+    });
 }
 
-// Storage Helper Functions
+// Get all notes from IndexedDB
 function getAllNotes() {
-    try {
-        return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-    } catch (error) {
-        console.error('Error reading notes:', error);
-        return [];
-    }
+    return new Promise((resolve, reject) => {
+        if (!db) {
+            reject(new Error('Database not initialized'));
+            return;
+        }
+
+        const transaction = db.transaction([STORE_NAME], 'readonly');
+        const objectStore = transaction.objectStore(STORE_NAME);
+        const request = objectStore.getAll();
+
+        request.onsuccess = () => {
+            // Sort by importance and creation date
+            const notes = request.result.sort((a, b) => {
+                if (a.is_important !== b.is_important) {
+                    return b.is_important - a.is_important;
+                }
+                return new Date(b.created_at) - new Date(a.created_at);
+            });
+            resolve(notes);
+        };
+
+        request.onerror = () => {
+            reject(request.error);
+        };
+    });
 }
 
-function saveNotes(notes) {
-    try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(notes));
-        return true;
-    } catch (error) {
-        console.error('Error saving notes:', error);
-        showNotification('Error saving notes. Storage might be full.', 'error');
-        return false;
-    }
+// Add a new note to IndexedDB
+function addNote(noteData) {
+    return new Promise((resolve, reject) => {
+        if (!db) {
+            reject(new Error('Database not initialized'));
+            return;
+        }
+
+        const transaction = db.transaction([STORE_NAME], 'readwrite');
+        const objectStore = transaction.objectStore(STORE_NAME);
+
+        const note = {
+            ...noteData,
+            created_at: new Date().toISOString(),
+            updated_at: new Date().toISOString(),
+            is_important: false
+        };
+
+        const request = objectStore.add(note);
+
+        request.onsuccess = () => {
+            resolve(request.result);
+        };
+
+        request.onerror = () => {
+            reject(request.error);
+        };
+    });
 }
 
-function getNextId() {
-    const currentId = parseInt(localStorage.getItem(COUNTER_KEY)) || 0;
-    const nextId = currentId + 1;
-    localStorage.setItem(COUNTER_KEY, nextId.toString());
-    return nextId;
+// Update an existing note in IndexedDB
+function updateNote(id, updates) {
+    return new Promise((resolve, reject) => {
+        if (!db) {
+            reject(new Error('Database not initialized'));
+            return;
+        }
+
+        const transaction = db.transaction([STORE_NAME], 'readwrite');
+        const objectStore = transaction.objectStore(STORE_NAME);
+
+        // First get the existing note
+        const getRequest = objectStore.get(id);
+
+        getRequest.onsuccess = () => {
+            const note = getRequest.result;
+            if (!note) {
+                reject(new Error('Note not found'));
+                return;
+            }
+
+            // Update the note with new data
+            const updatedNote = {
+                ...note,
+                ...updates,
+                updated_at: new Date().toISOString()
+            };
+
+            const putRequest = objectStore.put(updatedNote);
+
+            putRequest.onsuccess = () => {
+                resolve(updatedNote);
+            };
+
+            putRequest.onerror = () => {
+                reject(putRequest.error);
+            };
+        };
+
+        getRequest.onerror = () => {
+            reject(getRequest.error);
+        };
+    });
 }
 
-// Initialize storage on load
-initializeStorage();
+// Delete a note from IndexedDB
+function deleteNoteFromDB(id) {
+    return new Promise((resolve, reject) => {
+        if (!db) {
+            reject(new Error('Database not initialized'));
+            return;
+        }
+
+        const transaction = db.transaction([STORE_NAME], 'readwrite');
+        const objectStore = transaction.objectStore(STORE_NAME);
+        const request = objectStore.delete(id);
+
+        request.onsuccess = () => {
+            resolve();
+        };
+
+        request.onerror = () => {
+            reject(request.error);
+        };
+    });
+}
+
+// Clear all notes from IndexedDB
+function clearAllNotes() {
+    return new Promise((resolve, reject) => {
+        if (!db) {
+            reject(new Error('Database not initialized'));
+            return;
+        }
+
+        const transaction = db.transaction([STORE_NAME], 'readwrite');
+        const objectStore = transaction.objectStore(STORE_NAME);
+        const request = objectStore.clear();
+
+        request.onsuccess = () => {
+            resolve();
+        };
+
+        request.onerror = () => {
+            reject(request.error);
+        };
+    });
+}
 
 // Global variables
 let currentFilter = 'all';
@@ -94,26 +241,31 @@ function showNotification(message, type = 'success') {
 }
 
 // Enhanced function to display notes
-function updateNotes() {
+async function updateNotes() {
     const container = document.getElementById("savednotes");
     const emptyState = document.getElementById("emptyState");
 
-    allNotes = getAllNotes();
-    const filteredNotes = filterNotesByCategory(allNotes);
+    try {
+        allNotes = await getAllNotes();
+        const filteredNotes = filterNotesByCategory(allNotes);
 
-    if (filteredNotes.length === 0) {
+        if (filteredNotes.length === 0) {
+            container.innerHTML = "";
+            emptyState.classList.remove('hidden');
+            return;
+        }
+
+        emptyState.classList.add('hidden');
         container.innerHTML = "";
-        emptyState.classList.remove('hidden');
-        return;
+
+        filteredNotes.forEach(note => {
+            const noteElement = createNoteElement(note);
+            container.appendChild(noteElement);
+        });
+    } catch (error) {
+        console.error('Error loading notes:', error);
+        showNotification('Error loading notes', 'error');
     }
-
-    emptyState.classList.add('hidden');
-    container.innerHTML = "";
-
-    filteredNotes.forEach(note => {
-        const noteElement = createNoteElement(note);
-        container.appendChild(noteElement);
-    });
 }
 
 function createNoteElement(note) {
@@ -172,12 +324,12 @@ function filterNotes() {
 }
 
 // Display all notes
-function outputNotes() {
-    updateNotes();
+async function outputNotes() {
+    await updateNotes();
 }
 
 // Create new note
-function createNote() {
+async function createNote() {
     const title = document.getElementById("title").value.trim();
     const content = document.getElementById("note").value.trim();
     const category = document.getElementById("category").value;
@@ -194,45 +346,39 @@ function createNote() {
         return;
     }
 
-    const notes = getAllNotes();
-    const newNote = {
-        id: getNextId(),
-        title: title,
-        content: content,
-        category: category,
-        created_at: new Date().toISOString(),
-        updated_at: new Date().toISOString(),
-        is_important: false
-    };
+    try {
+        await addNote({
+            title: title,
+            content: content,
+            category: category
+        });
 
-    notes.push(newNote);
-
-    if (saveNotes(notes)) {
         showNotification("Note added successfully!");
         clearForm();
         clearDraft();
-        outputNotes();
+        await outputNotes();
+    } catch (error) {
+        console.error('Error creating note:', error);
+        showNotification("Error adding note", "error");
     }
 }
 
 // Toggle important status
-function toggleImportant(id, currentStatus) {
-    const notes = getAllNotes();
-    const noteIndex = notes.findIndex(note => note.id === id);
+async function toggleImportant(id, currentStatus) {
+    try {
+        const newStatus = !currentStatus;
+        await updateNote(id, { is_important: newStatus });
 
-    if (noteIndex !== -1) {
-        notes[noteIndex].is_important = !currentStatus;
-        notes[noteIndex].updated_at = new Date().toISOString();
-
-        if (saveNotes(notes)) {
-            showNotification(notes[noteIndex].is_important ? "Note marked as important" : "Note unmarked as important");
-            outputNotes();
-        }
+        showNotification(newStatus ? "Note marked as important" : "Note unmarked as important");
+        await outputNotes();
+    } catch (error) {
+        console.error('Error toggling importance:', error);
+        showNotification("Error updating note", "error");
     }
 }
 
 // Edit note (simplified version - could be enhanced with modal)
-function editNote(id) {
+async function editNote(id) {
     const note = allNotes.find(n => n.id === id);
     if (!note) return;
 
@@ -243,32 +389,32 @@ function editNote(id) {
     if (newContent === null) return;
 
     if (newTitle.trim() && newContent.trim()) {
-        const notes = getAllNotes();
-        const noteIndex = notes.findIndex(n => n.id === id);
+        try {
+            await updateNote(id, {
+                title: newTitle.trim(),
+                content: newContent.trim()
+            });
 
-        if (noteIndex !== -1) {
-            notes[noteIndex].title = newTitle.trim();
-            notes[noteIndex].content = newContent.trim();
-            notes[noteIndex].updated_at = new Date().toISOString();
-
-            if (saveNotes(notes)) {
-                showNotification("Note updated successfully!");
-                outputNotes();
-            }
+            showNotification("Note updated successfully!");
+            await outputNotes();
+        } catch (error) {
+            console.error('Error updating note:', error);
+            showNotification("Error updating note", "error");
         }
     }
 }
 
 // Delete individual note
-function deleteNote(id) {
+async function deleteNote(id) {
     if (!confirm("Are you sure you want to delete this note?")) return;
 
-    const notes = getAllNotes();
-    const filteredNotes = notes.filter(note => note.id !== id);
-
-    if (saveNotes(filteredNotes)) {
+    try {
+        await deleteNoteFromDB(id);
         showNotification("Note deleted successfully!");
-        outputNotes();
+        await outputNotes();
+    } catch (error) {
+        console.error('Error deleting note:', error);
+        showNotification("Error deleting note", "error");
     }
 }
 
@@ -291,13 +437,16 @@ function hideConfirmModal() {
 }
 
 // Clear all notes
-function clearDatabase() {
+async function clearDatabase() {
     hideConfirmModal();
 
-    if (saveNotes([])) {
-        localStorage.setItem(COUNTER_KEY, '0'); // Reset counter
+    try {
+        await clearAllNotes();
         showNotification("All notes cleared successfully!");
-        outputNotes();
+        await outputNotes();
+    } catch (error) {
+        console.error('Error clearing database:', error);
+        showNotification("Error clearing notes", "error");
     }
 }
 
@@ -322,9 +471,15 @@ document.getElementById('noteForm').addEventListener('submit', function (e) {
 });
 
 // Initialize app
-document.addEventListener('DOMContentLoaded', function () {
-    outputNotes();
-    document.getElementById("title").focus();
+document.addEventListener('DOMContentLoaded', async function () {
+    try {
+        await initializeDB();
+        await outputNotes();
+        document.getElementById("title").focus();
+    } catch (error) {
+        console.error('Failed to initialize app:', error);
+        showNotification('Failed to initialize database', 'error');
+    }
 });
 
 // Auto-save draft (optional enhancement)
