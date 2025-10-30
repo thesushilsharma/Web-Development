@@ -17,11 +17,11 @@ class WeatherApp {
 
     setupEventListeners() {
         // Temperature unit toggle
-        $('#unitchange').on('click', () => this.toggleTemperatureUnit());
+        document.getElementById('unitchange').addEventListener('click', () => this.toggleTemperatureUnit());
 
         // City search
-        $('#citySearch').on('keypress', (e) => {
-            if (e.which === 13) {
+        document.getElementById('citySearch').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
                 const city = e.target.value.trim();
                 if (city) {
                     this.getWeatherByCity(city);
@@ -30,9 +30,11 @@ class WeatherApp {
         });
 
         // Quick city buttons
-        $('.city-btn').on('click', (e) => {
-            const city = $(e.target).data('city');
-            this.getWeatherByCity(city);
+        document.querySelectorAll('.city-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const city = e.target.dataset.city;
+                this.getWeatherByCity(city);
+            });
         });
     }
 
@@ -44,13 +46,14 @@ class WeatherApp {
             month: 'long',
             day: 'numeric'
         };
-        $('#currentDate').text(now.toLocaleDateString('en-US', options));
+        document.getElementById('currentDate').textContent = now.toLocaleDateString('en-US', options);
 
         // Also update the time in weather card if it exists
-        if ($('#dateTime').length) {
+        const dateTimeElement = document.getElementById('dateTime');
+        if (dateTimeElement) {
             const timeString = this.formatTime(now);
             const dateString = this.formatDate(now);
-            $('#dateTime').html(`${timeString}<br><span class="text-sm text-white/70">${dateString}</span>`);
+            dateTimeElement.innerHTML = `${timeString}<br><span class="text-sm text-white/70">${dateString}</span>`;
         }
     }
 
@@ -132,7 +135,7 @@ class WeatherApp {
 
             const data = await response.json();
             this.displayWeatherDataWttr(data, city);
-            $('#citySearch').val('');
+            document.getElementById('citySearch').value = '';
         } catch (error) {
             console.error('Error fetching weather:', error);
             this.showError(`Unable to find weather data for "${city}". Please check the city name and try again.`);
@@ -164,31 +167,31 @@ class WeatherApp {
 
         // Location
         const locationName = cityName || `${nearest.areaName[0].value}, ${nearest.country[0].value}`;
-        $('.weather-location').text(locationName);
+        document.querySelector('.weather-location').textContent = locationName;
 
         // Temperature
         const temp = parseInt(current.temp_C);
-        $('.temp').text(temp);
-        $('.temp-type').text('°C');
+        document.querySelector('.temp').textContent = temp;
+        document.querySelector('.temp-type').textContent = '°C';
 
         // Weather description and icon
-        $('.weather-description').text(current.weatherDesc[0].value);
+        document.querySelector('.weather-description').textContent = current.weatherDesc[0].value;
 
         // Use wttr.in weather icons or fallback to emoji
         const iconUrl = this.createWeatherIconFromDescription(current.weatherDesc[0].value);
-        $('.weatherIcon').attr('src', iconUrl);
+        document.querySelector('.weatherIcon').src = iconUrl;
 
         // Weather details
-        $('.pressure').text(`${current.pressure} hPa`);
-        $('.humidity').text(`${current.humidity}%`);
-        $('.windSpeed').text(`${current.windspeedKmph} km/h`);
+        document.querySelector('.pressure').textContent = `${current.pressure} hPa`;
+        document.querySelector('.humidity').textContent = `${current.humidity}%`;
+        document.querySelector('.windSpeed').textContent = `${current.windspeedKmph} km/h`;
 
         // Date and timezone - better formatting
         const now = new Date();
         const timeString = this.formatTime(now);
         const dateString = this.formatDate(now);
 
-        $('#dateTime').html(`${timeString}<br><span class="text-sm text-white/70">${dateString}</span>`);
+        document.getElementById('dateTime').innerHTML = `${timeString}<br><span class="text-sm text-white/70">${dateString}</span>`;
 
         // Get timezone info
         const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -198,14 +201,16 @@ class WeatherApp {
         const offsetSign = timezoneOffset <= 0 ? '+' : '-';
         const offsetString = `UTC${offsetSign}${offsetHours.toString().padStart(2, '0')}:${offsetMinutes.toString().padStart(2, '0')}`;
 
-        $('#timezone').html(`${timezone}<br><span class="text-sm text-white/70">${offsetString}</span>`);
+        document.getElementById('timezone').innerHTML = `${timezone}<br><span class="text-sm text-white/70">${offsetString}</span>`;
 
         // Add weather-based background effects
         this.updateBackgroundEffect(current.weatherDesc[0].value);
 
         // Show success state
-        $('.weather-card').removeClass('error-state').addClass('success-state');
-        setTimeout(() => $('.weather-card').removeClass('success-state'), 2000);
+        const weatherCard = document.querySelector('.weather-card');
+        weatherCard.classList.remove('error-state');
+        weatherCard.classList.add('success-state');
+        setTimeout(() => weatherCard.classList.remove('success-state'), 2000);
     }
 
     displayWeatherDataOpenMeteo(data, lat, lon, locationName = null) {
@@ -228,38 +233,38 @@ class WeatherApp {
 
         // Location - use provided name or get from reverse geocoding
         if (locationName) {
-            $('.weather-location').text(locationName);
+            document.querySelector('.weather-location').textContent = locationName;
         } else {
             this.getLocationName(lat, lon);
         }
 
         // Temperature
         const temp = Math.round(data.current_weather.temperature);
-        $('.temp').text(temp);
-        $('.temp-type').text('°C');
+        document.querySelector('.temp').textContent = temp;
+        document.querySelector('.temp-type').textContent = '°C';
 
         // Weather description and icon
         const weatherDesc = this.getWeatherDescription(data.current_weather.weathercode);
-        $('.weather-description').text(weatherDesc);
+        document.querySelector('.weather-description').textContent = weatherDesc;
 
         // Set weather icon based on weather code
         const iconUrl = this.getWeatherIcon(data.current_weather.weathercode, data.current_weather.is_day);
-        $('.weatherIcon').attr('src', iconUrl);
+        document.querySelector('.weatherIcon').src = iconUrl;
 
         // Weather details
         const pressure = data.hourly.surface_pressure ? Math.round(data.hourly.surface_pressure[0]) : 1013;
         const humidity = data.hourly.relative_humidity_2m ? Math.round(data.hourly.relative_humidity_2m[0]) : 50;
 
-        $('.pressure').text(`${pressure} hPa`);
-        $('.humidity').text(`${humidity}%`);
-        $('.windSpeed').text(`${Math.round(data.current_weather.windspeed)} km/h`);
+        document.querySelector('.pressure').textContent = `${pressure} hPa`;
+        document.querySelector('.humidity').textContent = `${humidity}%`;
+        document.querySelector('.windSpeed').textContent = `${Math.round(data.current_weather.windspeed)} km/h`;
 
         // Date and timezone - better formatting
         const now = new Date();
         const timeString = this.formatTime(now);
         const dateString = this.formatDate(now);
 
-        $('#dateTime').html(`${timeString}<br><span class="text-sm text-white/70">${dateString}</span>`);
+        document.getElementById('dateTime').innerHTML = `${timeString}<br><span class="text-sm text-white/70">${dateString}</span>`;
 
         // Get timezone info
         const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -269,22 +274,24 @@ class WeatherApp {
         const offsetSign = timezoneOffset <= 0 ? '+' : '-';
         const offsetString = `UTC${offsetSign}${offsetHours.toString().padStart(2, '0')}:${offsetMinutes.toString().padStart(2, '0')}`;
 
-        $('#timezone').html(`${timezone}<br><span class="text-sm text-white/70">${offsetString}</span>`);
+        document.getElementById('timezone').innerHTML = `${timezone}<br><span class="text-sm text-white/70">${offsetString}</span>`;
 
         // Add weather-based background effects
         this.updateBackgroundEffect(this.getWeatherCondition(data.current_weather.weathercode));
 
         // Show success state
-        $('.weather-card').removeClass('error-state').addClass('success-state');
-        setTimeout(() => $('.weather-card').removeClass('success-state'), 2000);
+        const weatherCard = document.querySelector('.weather-card');
+        weatherCard.classList.remove('error-state');
+        weatherCard.classList.add('success-state');
+        setTimeout(() => weatherCard.classList.remove('success-state'), 2000);
     }
 
     async getLocationName(lat, lon) {
         try {
             // Simple location name based on coordinates (you could use a reverse geocoding API)
-            $('.weather-location').text(`${lat.toFixed(2)}°, ${lon.toFixed(2)}°`);
+            document.querySelector('.weather-location').textContent = `${lat.toFixed(2)}°, ${lon.toFixed(2)}°`;
         } catch (error) {
-            $('.weather-location').text('Current Location');
+            document.querySelector('.weather-location').textContent = 'Current Location';
         }
     }
 
@@ -480,82 +487,93 @@ class WeatherApp {
     toggleTemperatureUnit() {
         if (!this.currentData) return;
 
-        const tempElement = $('.temp');
-        const typeElement = $('.temp-type');
+        const tempElement = document.querySelector('.temp');
+        const typeElement = document.querySelector('.temp-type');
 
         if (this.isMetric) {
             // Convert to Fahrenheit
             const fahrenheit = Math.round((this.currentData.main.temp * 9 / 5) + 32);
-            tempElement.text(fahrenheit);
-            typeElement.text('°F');
+            tempElement.textContent = fahrenheit;
+            typeElement.textContent = '°F';
             this.isMetric = false;
         } else {
             // Convert to Celsius
             const celsius = Math.round(this.currentData.main.temp);
-            tempElement.text(celsius);
-            typeElement.text('°C');
+            tempElement.textContent = celsius;
+            typeElement.textContent = '°C';
             this.isMetric = true;
         }
 
         // Add animation effect
-        $('#unitchange').addClass('animate-pulse-glow');
-        setTimeout(() => $('#unitchange').removeClass('animate-pulse-glow'), 1000);
+        const unitChangeElement = document.getElementById('unitchange');
+        unitChangeElement.classList.add('animate-pulse-glow');
+        setTimeout(() => unitChangeElement.classList.remove('animate-pulse-glow'), 1000);
     }
 
     updateBackgroundEffect(weatherMain) {
-        const body = $('body');
-        body.removeClass('weather-clear weather-clouds weather-rain weather-snow weather-thunderstorm');
+        const body = document.body;
+        body.classList.remove('weather-clear', 'weather-clouds', 'weather-rain', 'weather-snow', 'weather-thunderstorm');
 
         const weather = weatherMain.toLowerCase();
 
         if (weather.includes('clear') || weather.includes('sunny')) {
-            body.addClass('weather-clear');
+            body.classList.add('weather-clear');
         } else if (weather.includes('cloud') || weather.includes('overcast')) {
-            body.addClass('weather-clouds');
+            body.classList.add('weather-clouds');
         } else if (weather.includes('rain') || weather.includes('drizzle') || weather.includes('shower')) {
-            body.addClass('weather-rain');
+            body.classList.add('weather-rain');
         } else if (weather.includes('snow') || weather.includes('blizzard')) {
-            body.addClass('weather-snow');
+            body.classList.add('weather-snow');
         } else if (weather.includes('thunder') || weather.includes('storm')) {
-            body.addClass('weather-thunderstorm');
+            body.classList.add('weather-thunderstorm');
         } else {
             // Default to clear for unknown conditions
-            body.addClass('weather-clear');
+            body.classList.add('weather-clear');
         }
     }
 
     showLoading() {
-        $('#loading').removeClass('hidden').addClass('flex');
+        const loading = document.getElementById('loading');
+        loading.classList.remove('hidden');
+        loading.classList.add('flex');
     }
 
     hideLoading() {
-        $('#loading').addClass('hidden').removeClass('flex');
+        const loading = document.getElementById('loading');
+        loading.classList.add('hidden');
+        loading.classList.remove('flex');
     }
 
     showError(message) {
-        $('.weather-card').addClass('error-state');
+        document.querySelector('.weather-card').classList.add('error-state');
 
         // Create error notification
-        const errorDiv = $(`
-            <div class="fixed top-4 right-4 bg-red-500/90 backdrop-blur-md text-white px-6 py-4 rounded-lg shadow-lg z-50 animate-slide-up">
-                <div class="flex items-center">
-                    <span class="material-symbols-outlined mr-3">warning</span>
-                    <span>${message}</span>
-                </div>
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'fixed top-4 right-4 bg-red-500/90 backdrop-blur-md text-white px-6 py-4 rounded-lg shadow-lg z-50 animate-slide-up';
+        errorDiv.innerHTML = `
+            <div class="flex items-center">
+                <span class="material-symbols-outlined mr-3">warning</span>
+                <span>${message}</span>
             </div>
-        `);
+        `;
 
-        $('body').append(errorDiv);
+        document.body.appendChild(errorDiv);
 
         // Remove error after 5 seconds
         setTimeout(() => {
-            errorDiv.fadeOut(() => errorDiv.remove());
-            $('.weather-card').removeClass('error-state');
+            errorDiv.style.opacity = '0';
+            errorDiv.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+                if (errorDiv.parentNode) {
+                    errorDiv.parentNode.removeChild(errorDiv);
+                }
+                document.querySelector('.weather-card').classList.remove('error-state');
+            }, 300);
         }, 5000);
     }
 }
 
 // Initialize the weather app when document is ready
-$(document).ready(() => {
+document.addEventListener('DOMContentLoaded', () => {
     new WeatherApp();
 });
