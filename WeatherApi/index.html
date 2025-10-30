@@ -5,68 +5,157 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>The Sushil Sharma | Weather Api</title>
-    <meta name="description" content="Weather report based on location">
-    <meta name="keywords" content="Html, CCS, JavaScript, Github">
+    <title>Weather App | Modern Weather Dashboard</title>
+    <meta name="description" content="Modern weather app with location-based forecasts">
+    <meta name="keywords" content="Weather, API, JavaScript, Tailwind CSS">
     <meta name="author" content="Sushil Sharma">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'pulse-glow': 'pulseGlow 2s infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(-20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(50px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.3)' },
+                            '50%': { boxShadow: '0 0 40px rgba(59, 130, 246, 0.6)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
     <link rel="stylesheet" href="./assets/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-        crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple">
 </head>
 
-<body>
-    <div class="container-fluid">
-        <div class="weather-card">
-            <div class="row">
-                <h2 class="weather-location"></h2>
-                <img src="https://cdn.glitch.com/6e8889e5-7a72-48f0-a061-863548450de5%2F04n.png?1499366020983" alt=""
-                    srcset="" class="weatherIcon">
+<body class="bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 min-h-screen font-inter transition-all duration-500">
+    <!-- Loading Screen -->
+    <div id="loading" class="fixed inset-0 bg-gradient-to-br from-blue-900 to-purple-900 flex items-center justify-center z-50 backdrop-blur-xl"></div>
+        <div class="text-center">
+            <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-white mx-auto mb-4"></div>
+            <p class="text-white text-lg">Getting your location...</p>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container mx-auto px-4 py-8 min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-2 animate-fade-in">Weather Dashboard</h1>
+            <p class="text-blue-200 text-lg">Real-time weather information</p>
+        </header>
+
+        <!-- City Search -->
+        <div class="max-w-md mx-auto mb-8">
+            <div class="relative">
+                <input type="text" id="citySearch" placeholder="Search for a city..." 
+                       class="w-full px-4 py-3 pl-12 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/15 focus:border-blue-400/50 transition-all duration-300">
+                <span class="material-symbols-outlined absolute left-4 top-1/2 transform -translate-y-1/2 text-white/60">search</span>
             </div>
-            <div class="row">
-                <div id="unitchange" class="col text-center">
-                    <h1 class="temp"></h1>
-                    <span class="temp-type">°C</span>
+            <div class="flex flex-wrap gap-2 mt-4 justify-center">
+                <button class="city-btn px-3 py-2 bg-white/10 backdrop-blur-md rounded-lg text-white hover:bg-white/20 hover:-translate-y-0.5 hover:shadow-lg active:scale-95 transition-all duration-300 text-sm border border-white/10 relative overflow-hidden" data-city="Dubai">Dubai</button>
+                <button class="city-btn px-3 py-2 bg-white/10 backdrop-blur-md rounded-lg text-white hover:bg-white/20 hover:-translate-y-0.5 hover:shadow-lg active:scale-95 transition-all duration-300 text-sm border border-white/10 relative overflow-hidden" data-city="Copenhagen">Copenhagen</button>
+                <button class="city-btn px-3 py-2 bg-white/10 backdrop-blur-md rounded-lg text-white hover:bg-white/20 hover:-translate-y-0.5 hover:shadow-lg active:scale-95 transition-all duration-300 text-sm border border-white/10 relative overflow-hidden" data-city="Kathmandu">Kathmandu</button>
+                <button class="city-btn px-3 py-2 bg-white/10 backdrop-blur-md rounded-lg text-white hover:bg-white/20 hover:-translate-y-0.5 hover:shadow-lg active:scale-95 transition-all duration-300 text-sm border border-white/10 relative overflow-hidden" data-city="London">London</button>
+                <button class="city-btn px-3 py-2 bg-white/10 backdrop-blur-md rounded-lg text-white hover:bg-white/20 hover:-translate-y-0.5 hover:shadow-lg active:scale-95 transition-all duration-300 text-sm border border-white/10 relative overflow-hidden" data-city="New York">New York</button>
+                <button class="city-btn px-3 py-2 bg-white/10 backdrop-blur-md rounded-lg text-white hover:bg-white/20 hover:-translate-y-0.5 hover:shadow-lg active:scale-95 transition-all duration-300 text-sm border border-white/10 relative overflow-hidden" data-city="Tokyo">Tokyo</button>
+                <button class="city-btn px-3 py-2 bg-white/10 backdrop-blur-md rounded-lg text-white hover:bg-white/20 hover:-translate-y-0.5 hover:shadow-lg active:scale-95 transition-all duration-300 text-sm border border-white/10 relative overflow-hidden" data-city="Paris">Paris</button>
+                <button class="city-btn px-3 py-2 bg-white/10 backdrop-blur-md rounded-lg text-white hover:bg-white/20 hover:-translate-y-0.5 hover:shadow-lg active:scale-95 transition-all duration-300 text-sm border border-white/10 relative overflow-hidden" data-city="Sydney">Sydney</button>
+            </div>
+        </div>
+
+        <!-- Weather Card -->
+        <div class="weather-card max-w-4xl mx-auto w-full bg-white/10 backdrop-blur-md rounded-3xl p-8 shadow-2xl border border-white/20 animate-slide-up transition-all duration-300 hover:shadow-3xl">
+            <!-- Location and Icon -->
+            <div class="flex flex-col md:flex-row items-center justify-between mb-8">
+                <div class="text-center md:text-left mb-4 md:mb-0">
+                    <h2 class="weather-location text-3xl md:text-4xl font-bold text-white mb-2"></h2>
+                    <p class="text-blue-200 text-lg" id="currentDate"></p>
                 </div>
-                <div class="col text-center">
-                    <h1 class="weather-description"></h1>
+                <div class="text-center">
+                    <img class="weatherIcon w-24 h-24 md:w-32 md:h-32 mx-auto rounded-full bg-white/10 p-4 backdrop-blur-sm transition-transform duration-300 hover:scale-110 hover:rotate-6 drop-shadow-lg" src="" alt="Weather Icon">
+                    <p class="weather-description text-xl text-white capitalize mt-2"></p>
                 </div>
             </div>
-            <div class="row" id="Details">
-                <div class="col text-center">
-                    <i class="fas fa-tachometer-alt" style="font-size:48px;color:white"></i>
-                    <h4 class="pressure" style="font-size:48px;color:#3EB9E6"></h4>
+
+            <!-- Temperature -->
+            <div class="text-center mb-8">
+                <div id="unitchange" class="cursor-pointer group inline-block transition-all duration-300 hover:scale-105">
+                    <span class="temp text-6xl md:text-8xl font-bold text-white group-hover:text-blue-300 transition-colors duration-300"></span>
+                    <span class="temp-type text-3xl md:text-4xl text-blue-300 ml-2 group-hover:text-white transition-colors duration-300"></span>
                 </div>
-                <div class="col text-center">
-                    <i class="fas fa-tint" style="font-size:48px;color:white"></i>
-                    <h4 class="humidity" style="font-size:48px;color:#3EB9E6"></h4>
+                <p class="text-blue-200 mt-2">Click to switch units</p>
+            </div>
+
+            <!-- Weather Details -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white/5 rounded-2xl p-6 text-center backdrop-blur-sm border border-white/10">
+                    <span class="material-symbols-outlined text-4xl text-blue-300 mb-3 block">speed</span>
+                    <p class="text-white/70 text-sm uppercase tracking-wide mb-1">Pressure</p>
+                    <p class="pressure text-2xl font-semibold text-white"></p>
                 </div>
-                <div class="col text-center">
-                    <i class="fas fa-wind" style="font-size:48px;color:white"></i>
-                    <h4 class="windSpeed" style="font-size:48px;color:#3EB9E6"></h4>
+                <div class="bg-white/5 rounded-2xl p-6 text-center backdrop-blur-sm border border-white/10">
+                    <span class="material-symbols-outlined text-4xl text-blue-300 mb-3 block">water_drop</span>
+                    <p class="text-white/70 text-sm uppercase tracking-wide mb-1">Humidity</p>
+                    <p class="humidity text-2xl font-semibold text-white"></p>
+                </div>
+                <div class="bg-white/5 rounded-2xl p-6 text-center backdrop-blur-sm border border-white/10">
+                    <span class="material-symbols-outlined text-4xl text-blue-300 mb-3 block">air</span>
+                    <p class="text-white/70 text-sm uppercase tracking-wide mb-1">Wind Speed</p>
+                    <p class="windSpeed text-2xl font-semibold text-white"></p>
                 </div>
             </div>
-            <div class="row" id="otherDetails">
-                <div class="col text-center">
-                    <h3 id="dateTime"></h3> <br>
-                    <h3 id="timezone"></h3>
+
+            <!-- Additional Info -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white/5 rounded-2xl p-6 backdrop-blur-sm border border-white/10">
+                    <h3 class="text-white font-semibold mb-3 flex items-center">
+                        <span class="material-symbols-outlined mr-2 text-blue-300">schedule</span>
+                        Local Time
+                    </h3>
+                    <p id="dateTime" class="text-white/90"></p>
+                </div>
+                <div class="bg-white/5 rounded-2xl p-6 backdrop-blur-sm border border-white/10">
+                    <h3 class="text-white font-semibold mb-3 flex items-center">
+                        <span class="material-symbols-outlined mr-2 text-blue-300">public</span>
+                        Timezone
+                    </h3>
+                    <p id="timezone" class="text-white/90"></p>
                 </div>
             </div>
         </div>
-        <footer>
-            <a href="https://thesushilsharma.github.io/">Sushil Sharma</a>
+
+        <!-- Footer -->
+        <footer class="mt-auto pt-8 text-center">
+            <p class="text-white/60">
+                Made with <span class="material-symbols-outlined text-red-400 text-sm align-middle">favorite</span> by 
+                <a href="https://thesushilsharma.github.io/" class="text-blue-300 hover:text-white transition-colors">Sushil Sharma</a>
+            </p>
         </footer>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-        crossorigin="anonymous"></script>
-    <script src="./assets/main.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./assets/main.js"></script>
 </body>
 
 </html>
