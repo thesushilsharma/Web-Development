@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Quiz Application</title>
+    <meta name="description" content="Interactive quiz game with modern UI using Tailwind CSS">
+    <meta name="keywords" content="Quiz, JavaScript, Tailwind CSS, Interactive">
+    <meta name="author" content="Enhanced Quiz App">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.3s ease-out'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Header -->
+        <div class="text-center mb-8 animate-fade-in">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                🧠 Enhanced Quiz Challenge
+            </h1>
+            <p class="text-lg text-gray-600">Test your knowledge with our interactive quiz!</p>
+        </div>
+
+        <!-- Quiz Container -->
+        <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 animate-slide-up">
+            <form id="quizForm" class="space-y-8">
+                <!-- Question 1 -->
+                <div class="question-block border-b border-gray-200 pb-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                        <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">1</span>
+                        What is 5 + 6?
+                    </h3>
+                    <div class="space-y-3 ml-11">
+                        <label class="flex items-center p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                            <input type="radio" name="q1" value="5" class="mr-3 text-blue-500 focus:ring-blue-500">
+                            <span class="text-gray-700">5</span>
+                        </label>
+                        <label class="flex items-center p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                            <input type="radio" name="q1" value="56" class="mr-3 text-blue-500 focus:ring-blue-500">
+                            <span class="text-gray-700">56</span>
+                        </label>
+                        <label class="flex items-center p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                            <input type="radio" name="q1" value="11" class="mr-3 text-blue-500 focus:ring-blue-500">
+                            <span class="text-gray-700">11</span>
+                        </label>
+                    </div>
+                    <div id="result1" class="ml-11 mt-3 text-sm font-medium"></div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="question-block border-b border-gray-200 pb-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                        <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">2</span>
+                        What is 10 ÷ 2?
+                    </h3>
+                    <div class="space-y-3 ml-11">
+                        <label class="flex items-center p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                            <input type="radio" name="q2" value="5" class="mr-3 text-blue-500 focus:ring-blue-500">
+                            <span class="text-gray-700">5</span>
+                        </label>
+                        <label class="flex items-center p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                            <input type="radio" name="q2" value="20" class="mr-3 text-blue-500 focus:ring-blue-500">
+                            <span class="text-gray-700">20</span>
+                        </label>
+                        <label class="flex items-center p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                            <input type="radio" name="q2" value="102" class="mr-3 text-blue-500 focus:ring-blue-500">
+                            <span class="text-gray-700">102</span>
+                        </label>
+                    </div>
+                    <div id="result2" class="ml-11 mt-3 text-sm font-medium"></div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="question-block border-b border-gray-200 pb-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                        <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">3</span>
+                        The average of first 50 natural numbers is:
+                    </h3>
+                    <div class="space-y-3 ml-11">
+                        <label class="flex items-center p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                            <input type="radio" name="q3" value="10" class="mr-3 text-blue-500 focus:ring-blue-500">
+                            <span class="text-gray-700">10</span>
+                        </label>
+                        <label class="flex items-center p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                            <input type="radio" name="q3" value="25.5" class="mr-3 text-blue-500 focus:ring-blue-500">
+                            <span class="text-gray-700">25.5</span>
+                        </label>
+                        <label class="flex items-center p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                            <input type="radio" name="q3" value="25.30" class="mr-3 text-blue-500 focus:ring-blue-500">
+                            <span class="text-gray-700">25.30</span>
+                        </label>
+                    </div>
+                    <div id="result3" class="ml-11 mt-3 text-sm font-medium"></div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="question-block border-b border-gray-200 pb-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                        <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">4</span>
+                        106 × 106 – 94 × 94 = ?
+                    </h3>
+                    <div class="space-y-3 ml-11">
+                        <label class="flex items-center p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                            <input type="radio" name="q4" value="2400" class="mr-3 text-blue-500 focus:ring-blue-500">
+                            <span class="text-gray-700">2400</span>
+                        </label>
+                        <label class="flex items-center p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                            <input type="radio" name="q4" value="0" class="mr-3 text-blue-500 focus:ring-blue-500">
+                            <span class="text-gray-700">0</span>
+                        </label>
+                        <label class="flex items-center p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                            <input type="radio" name="q4" value="106" class="mr-3 text-blue-500 focus:ring-blue-500">
+                            <span class="text-gray-700">106</span>
+                        </label>
+                    </div>
+                    <div id="result4" class="ml-11 mt-3 text-sm font-medium"></div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="question-block">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                        <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">5</span>
+                        If water flowing into a tank doubles every minute and the tank is full in 60 minutes, when is it half full?
+                    </h3>
+                    <div class="space-y-3 ml-11">
+                        <label class="flex items-center p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                            <input type="radio" name="q5" value="59" class="mr-3 text-blue-500 focus:ring-blue-500">
+                            <span class="text-gray-700">59 minutes</span>
+                        </label>
+                        <label class="flex items-center p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                            <input type="radio" name="q5" value="30" class="mr-3 text-blue-500 focus:ring-blue-500">
+                            <span class="text-gray-700">30 minutes</span>
+                        </label>
+                        <label class="flex items-center p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                            <input type="radio" name="q5" value="43" class="mr-3 text-blue-500 focus:ring-blue-500">
+                            <span class="text-gray-700">43 minutes</span>
+                        </label>
+                    </div>
+                    <div id="result5" class="ml-11 mt-3 text-sm font-medium"></div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 pt-6 border-t border-gray-200">
+                    <button type="button" onclick="submitQuiz()" 
+                            class="flex-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-200 transform hover:scale-105 shadow-lg">
+                        📊 Submit Quiz
+                    </button>
+                    <button type="button" onclick="resetQuiz()" 
+                            class="flex-1 bg-gray-500 text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-600 transition-all duration-200 shadow-lg">
+                        🔄 Reset
+                    </button>
+                </div>
+
+                <!-- Results Section -->
+                <div id="totalResults" class="mt-6 p-6 rounded-lg text-center font-bold text-lg hidden"></div>
+            </form>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="mt-8 bg-white rounded-lg p-4 shadow-lg">
+            <div class="flex justify-between items-center mb-2">
+                <span class="text-sm font-medium text-gray-700">Progress</span>
+                <span id="progressText" class="text-sm font-medium text-gray-700">0/5 answered</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2">
+                <div id="progressBar" class="bg-blue-500 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Quiz configuration
+        const quizConfig = {
+            questions: 5,
+            correctAnswers: ["11", "5", "25.5", "2400", "59"],
+            explanations: [
+                "5 + 6 = 11 (Basic addition)",
+                "10 ÷ 2 = 5 (Basic division)",
+                "Average of first 50 natural numbers = (1+50)/2 = 25.5",
+                "106² - 94² = (106+94)(106-94) = 200 × 12 = 2400",
+                "If it doubles every minute and is full at 60 min, it's half full at 59 min"
+            ]
+        };
+
+        let answeredQuestions = 0;
+
+        // Update progress bar
+        function updateProgress() {
+            const answered = document.querySelectorAll('input[type="radio"]:checked').length;
+            const percentage = (answered / quizConfig.questions) * 100;
+            
+            document.getElementById('progressBar').style.width = percentage + '%';
+            document.getElementById('progressText').textContent = `${answered}/${quizConfig.questions} answered`;
+            
+            answeredQuestions = answered;
+        }
+
+        // Add event listeners to all radio buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            const radioButtons = document.querySelectorAll('input[type="radio"]');
+            radioButtons.forEach(radio => {
+                radio.addEventListener('change', updateProgress);
+            });
+        });
+
+        // Submit quiz function
+        function submitQuiz() {
+            let score = 0;
+            let allAnswered = true;
+
+            // Clear previous results
+            for (let i = 1; i <= quizConfig.questions; i++) {
+                document.getElementById(`result${i}`).innerHTML = '';
+            }
+
+            // Check each question
+            for (let i = 1; i <= quizConfig.questions; i++) {
+                const selectedAnswer = document.querySelector(`input[name="q${i}"]:checked`);
+                const resultDiv = document.getElementById(`result${i}`);
+
+                if (!selectedAnswer) {
+                    resultDiv.innerHTML = `<span class="text-orange-500">⚠️ Please select an answer</span>`;
+                    allAnswered = false;
+                    continue;
+                }
+
+                const userAnswer = selectedAnswer.value;
+                const correctAnswer = quizConfig.correctAnswers[i - 1];
+                const explanation = quizConfig.explanations[i - 1];
+
+                if (userAnswer === correctAnswer) {
+                    score++;
+                    resultDiv.innerHTML = `<span class="text-green-600">✅ Correct! ${explanation}</span>`;
+                    selectedAnswer.closest('label').classList.add('bg-green-50', 'border-green-200');
+                } else {
+                    resultDiv.innerHTML = `<span class="text-red-600">❌ Incorrect. ${explanation}</span>`;
+                    selectedAnswer.closest('label').classList.add('bg-red-50', 'border-red-200');
+                    
+                    // Highlight correct answer
+                    const correctRadio = document.querySelector(`input[name="q${i}"][value="${correctAnswer}"]`);
+                    if (correctRadio) {
+                        correctRadio.closest('label').classList.add('bg-green-50', 'border-green-200');
+                    }
+                }
+            }
+
+            if (!allAnswered) {
+                showResults("Please answer all questions before submitting!", "bg-orange-100 text-orange-800 border border-orange-200");
+                return;
+            }
+
+            // Show final results
+            const percentage = Math.round((score / quizConfig.questions) * 100);
+            let resultClass, emoji, message;
+
+            if (percentage >= 80) {
+                resultClass = "bg-green-100 text-green-800 border border-green-200";
+                emoji = "🎉";
+                message = "Excellent work!";
+            } else if (percentage >= 60) {
+                resultClass = "bg-blue-100 text-blue-800 border border-blue-200";
+                emoji = "👍";
+                message = "Good job!";
+            } else {
+                resultClass = "bg-red-100 text-red-800 border border-red-200";
+                emoji = "📚";
+                message = "Keep studying!";
+            }
+
+            showResults(
+                `${emoji} ${message} You scored ${score} out of ${quizConfig.questions} (${percentage}%)`,
+                resultClass
+            );
+
+            // Scroll to results
+            document.getElementById('totalResults').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Show results function
+        function showResults(text, className) {
+            const resultsDiv = document.getElementById('totalResults');
+            resultsDiv.className = `mt-6 p-6 rounded-lg text-center font-bold text-lg ${className}`;
+            resultsDiv.innerHTML = text;
+            resultsDiv.classList.remove('hidden');
+        }
+
+        // Reset quiz function
+        function resetQuiz() {
+            // Clear all selections
+            const radioButtons = document.querySelectorAll('input[type="radio"]');
+            radioButtons.forEach(radio => {
+                radio.checked = false;
+                radio.closest('label').classList.remove('bg-green-50', 'bg-red-50', 'border-green-200', 'border-red-200');
+            });
+
+            // Clear all result messages
+            for (let i = 1; i <= quizConfig.questions; i++) {
+                document.getElementById(`result${i}`).innerHTML = '';
+            }
+
+            // Hide total results
+            document.getElementById('totalResults').classList.add('hidden');
+
+            // Reset progress
+            updateProgress();
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Add keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'Enter') {
+                submitQuiz();
+            } else if (e.ctrlKey && e.key === 'r') {
+                e.preventDefault();
+                resetQuiz();
+            }
+        });
+    </script>
+</body>
+</html>
